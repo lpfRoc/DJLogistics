@@ -32,8 +32,7 @@
 
 - (void)setUpNavigationBar
 {
-   
-    UIImage *bgImage = [UIImage imageWithColor:DJRGBAColor(82, 147, 237, 1) size:CGSizeMake(UI_SCREEN_WIDTH, 64)];
+    UIImage *bgImage = [UIImage imageWithColor:COLOR_BlueDark size:CGSizeMake(UI_SCREEN_WIDTH, 64)];
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                NSFontAttributeName : [UIFont boldSystemFontOfSize:18]};
     [self.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];

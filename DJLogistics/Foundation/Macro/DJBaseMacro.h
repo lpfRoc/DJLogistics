@@ -8,7 +8,31 @@
 
 #ifndef DJBaseMacro_h
 #define DJBaseMacro_h
-
+//颜色
+#define COLOR_W (DJColorFromRGB(0xFFFFFF))
+/** 深蓝 */
+#define COLOR_BlueDark  (DJColorFromRGB(0x075ad7))
+/** 浅蓝 */
+#define COLOR_Blue  (DJColorFromRGB(0x25abfa))
+/** 橘色 */
+#define COLOR_Orange  (DJRGBAColor(246,88,54,1))
+/** 黄色 */
+#define COLOR_Yellow  (DJColorFromRGB(0xf5a60d))
+/** 背景色 */
+#define COLOR_BG  (DJColorFromRGB(0xf4f9ff))
+/** 深灰灰色icon背景 */
+#define COLOR_GragDark  (DJColorFromRGB(0xa4a4a4))
+/** 分割线色 */
+#define COLOR_Line  (DJColorFromRGB(0xcccccc))
+/** 深灰灰色icon背景 */
+#define COLOR_Grag  (DJColorFromRGB(0xe8e8e8))
+//文本颜色
+/** 文本标题色 */
+#define COLOR_FontTitle  (DJColorFromRGB(0x191919))
+/** 文本色 */
+#define COLOR_FontText  (DJColorFromRGB(0x666666))
+/** 文本背景色 */
+#define COLOR_BGFont  (DJColorFromRGB(0xf9f9f9))
 
 #define DJRGBAColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define DJComnonRGBAColor(r,a) [UIColor colorWithRed:(r)/255.0f green:(r)/255.0f blue:(r)/255.0f alpha:(a)]
@@ -58,7 +82,6 @@ alpha:1.0]
 
 #define  FONT_SIZE(A) ([UIFont systemFontOfSize:(A)])
 #define  FONT_Bold_SIZE(A) ([UIFont boldSystemFontOfSize:(A)])
-#define DJCOLOR_W (DJColorFromRGB(0xFFFFFF))
-#define COLOR_RED [UIColor redColor]
+
 
 #endif /* DJBaseMacro_h */

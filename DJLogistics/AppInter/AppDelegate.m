@@ -23,13 +23,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
 //    if ([[ZDCacheDataModel sharedInstance] isAutoLogin]){
-        self.window.rootViewController = [[DJTabBarController alloc] init];
-        
+//        self.window.rootViewController = [[DJTabBarController alloc] init];
+    
 //    }else
 //    {
-//        DJNavgationViewController*nav = [[DJNavgationViewController alloc]initWithRootViewController:[[DJLoginViewController alloc] init]];
-//        
-//        self.window.rootViewController = nav;
+        DJNavgationViewController*nav = [[DJNavgationViewController alloc]initWithRootViewController:[[DJLoginViewController alloc] init]];
+        
+        self.window.rootViewController = nav;
 //    }
     
     [self.window makeKeyAndVisible];

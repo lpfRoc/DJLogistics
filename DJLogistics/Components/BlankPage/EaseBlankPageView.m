@@ -201,10 +201,10 @@
                 UIButton *button=[UIButton new];
                 button.backgroundColor=[UIColor clearColor];
                 button.titleLabel.font=[UIFont systemFontOfSize:14];
-                [button setTitleColor:COLOR_RED forState:(UIControlStateNormal)];
+                [button setTitleColor:COLOR_Yellow forState:(UIControlStateNormal)];
                 [button addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
                 button.layer.cornerRadius=4;
-                button.layer.borderColor = COLOR_RED.CGColor;
+                button.layer.borderColor = COLOR_Yellow.CGColor;
                 button.layer.borderWidth = ISRetina_Min_Line;
                 button.layer.masksToBounds=TRUE;
                 button;

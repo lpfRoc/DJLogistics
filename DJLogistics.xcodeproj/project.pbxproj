@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		15686ADD292CB714C7EB6BE0 /* libPods-DJLogistics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 845DF412F4D6D6F6DD7BBEB4 /* libPods-DJLogistics.a */; };
+		D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6A1F7F3E4800BD8552 /* DJLoginViewController.m */; };
+		D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */; };
+		D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF721F7F72D400BD8552 /* NSString+Extension.m */; };
 		D81AD6081F7DD94100EE8F2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6071F7DD94100EE8F2A /* main.m */; };
 		D81AD6131F7DD94100EE8F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81AD6121F7DD94100EE8F2A /* Assets.xcassets */; };
 		D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81AD6141F7DD94100EE8F2A /* LaunchScreen.storyboard */; };
@@ -24,7 +27,6 @@
 		D81AD6731F7DEBC000EE8F2A /* ZDBaseRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6591F7DEBC000EE8F2A /* ZDBaseRequestManager.m */; };
 		D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD65D1F7DEBC000EE8F2A /* DJNavgationViewController.m */; };
 		D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6771F7DECF800EE8F2A /* DJRootViewController.m */; };
-		D81AD67B1F7DED2800EE8F2A /* DJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD67A1F7DED2800EE8F2A /* DJLoginViewController.m */; };
 		D81AD67E1F7DEE0500EE8F2A /* DJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD67D1F7DEE0500EE8F2A /* DJTabBarController.m */; };
 		D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6861F7DF76400EE8F2A /* UIImage+ZDExtension.m */; };
 		D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */; };
@@ -52,6 +54,12 @@
 		02BB86A1223B6C6E249562AC /* Pods-DJLogistics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJLogistics.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJLogistics/Pods-DJLogistics.release.xcconfig"; sourceTree = "<group>"; };
 		1264B2E724BEA92BF26B4E0E /* Pods-DJLogistics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJLogistics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DJLogistics/Pods-DJLogistics.debug.xcconfig"; sourceTree = "<group>"; };
 		845DF412F4D6D6F6DD7BBEB4 /* libPods-DJLogistics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DJLogistics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D811FF691F7F3E4800BD8552 /* DJLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJLoginViewController.h; sourceTree = "<group>"; };
+		D811FF6A1F7F3E4800BD8552 /* DJLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJLoginViewController.m; sourceTree = "<group>"; };
+		D811FF6E1F7F3E7100BD8552 /* DJLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJLoginView.h; sourceTree = "<group>"; };
+		D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJLoginView.m; sourceTree = "<group>"; };
+		D811FF711F7F72D400BD8552 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		D811FF721F7F72D400BD8552 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		D81AD6031F7DD94100EE8F2A /* DJLogistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJLogistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81AD6071F7DD94100EE8F2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D81AD6121F7DD94100EE8F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -85,8 +93,6 @@
 		D81AD65D1F7DEBC000EE8F2A /* DJNavgationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJNavgationViewController.m; sourceTree = "<group>"; };
 		D81AD6761F7DECF800EE8F2A /* DJRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJRootViewController.h; sourceTree = "<group>"; };
 		D81AD6771F7DECF800EE8F2A /* DJRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJRootViewController.m; sourceTree = "<group>"; };
-		D81AD6791F7DED2800EE8F2A /* DJLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJLoginViewController.h; sourceTree = "<group>"; };
-		D81AD67A1F7DED2800EE8F2A /* DJLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJLoginViewController.m; sourceTree = "<group>"; };
 		D81AD67C1F7DEE0500EE8F2A /* DJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJTabBarController.h; sourceTree = "<group>"; };
 		D81AD67D1F7DEE0500EE8F2A /* DJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJTabBarController.m; sourceTree = "<group>"; };
 		D81AD67F1F7DEEE800EE8F2A /* DJBaseMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJBaseMacro.h; sourceTree = "<group>"; };
@@ -141,6 +147,31 @@
 				02BB86A1223B6C6E249562AC /* Pods-DJLogistics.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D811FF681F7F3E4800BD8552 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D811FF691F7F3E4800BD8552 /* DJLoginViewController.h */,
+				D811FF6A1F7F3E4800BD8552 /* DJLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D811FF6B1F7F3E4800BD8552 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D811FF6C1F7F3E4800BD8552 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D811FF6E1F7F3E7100BD8552 /* DJLoginView.h */,
+				D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D81AD5FA1F7DD94100EE8F2A = {
@@ -232,6 +263,8 @@
 				D81AD6851F7DF76400EE8F2A /* UIImage+ZDExtension.h */,
 				D81AD6861F7DF76400EE8F2A /* UIImage+ZDExtension.m */,
 				D81AD63E1F7DEBC000EE8F2A /* UIView */,
+				D811FF711F7F72D400BD8552 /* NSString+Extension.h */,
+				D811FF721F7F72D400BD8552 /* NSString+Extension.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -471,8 +504,9 @@
 		D81AD6751F7DEC9A00EE8F2A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D81AD6791F7DED2800EE8F2A /* DJLoginViewController.h */,
-				D81AD67A1F7DED2800EE8F2A /* DJLoginViewController.m */,
+				D811FF681F7F3E4800BD8552 /* Controller */,
+				D811FF6C1F7F3E4800BD8552 /* View */,
+				D811FF6B1F7F3E4800BD8552 /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -674,12 +708,14 @@
 				D81AD68D1F7DF94900EE8F2A /* DJMineViewController.m in Sources */,
 				D81AD6721F7DEBC000EE8F2A /* ZDUserModel.m in Sources */,
 				D81AD66C1F7DEBC000EE8F2A /* UIView+Extension.m in Sources */,
+				D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */,
 				D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */,
+				D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */,
 				D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */,
 				D81AD6701F7DEBC000EE8F2A /* ZDCacheDataModel.m in Sources */,
-				D81AD67B1F7DED2800EE8F2A /* DJLoginViewController.m in Sources */,
 				D81AD6731F7DEBC000EE8F2A /* ZDBaseRequestManager.m in Sources */,
 				D81AD66B1F7DEBC000EE8F2A /* AppDelegate.m in Sources */,
+				D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */,
 				D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */,
 				D81AD6081F7DD94100EE8F2A /* main.m in Sources */,
 				D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */,
