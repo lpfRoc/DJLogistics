@@ -8,7 +8,8 @@
 
 #import "DJLoginViewController.h"
 #import "DJLoginView.h"
-@interface DJLoginViewController ()
+#import "DJTabBarController.h"
+@interface DJLoginViewController ()<DJLoginViewDelegate>
 /** 登录视图 */
 @property (nonatomic,strong) DJLoginView *loginView;
 @end
@@ -22,6 +23,7 @@
         
         _loginView = [[DJLoginView alloc] init];
         _loginView.rootVc =self;
+        _loginView.delegate = self;
     }
     return _loginView;
 }
@@ -47,6 +49,35 @@
     [self autoLayout];
 }
 
+-(void)loginByPhone:(NSString *)phoneNum Password:(NSString *)password
+{
+    NSDictionary * info = [[NSBundle mainBundle] infoDictionary];
+    NSDictionary *parameters = @{
+                                 @"phone":phoneNum,
+                                 @"password":password,
+                                 @"appversion":info[@"CFBundleShortVersionString"]
+                                 };
+    [ZDBaseRequestManager POSTJKID:@"login" parameters:parameters success:^(id responseObject) {
+        DJLog(@"%@",responseObject);
+        _loginView.passWordDescribeLb.text = @"";
+        if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
+            
+            NSDictionary *result = responseObject[@"result"];
+             DJUserModel *userModel = [DJUserModel yy_modelWithDictionary:result];
+            //存储用户登录数据
+            DJUser_Info = userModel;
+            
+            DJTabBarController *tabBarViewController = [[DJTabBarController alloc] init];
+            [[[UIApplication sharedApplication] delegate] window].rootViewController =tabBarViewController;
+        }else
+        {
+            _loginView.passWordDescribeLb.text = responseObject[@"msg"];
+        }
+        [Toast makeToast:responseObject[@"msg"]];
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

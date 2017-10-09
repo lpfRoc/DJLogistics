@@ -279,18 +279,14 @@
     DJLog(@"登陆");
     _passWordDescribeLb.text = @"";
     _phoneDescribeLb.text = @"";
-    DJLog(@"%@",_passWordTextField.text);
     if (![NSString validateMobile:_phoneTextField.text]) {
         _phoneDescribeLb.text = @"*手机号格式不正确";
+        return;
     }
-    if (![_passWordTextField.text isEqualToString:@"123"]) {
-        _passWordDescribeLb.text = @"*密码与账号不匹配";
+    if (_delegate && [_delegate respondsToSelector:@selector(loginByPhone:Password:)]) {
+        [_delegate loginByPhone:_phoneTextField.text Password:_passWordTextField.text];
     }
-    if (_passWordDescribeLb.text.length == 0 && _phoneDescribeLb.text.length == 0) {
+    
 
-        DJTabBarController *tabBarViewController = [[DJTabBarController alloc] init];
-
-   [[[UIApplication sharedApplication] delegate] window].rootViewController =tabBarViewController;
-    }
 }
 @end

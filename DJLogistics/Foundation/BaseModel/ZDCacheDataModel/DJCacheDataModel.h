@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZDCacheDataModel : NSObject
+@interface DJCacheDataModel : NSObject
 @property (nonatomic, strong) NSDictionary *userInfoData;   //本地存储用户信息
 /**
  *  存储手机号用户清除用户信息后，在登录界面仍可获取手机号

@@ -20,13 +20,7 @@
     self.view.backgroundColor = COLOR_BG;
     // Do any additional setup after loading the view.
     
-    [ZDBaseRequestManager POSTJKID:@"getconfig" parameters:@{} success:^(id responseObject) {
-        DJLog(@"%@",responseObject);
 
-        
-    } failure:^(ZDURLResponseStatusCode errorCode) {
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

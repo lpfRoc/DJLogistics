@@ -12,6 +12,10 @@
 		D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */; };
 		D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF721F7F72D400BD8552 /* NSString+Extension.m */; };
 		D814B3F21F8B011C001E424C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D814B3F11F8B011C001E424C /* Assets.xcassets */; };
+		D814B3F51F8B0EF7001E424C /* DJMineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3F41F8B0EF7001E424C /* DJMineTableView.m */; };
+		D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3F71F8B1086001E424C /* DJMineTableViewCell.m */; };
+		D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3FA1F8B1F44001E424C /* DJMineFooterView.m */; };
+		D814B3FE1F8B263D001E424C /* DJMineFooterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3FD1F8B263D001E424C /* DJMineFooterCollectionViewCell.m */; };
 		D81AD6081F7DD94100EE8F2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6071F7DD94100EE8F2A /* main.m */; };
 		D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81AD6141F7DD94100EE8F2A /* LaunchScreen.storyboard */; };
 		D81AD6211F7DD94100EE8F2A /* DJLogisticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6201F7DD94100EE8F2A /* DJLogisticsTests.m */; };
@@ -21,9 +25,9 @@
 		D81AD66D1F7DEBC000EE8F2A /* EaseBlankPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6441F7DEBC000EE8F2A /* EaseBlankPageView.m */; };
 		D81AD66E1F7DEBC000EE8F2A /* MBProgressHUD+SCustomHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6471F7DEBC000EE8F2A /* MBProgressHUD+SCustomHUD.m */; };
 		D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6491F7DEBC000EE8F2A /* Toast.m */; };
-		D81AD6701F7DEBC000EE8F2A /* ZDCacheDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD64E1F7DEBC000EE8F2A /* ZDCacheDataModel.m */; };
-		D81AD6711F7DEBC000EE8F2A /* ZDContextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6511F7DEBC000EE8F2A /* ZDContextModel.m */; };
-		D81AD6721F7DEBC000EE8F2A /* ZDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6541F7DEBC000EE8F2A /* ZDUserModel.m */; };
+		D81AD6701F7DEBC000EE8F2A /* DJCacheDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD64E1F7DEBC000EE8F2A /* DJCacheDataModel.m */; };
+		D81AD6711F7DEBC000EE8F2A /* DJContextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6511F7DEBC000EE8F2A /* DJContextModel.m */; };
+		D81AD6721F7DEBC000EE8F2A /* DJUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6541F7DEBC000EE8F2A /* DJUserModel.m */; };
 		D81AD6731F7DEBC000EE8F2A /* ZDBaseRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6591F7DEBC000EE8F2A /* ZDBaseRequestManager.m */; };
 		D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD65D1F7DEBC000EE8F2A /* DJNavgationViewController.m */; };
 		D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6771F7DECF800EE8F2A /* DJRootViewController.m */; };
@@ -61,6 +65,14 @@
 		D811FF711F7F72D400BD8552 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		D811FF721F7F72D400BD8552 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		D814B3F11F8B011C001E424C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D814B3F31F8B0EF7001E424C /* DJMineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineTableView.h; sourceTree = "<group>"; };
+		D814B3F41F8B0EF7001E424C /* DJMineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineTableView.m; sourceTree = "<group>"; };
+		D814B3F61F8B1086001E424C /* DJMineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineTableViewCell.h; sourceTree = "<group>"; };
+		D814B3F71F8B1086001E424C /* DJMineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineTableViewCell.m; sourceTree = "<group>"; };
+		D814B3F91F8B1F44001E424C /* DJMineFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineFooterView.h; sourceTree = "<group>"; };
+		D814B3FA1F8B1F44001E424C /* DJMineFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineFooterView.m; sourceTree = "<group>"; };
+		D814B3FC1F8B263D001E424C /* DJMineFooterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineFooterCollectionViewCell.h; sourceTree = "<group>"; };
+		D814B3FD1F8B263D001E424C /* DJMineFooterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineFooterCollectionViewCell.m; sourceTree = "<group>"; };
 		D81AD6031F7DD94100EE8F2A /* DJLogistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJLogistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81AD6071F7DD94100EE8F2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D81AD6151F7DD94100EE8F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,12 +93,12 @@
 		D81AD6471F7DEBC000EE8F2A /* MBProgressHUD+SCustomHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+SCustomHUD.m"; sourceTree = "<group>"; };
 		D81AD6481F7DEBC000EE8F2A /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		D81AD6491F7DEBC000EE8F2A /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
-		D81AD64D1F7DEBC000EE8F2A /* ZDCacheDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCacheDataModel.h; sourceTree = "<group>"; };
-		D81AD64E1F7DEBC000EE8F2A /* ZDCacheDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCacheDataModel.m; sourceTree = "<group>"; };
-		D81AD6501F7DEBC000EE8F2A /* ZDContextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDContextModel.h; sourceTree = "<group>"; };
-		D81AD6511F7DEBC000EE8F2A /* ZDContextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDContextModel.m; sourceTree = "<group>"; };
-		D81AD6531F7DEBC000EE8F2A /* ZDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserModel.h; sourceTree = "<group>"; };
-		D81AD6541F7DEBC000EE8F2A /* ZDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserModel.m; sourceTree = "<group>"; };
+		D81AD64D1F7DEBC000EE8F2A /* DJCacheDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJCacheDataModel.h; sourceTree = "<group>"; };
+		D81AD64E1F7DEBC000EE8F2A /* DJCacheDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJCacheDataModel.m; sourceTree = "<group>"; };
+		D81AD6501F7DEBC000EE8F2A /* DJContextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJContextModel.h; sourceTree = "<group>"; };
+		D81AD6511F7DEBC000EE8F2A /* DJContextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJContextModel.m; sourceTree = "<group>"; };
+		D81AD6531F7DEBC000EE8F2A /* DJUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJUserModel.h; sourceTree = "<group>"; };
+		D81AD6541F7DEBC000EE8F2A /* DJUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJUserModel.m; sourceTree = "<group>"; };
 		D81AD6581F7DEBC000EE8F2A /* ZDBaseRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBaseRequestManager.h; sourceTree = "<group>"; };
 		D81AD6591F7DEBC000EE8F2A /* ZDBaseRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBaseRequestManager.m; sourceTree = "<group>"; };
 		D81AD65C1F7DEBC000EE8F2A /* DJNavgationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJNavgationViewController.h; sourceTree = "<group>"; };
@@ -321,37 +333,40 @@
 		D81AD64B1F7DEBC000EE8F2A /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
-				D81AD64C1F7DEBC000EE8F2A /* ZDCacheDataModel */,
-				D81AD64F1F7DEBC000EE8F2A /* ZDContextModel */,
-				D81AD6521F7DEBC000EE8F2A /* ZDUserModel */,
+				D81AD64C1F7DEBC000EE8F2A /* DJCacheDataModel */,
+				D81AD64F1F7DEBC000EE8F2A /* DJContextModel */,
+				D81AD6521F7DEBC000EE8F2A /* DJUserModel */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
 		};
-		D81AD64C1F7DEBC000EE8F2A /* ZDCacheDataModel */ = {
+		D81AD64C1F7DEBC000EE8F2A /* DJCacheDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				D81AD64D1F7DEBC000EE8F2A /* ZDCacheDataModel.h */,
-				D81AD64E1F7DEBC000EE8F2A /* ZDCacheDataModel.m */,
+				D81AD64D1F7DEBC000EE8F2A /* DJCacheDataModel.h */,
+				D81AD64E1F7DEBC000EE8F2A /* DJCacheDataModel.m */,
 			);
+			name = DJCacheDataModel;
 			path = ZDCacheDataModel;
 			sourceTree = "<group>";
 		};
-		D81AD64F1F7DEBC000EE8F2A /* ZDContextModel */ = {
+		D81AD64F1F7DEBC000EE8F2A /* DJContextModel */ = {
 			isa = PBXGroup;
 			children = (
-				D81AD6501F7DEBC000EE8F2A /* ZDContextModel.h */,
-				D81AD6511F7DEBC000EE8F2A /* ZDContextModel.m */,
+				D81AD6501F7DEBC000EE8F2A /* DJContextModel.h */,
+				D81AD6511F7DEBC000EE8F2A /* DJContextModel.m */,
 			);
+			name = DJContextModel;
 			path = ZDContextModel;
 			sourceTree = "<group>";
 		};
-		D81AD6521F7DEBC000EE8F2A /* ZDUserModel */ = {
+		D81AD6521F7DEBC000EE8F2A /* DJUserModel */ = {
 			isa = PBXGroup;
 			children = (
-				D81AD6531F7DEBC000EE8F2A /* ZDUserModel.h */,
-				D81AD6541F7DEBC000EE8F2A /* ZDUserModel.m */,
+				D81AD6531F7DEBC000EE8F2A /* DJUserModel.h */,
+				D81AD6541F7DEBC000EE8F2A /* DJUserModel.m */,
 			);
+			name = DJUserModel;
 			path = ZDUserModel;
 			sourceTree = "<group>";
 		};
@@ -449,6 +464,14 @@
 		D81AD6641F7DEBC000EE8F2A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D814B3F31F8B0EF7001E424C /* DJMineTableView.h */,
+				D814B3F41F8B0EF7001E424C /* DJMineTableView.m */,
+				D814B3F61F8B1086001E424C /* DJMineTableViewCell.h */,
+				D814B3F71F8B1086001E424C /* DJMineTableViewCell.m */,
+				D814B3F91F8B1F44001E424C /* DJMineFooterView.h */,
+				D814B3FA1F8B1F44001E424C /* DJMineFooterView.m */,
+				D814B3FC1F8B263D001E424C /* DJMineFooterCollectionViewCell.h */,
+				D814B3FD1F8B263D001E424C /* DJMineFooterCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,20 +729,24 @@
 				D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */,
 				D81AD66D1F7DEBC000EE8F2A /* EaseBlankPageView.m in Sources */,
 				D81AD68D1F7DF94900EE8F2A /* DJMineViewController.m in Sources */,
-				D81AD6721F7DEBC000EE8F2A /* ZDUserModel.m in Sources */,
+				D81AD6721F7DEBC000EE8F2A /* DJUserModel.m in Sources */,
 				D81AD66C1F7DEBC000EE8F2A /* UIView+Extension.m in Sources */,
+				D814B3F51F8B0EF7001E424C /* DJMineTableView.m in Sources */,
 				D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */,
+				D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */,
 				D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */,
 				D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */,
 				D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */,
-				D81AD6701F7DEBC000EE8F2A /* ZDCacheDataModel.m in Sources */,
+				D81AD6701F7DEBC000EE8F2A /* DJCacheDataModel.m in Sources */,
 				D81AD6731F7DEBC000EE8F2A /* ZDBaseRequestManager.m in Sources */,
 				D81AD66B1F7DEBC000EE8F2A /* AppDelegate.m in Sources */,
 				D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */,
+				D814B3FE1F8B263D001E424C /* DJMineFooterCollectionViewCell.m in Sources */,
 				D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */,
 				D81AD6081F7DD94100EE8F2A /* main.m in Sources */,
+				D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */,
 				D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */,
-				D81AD6711F7DEBC000EE8F2A /* ZDContextModel.m in Sources */,
+				D81AD6711F7DEBC000EE8F2A /* DJContextModel.m in Sources */,
 				D81AD67E1F7DEE0500EE8F2A /* DJTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

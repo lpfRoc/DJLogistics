@@ -16,6 +16,10 @@
 #import "DJBaseMacro.h"
 #import "DJCofigService.h"
 #import "ZDBaseRequestManager.h"
+#import "Toast.h"
+#import "DJContextModel.h"
+#import "DJCacheDataModel.h"
+#import "DJUserModel.h"
 //第三方
 #import <Masonry/Masonry.h>
 #import <YYModel/YYModel.h>

@@ -1,20 +1,20 @@
 //
-//  ZDCacheDataModel.m
+//  DJCacheDataModel.m
 //  Loan
 //
 //  Created by Roc on 16/10/14.
 //  Copyright © 2016年 zhengDa. All rights reserved.
 //
 
-#import "ZDCacheDataModel.h"
+#import "DJCacheDataModel.h"
 static NSString *const cacheUserinfoKey = @"CACHE_USERINFO_KEY";                 //用户信息Key
 static NSString *const cacheUserLoginCellPhoneKey = @"CACHE_USELOGIONCELLPHONE_KEY";        //用户登录手机号Key
-@implementation ZDCacheDataModel
-static ZDCacheDataModel *sharedCacheDataModel = nil;
+@implementation DJCacheDataModel
+static DJCacheDataModel *sharedCacheDataModel = nil;
 static dispatch_once_t onceToken;
 + (instancetype)sharedInstance{
     dispatch_once(&onceToken, ^{
-        sharedCacheDataModel = [[ZDCacheDataModel alloc] init];
+        sharedCacheDataModel = [[DJCacheDataModel alloc] init];
     });
     return sharedCacheDataModel;
 }

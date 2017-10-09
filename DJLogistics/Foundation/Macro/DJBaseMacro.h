@@ -42,6 +42,8 @@ green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 \
 alpha:1.0]
 
+#define  DJUser_Info [DJContextModel sharedInstance].currentUserInfo
+
 /**
  * 强弱引用转换，用于解决代码块（block）与强引用self之间的循环引用问题
  * 调用方式: `@ZDWeakify_self`实现弱引用转换，`@ZDStrongify_self`实现强引用转换

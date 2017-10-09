@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol DJLoginViewDelegate <NSObject>
+
+-(void)loginByPhone:(NSString *)phoneNum Password:(NSString *)password;
+
+@end
+
 @interface DJLoginView : UIView
+/** <#Descripe#> */
+@property (nonatomic,weak)  id<DJLoginViewDelegate> delegate;
 /** rootvc */
 @property (nonatomic,weak) UIViewController *rootVc;
 /** Logo */

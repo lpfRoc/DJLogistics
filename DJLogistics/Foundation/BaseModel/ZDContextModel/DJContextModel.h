@@ -1,5 +1,5 @@
 //
-//  ZDContextModel.h
+//  DJContextModel.h
 //  Loan
 //
 //  Created by Roc on 16/10/14.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-@class ZDUserModel;
-@interface ZDContextModel : NSObject
-@property (nonatomic,strong) ZDUserModel *currentUserInfo;     //用户信息
+@class DJUserModel;
+@interface DJContextModel : NSObject
+@property (nonatomic,strong) DJUserModel *currentUserInfo;     //用户信息
 /**
  * @brief 创建单例
  */
