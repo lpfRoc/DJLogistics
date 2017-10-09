@@ -11,8 +11,8 @@
 		D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6A1F7F3E4800BD8552 /* DJLoginViewController.m */; };
 		D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */; };
 		D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF721F7F72D400BD8552 /* NSString+Extension.m */; };
+		D814B3F21F8B011C001E424C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D814B3F11F8B011C001E424C /* Assets.xcassets */; };
 		D81AD6081F7DD94100EE8F2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6071F7DD94100EE8F2A /* main.m */; };
-		D81AD6131F7DD94100EE8F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81AD6121F7DD94100EE8F2A /* Assets.xcassets */; };
 		D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81AD6141F7DD94100EE8F2A /* LaunchScreen.storyboard */; };
 		D81AD6211F7DD94100EE8F2A /* DJLogisticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6201F7DD94100EE8F2A /* DJLogisticsTests.m */; };
 		D81AD62C1F7DD94100EE8F2A /* DJLogisticsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD62B1F7DD94100EE8F2A /* DJLogisticsUITests.m */; };
@@ -60,9 +60,9 @@
 		D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJLoginView.m; sourceTree = "<group>"; };
 		D811FF711F7F72D400BD8552 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		D811FF721F7F72D400BD8552 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		D814B3F11F8B011C001E424C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D81AD6031F7DD94100EE8F2A /* DJLogistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJLogistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81AD6071F7DD94100EE8F2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D81AD6121F7DD94100EE8F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		D81AD6151F7DD94100EE8F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81AD6171F7DD94100EE8F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81AD61C1F7DD94100EE8F2A /* DJLogisticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJLogisticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -489,7 +489,7 @@
 		D81AD6691F7DEBC000EE8F2A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D81AD6121F7DD94100EE8F2A /* Assets.xcassets */,
+				D814B3F11F8B011C001E424C /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -621,8 +621,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D814B3F21F8B011C001E424C /* Assets.xcassets in Resources */,
 				D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */,
-				D81AD6131F7DD94100EE8F2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
