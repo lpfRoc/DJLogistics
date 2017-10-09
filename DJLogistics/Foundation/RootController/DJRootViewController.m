@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.view.backgroundColor = COLOR_BG;
 }
 
 - (void)didReceiveMemoryWarning {

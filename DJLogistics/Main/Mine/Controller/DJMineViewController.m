@@ -51,6 +51,7 @@
         
         _mineTableView = [[DJMineTableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
         _mineTableView.tableFooterView = self.mineFooterView;
+        _mineTableView.rootVc = self;
     }
     return _mineTableView;
 }

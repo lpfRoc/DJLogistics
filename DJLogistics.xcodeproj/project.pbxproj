@@ -16,6 +16,9 @@
 		D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3F71F8B1086001E424C /* DJMineTableViewCell.m */; };
 		D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3FA1F8B1F44001E424C /* DJMineFooterView.m */; };
 		D814B3FE1F8B263D001E424C /* DJMineFooterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B3FD1F8B263D001E424C /* DJMineFooterCollectionViewCell.m */; };
+		D814B4011F8B70D7001E424C /* DJPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B4001F8B70D7001E424C /* DJPersonInfoViewController.m */; };
+		D814B4041F8B7116001E424C /* DJPersonInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B4031F8B7116001E424C /* DJPersonInfoTableView.m */; };
+		D814B40A1F8B7867001E424C /* DJPersonInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D814B4091F8B7867001E424C /* DJPersonInfoTableViewCell.m */; };
 		D81AD6081F7DD94100EE8F2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6071F7DD94100EE8F2A /* main.m */; };
 		D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81AD6141F7DD94100EE8F2A /* LaunchScreen.storyboard */; };
 		D81AD6211F7DD94100EE8F2A /* DJLogisticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6201F7DD94100EE8F2A /* DJLogisticsTests.m */; };
@@ -73,6 +76,12 @@
 		D814B3FA1F8B1F44001E424C /* DJMineFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineFooterView.m; sourceTree = "<group>"; };
 		D814B3FC1F8B263D001E424C /* DJMineFooterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineFooterCollectionViewCell.h; sourceTree = "<group>"; };
 		D814B3FD1F8B263D001E424C /* DJMineFooterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineFooterCollectionViewCell.m; sourceTree = "<group>"; };
+		D814B3FF1F8B70D7001E424C /* DJPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJPersonInfoViewController.h; sourceTree = "<group>"; };
+		D814B4001F8B70D7001E424C /* DJPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJPersonInfoViewController.m; sourceTree = "<group>"; };
+		D814B4021F8B7116001E424C /* DJPersonInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJPersonInfoTableView.h; sourceTree = "<group>"; };
+		D814B4031F8B7116001E424C /* DJPersonInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJPersonInfoTableView.m; sourceTree = "<group>"; };
+		D814B4081F8B7867001E424C /* DJPersonInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJPersonInfoTableViewCell.h; sourceTree = "<group>"; };
+		D814B4091F8B7867001E424C /* DJPersonInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJPersonInfoTableViewCell.m; sourceTree = "<group>"; };
 		D81AD6031F7DD94100EE8F2A /* DJLogistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJLogistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81AD6071F7DD94100EE8F2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D81AD6151F7DD94100EE8F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -450,6 +459,8 @@
 			children = (
 				D81AD68B1F7DF94900EE8F2A /* DJMineViewController.h */,
 				D81AD68C1F7DF94900EE8F2A /* DJMineViewController.m */,
+				D814B3FF1F8B70D7001E424C /* DJPersonInfoViewController.h */,
+				D814B4001F8B70D7001E424C /* DJPersonInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,6 +483,10 @@
 				D814B3FA1F8B1F44001E424C /* DJMineFooterView.m */,
 				D814B3FC1F8B263D001E424C /* DJMineFooterCollectionViewCell.h */,
 				D814B3FD1F8B263D001E424C /* DJMineFooterCollectionViewCell.m */,
+				D814B4021F8B7116001E424C /* DJPersonInfoTableView.h */,
+				D814B4031F8B7116001E424C /* DJPersonInfoTableView.m */,
+				D814B4081F8B7867001E424C /* DJPersonInfoTableViewCell.h */,
+				D814B4091F8B7867001E424C /* DJPersonInfoTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -734,6 +749,8 @@
 				D814B3F51F8B0EF7001E424C /* DJMineTableView.m in Sources */,
 				D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */,
 				D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */,
+				D814B4041F8B7116001E424C /* DJPersonInfoTableView.m in Sources */,
+				D814B40A1F8B7867001E424C /* DJPersonInfoTableViewCell.m in Sources */,
 				D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */,
 				D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */,
 				D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */,
@@ -748,6 +765,7 @@
 				D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */,
 				D81AD6711F7DEBC000EE8F2A /* DJContextModel.m in Sources */,
 				D81AD67E1F7DEE0500EE8F2A /* DJTabBarController.m in Sources */,
+				D814B4011F8B70D7001E424C /* DJPersonInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

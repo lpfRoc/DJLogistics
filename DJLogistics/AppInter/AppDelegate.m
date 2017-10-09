@@ -24,15 +24,15 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    if ([[ZDCacheDataModel sharedInstance] isAutoLogin]){
-//        self.window.rootViewController = [[DJTabBarController alloc] init];
+    if ([[DJCacheDataModel sharedInstance] isAutoLogin]){
+        self.window.rootViewController = [[DJTabBarController alloc] init];
     
-//    }else
-//    {
+    }else
+    {
         DJNavgationViewController*nav = [[DJNavgationViewController alloc]initWithRootViewController:[[DJLoginViewController alloc] init]];
         
         self.window.rootViewController = nav;
-//    }
+    }
     
     [self.window makeKeyAndVisible];
 

@@ -8,6 +8,7 @@
 
 #import "DJMineTableView.h"
 #import "DJMineTableViewCell.h"
+#import "DJPersonInfoViewController.h"
 static NSString *DJMineTableViewCellIdentifier = @"DJMineTableViewCell";
 
 @interface DJMineTableView ()<UITableViewDelegate, UITableViewDataSource>
@@ -94,6 +95,17 @@ static NSString *DJMineTableViewCellIdentifier = @"DJMineTableViewCell";
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    switch (indexPath.section) {
+        case 0:
+        {
+            DJPersonInfoViewController *personInfoViewController = [[DJPersonInfoViewController alloc] init];
+            [self.rootVc.navigationController pushViewController:personInfoViewController animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
     
 }
 

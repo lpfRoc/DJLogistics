@@ -1,5 +1,5 @@
 //
-//  DJMineTableView.h
+//  DJPersonInfoTableView.h
 //  DJLogistics
 //
 //  Created by Roc on 2017/10/9.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DJMineTableView : UITableView
+@interface DJPersonInfoTableView : UITableView
 /** rootVc */
 @property (nonatomic,weak) UIViewController *rootVc;
 @end
