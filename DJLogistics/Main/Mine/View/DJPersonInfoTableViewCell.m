@@ -22,7 +22,7 @@
         }
         [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make){
             make.centerY.equalTo(self.contentView.mas_centerY);
-            make.right.equalTo(self.contentView.mas_right);
+            make.right.equalTo(self.contentView.mas_right).with.offset(AUTO_SIZE(-15));
             make.size.mas_equalTo(CGSizeMake(50, 50));
         }];
         

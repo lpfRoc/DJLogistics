@@ -9,7 +9,7 @@
 #import "DJMineViewController.h"
 #import "DJMineTableView.h"
 #import "DJMineFooterView.h"
-
+#import "DJMineWaybillViewController.h"
 @interface DJMineViewController ()
 /** tableView */
 @property (nonatomic,strong) DJMineTableView *mineTableView;
@@ -42,6 +42,9 @@
             make.width.equalTo(@(UI_SCREEN_WIDTH -AUTO_SIZE(15) ));
 
         }];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMineWaybill)];
+        [_mineFooterView addGestureRecognizer:tap];
     }
     return _mineFooterView;
 }
@@ -73,6 +76,10 @@
     NSLog(@"%@",DJUser_Info.phone);
 }
 
+-(void)tapMineWaybill
+{
+    [self.navigationController pushViewController:[[DJMineWaybillViewController alloc] init] animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

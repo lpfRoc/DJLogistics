@@ -10,6 +10,7 @@
 #import "DJPersonInfoTableView.h"
 #import "DJNavgationViewController.h"
 #import "DJLoginViewController.h"
+#import "DJChangePasswordViewController.h"
 @interface DJPersonInfoViewController ()
 /** tableView */
 @property (nonatomic,strong) DJPersonInfoTableView *personInfoTableView;
@@ -133,6 +134,7 @@
 -(void)changePwAction:(UIButton *)btn
 {
     DJLog(@"更改密码");
+    [self.navigationController pushViewController:[[DJChangePasswordViewController alloc] init] animated:YES];
 
 }
 - (void)didReceiveMemoryWarning {

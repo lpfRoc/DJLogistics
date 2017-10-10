@@ -16,7 +16,7 @@
 @end
 
 @interface DJLoginView : UIView
-/** <#Descripe#> */
+/** delegate */
 @property (nonatomic,weak)  id<DJLoginViewDelegate> delegate;
 /** rootvc */
 @property (nonatomic,weak) UIViewController *rootVc;

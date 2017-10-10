@@ -25,6 +25,15 @@
     return self;
 }
 #pragma mark - lazy
+- (UIImageView *)arrow
+{
+    if (_arrow == nil) {
+        
+        _arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"left_arrow"]];
+    }
+    return _arrow;
+}
+
 - (UILabel *)nameLabel
 {
     if (_nameLabel == nil) {
@@ -115,9 +124,7 @@
     switch (mineTableViewCellStyle) {
         case DJMineTableViewCellStyleMineInfo:
         {
-            self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
-            NSArray *viewArray = @[self.nameLabel,self.phoneLabel, self.iconImageView];
+            NSArray *viewArray = @[self.nameLabel,self.phoneLabel, self.iconImageView,self.arrow];
             for (UIView *view in viewArray) {
                 [self.contentView addSubview:view];
             }
@@ -138,7 +145,11 @@
                 make.left.equalTo(_iconImageView.mas_right).with.offset(AUTO_SIZE(15));
             }];
             
-
+            [_arrow mas_makeConstraints:^(MASConstraintMaker *make){
+                make.centerY.equalTo(_iconImageView.mas_centerY);
+                make.right.equalTo(self.contentView.mas_right).with.offset(AUTO_SIZE(-20));
+                make.size.mas_equalTo(CGSizeMake(8, 15));
+            }];
         }
             break;
         case DJMineTableViewCellStyleStationInfo:

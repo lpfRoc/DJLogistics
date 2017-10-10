@@ -42,7 +42,7 @@ static NSString *DJMineFooterCollectionViewCellIdentifier = @"DJMineFooterCollec
 {
     if (_arrow == nil) {
         
-        _arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
+        _arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"left_arrow"]];
     }
     return _arrow;
 }

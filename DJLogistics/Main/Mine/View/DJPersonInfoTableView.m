@@ -52,8 +52,6 @@
         }
 
     }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
 
     switch (indexPath.section) {
         case 0:

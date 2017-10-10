@@ -17,6 +17,9 @@ typedef NS_ENUM(NSInteger, DJMineTableViewCellStyle) {
 /** cellstyle */
 @property (nonatomic,assign) DJMineTableViewCellStyle mineTableViewCellStyle;
 
+/** arrow */
+@property (nonatomic,strong) UIImageView *arrow;
+
 @property (strong, nonatomic)  UIImageView *iconImageView;//头像
 @property (strong, nonatomic)  UILabel *nameLabel;//名字
 @property (strong, nonatomic)  UILabel *phoneLabel;//手机号
