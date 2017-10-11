@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DJMineWaybillTableView : UITableView
+/** dataArr */
+@property (nonatomic,strong) NSArray *dataArr;
 /** rootVc */
 @property (nonatomic,weak) UIViewController *rootVc;
 @end

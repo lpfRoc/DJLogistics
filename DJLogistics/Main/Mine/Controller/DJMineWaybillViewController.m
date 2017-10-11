@@ -8,6 +8,8 @@
 
 #import "DJMineWaybillViewController.h"
 #import "DJMineWaybillTableView.h"
+#import "DJWaybillModel.h"
+#import "DJWaybillDataSource.h"
 @interface DJMineWaybillViewController ()
 /** tableView */
 @property (nonatomic,strong) DJMineWaybillTableView *mineWaybillTableView;
@@ -38,8 +40,26 @@
     self.navigationItem.title = @"我的运单";
     [self.view addSubview:self.mineWaybillTableView];
     [self autoLayout];
+    [self requestData];
 }
-
+//
+-(void)requestData
+{
+    [ZDBaseRequestManager POSTJKID:@"waybill_list" parameters:@{@"id":DJUser_Info.aid} success:^(id responseObject) {
+        DJLog(@"%@",responseObject);
+        if ([responseObject[@"code"] integerValue] == 1) {//退出成功
+            DJWaybillDataSource *dataSource = [DJWaybillDataSource yy_modelWithJSON:responseObject];
+            NSLog(@"%@",dataSource.result);
+            _mineWaybillTableView.dataArr = dataSource.result;
+            [_mineWaybillTableView reloadData];
+        }else
+        {
+            [Toast makeToast:responseObject[@"msg"]];
+        }
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		15686ADD292CB714C7EB6BE0 /* libPods-DJLogistics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 845DF412F4D6D6F6DD7BBEB4 /* libPods-DJLogistics.a */; };
+		D80DFBDE1F8DFE620015E413 /* DJWaybillDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DFBDD1F8DFE620015E413 /* DJWaybillDataSource.m */; };
+		D80DFBE21F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DFBE11F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.m */; };
+		D80DFBE51F8E07290015E413 /* DJMerchantInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DFBE41F8E07290015E413 /* DJMerchantInfoCell.m */; };
+		D80DFBE81F8E07830015E413 /* DJOrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DFBE71F8E07830015E413 /* DJOrderInfoCell.m */; };
+		D80DFBEB1F8E07AD0015E413 /* DJCustomInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DFBEA1F8E07AD0015E413 /* DJCustomInfoCell.m */; };
 		D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6A1F7F3E4800BD8552 /* DJLoginViewController.m */; };
 		D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF6F1F7F3E7100BD8552 /* DJLoginView.m */; };
 		D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D811FF721F7F72D400BD8552 /* NSString+Extension.m */; };
@@ -67,6 +72,16 @@
 		02BB86A1223B6C6E249562AC /* Pods-DJLogistics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJLogistics.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJLogistics/Pods-DJLogistics.release.xcconfig"; sourceTree = "<group>"; };
 		1264B2E724BEA92BF26B4E0E /* Pods-DJLogistics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJLogistics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DJLogistics/Pods-DJLogistics.debug.xcconfig"; sourceTree = "<group>"; };
 		845DF412F4D6D6F6DD7BBEB4 /* libPods-DJLogistics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DJLogistics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80DFBDC1F8DFE620015E413 /* DJWaybillDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillDataSource.h; sourceTree = "<group>"; };
+		D80DFBDD1F8DFE620015E413 /* DJWaybillDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillDataSource.m; sourceTree = "<group>"; };
+		D80DFBE01F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJDeliveryInfoTableViewCell.h; sourceTree = "<group>"; };
+		D80DFBE11F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJDeliveryInfoTableViewCell.m; sourceTree = "<group>"; };
+		D80DFBE31F8E07290015E413 /* DJMerchantInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMerchantInfoCell.h; sourceTree = "<group>"; };
+		D80DFBE41F8E07290015E413 /* DJMerchantInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMerchantInfoCell.m; sourceTree = "<group>"; };
+		D80DFBE61F8E07830015E413 /* DJOrderInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJOrderInfoCell.h; sourceTree = "<group>"; };
+		D80DFBE71F8E07830015E413 /* DJOrderInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJOrderInfoCell.m; sourceTree = "<group>"; };
+		D80DFBE91F8E07AD0015E413 /* DJCustomInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJCustomInfoCell.h; sourceTree = "<group>"; };
+		D80DFBEA1F8E07AD0015E413 /* DJCustomInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJCustomInfoCell.m; sourceTree = "<group>"; };
 		D811FF691F7F3E4800BD8552 /* DJLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJLoginViewController.h; sourceTree = "<group>"; };
 		D811FF6A1F7F3E4800BD8552 /* DJLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJLoginViewController.m; sourceTree = "<group>"; };
 		D811FF6E1F7F3E7100BD8552 /* DJLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJLoginView.h; sourceTree = "<group>"; };
@@ -186,6 +201,21 @@
 				02BB86A1223B6C6E249562AC /* Pods-DJLogistics.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D80DFBDF1F8E06550015E413 /* DJMineWaybillDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				D80DFBE01F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.h */,
+				D80DFBE11F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.m */,
+				D80DFBE31F8E07290015E413 /* DJMerchantInfoCell.h */,
+				D80DFBE41F8E07290015E413 /* DJMerchantInfoCell.m */,
+				D80DFBE61F8E07830015E413 /* DJOrderInfoCell.h */,
+				D80DFBE71F8E07830015E413 /* DJOrderInfoCell.m */,
+				D80DFBE91F8E07AD0015E413 /* DJCustomInfoCell.h */,
+				D80DFBEA1F8E07AD0015E413 /* DJCustomInfoCell.m */,
+			);
+			path = DJMineWaybillDetailCell;
 			sourceTree = "<group>";
 		};
 		D811FF681F7F3E4800BD8552 /* Controller */ = {
@@ -492,6 +522,8 @@
 			children = (
 				D8FFA7071F8CCCE400326AA1 /* DJWaybillModel.h */,
 				D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */,
+				D80DFBDC1F8DFE620015E413 /* DJWaybillDataSource.h */,
+				D80DFBDD1F8DFE620015E413 /* DJWaybillDataSource.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +531,7 @@
 		D81AD6641F7DEBC000EE8F2A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D80DFBDF1F8E06550015E413 /* DJMineWaybillDetailCell */,
 				D814B3F31F8B0EF7001E424C /* DJMineTableView.h */,
 				D814B3F41F8B0EF7001E424C /* DJMineTableView.m */,
 				D814B3F61F8B1086001E424C /* DJMineTableViewCell.h */,
@@ -774,6 +807,7 @@
 				D8FFA7031F8CC6DB00326AA1 /* DJMineWaybillTableView.m in Sources */,
 				D8FFA7001F8CC64C00326AA1 /* DJMineWaybillViewController.m in Sources */,
 				D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */,
+				D80DFBE51F8E07290015E413 /* DJMerchantInfoCell.m in Sources */,
 				D81AD66D1F7DEBC000EE8F2A /* EaseBlankPageView.m in Sources */,
 				D81AD68D1F7DF94900EE8F2A /* DJMineViewController.m in Sources */,
 				D8FFA6FA1F8C995400326AA1 /* DJChangePasswordViewController.m in Sources */,
@@ -781,7 +815,9 @@
 				D81AD66C1F7DEBC000EE8F2A /* UIView+Extension.m in Sources */,
 				D8FFA6FD1F8CA2F100326AA1 /* DJChangePasswordView.m in Sources */,
 				D814B3F51F8B0EF7001E424C /* DJMineTableView.m in Sources */,
+				D80DFBE21F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.m in Sources */,
 				D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */,
+				D80DFBE81F8E07830015E413 /* DJOrderInfoCell.m in Sources */,
 				D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */,
 				D814B4041F8B7116001E424C /* DJPersonInfoTableView.m in Sources */,
 				D8FFA7061F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m in Sources */,
@@ -799,7 +835,9 @@
 				D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */,
 				D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */,
 				D81AD6711F7DEBC000EE8F2A /* DJContextModel.m in Sources */,
+				D80DFBDE1F8DFE620015E413 /* DJWaybillDataSource.m in Sources */,
 				D81AD67E1F7DEE0500EE8F2A /* DJTabBarController.m in Sources */,
+				D80DFBEB1F8E07AD0015E413 /* DJCustomInfoCell.m in Sources */,
 				D8FFA7091F8CCCE400326AA1 /* DJWaybillModel.m in Sources */,
 				D814B4011F8B70D7001E424C /* DJPersonInfoViewController.m in Sources */,
 			);

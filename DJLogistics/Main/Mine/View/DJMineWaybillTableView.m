@@ -29,15 +29,16 @@ static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableView
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return self.dataArr.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DJMineWaybillTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DJMineWaybillTableViewCellIdentifier forIndexPath:indexPath];
-    
+    DJWaybillModel *model = self.dataArr[indexPath.section];
+    [cell setModel:model];
     return cell;
 }
 
