@@ -15,7 +15,7 @@
 {
     if (_titleLb == nil) {
         _titleLb = [[UILabel alloc] init];
-        _titleLb.font = FONT_SIZE(16);
+        _titleLb.font = AUTO_FONT_SIZE(16);
         _titleLb.textAlignment = NSTextAlignmentCenter;
         _titleLb.textColor = COLOR_FontTitle;
         
@@ -26,7 +26,7 @@
 {
     if (_contentLb == nil) {
         _contentLb = [[UILabel alloc] init];
-        _contentLb.font = FONT_SIZE(18);
+        _contentLb.font = AUTO_FONT_SIZE(18);
         _contentLb.textAlignment = NSTextAlignmentCenter;
         _contentLb.textColor = COLOR_Blue;
         

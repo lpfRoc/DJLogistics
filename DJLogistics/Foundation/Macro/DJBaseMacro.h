@@ -84,6 +84,7 @@ alpha:1.0]
 
 #define  FONT_SIZE(A) ([UIFont systemFontOfSize:(A)])
 #define  FONT_Bold_SIZE(A) ([UIFont boldSystemFontOfSize:(A)])
-
+#define  AUTO_FONT_SIZE(A) ([UIFont systemFontOfSize:([[UIScreen mainScreen] bounds].size.width/375*A)])
+#define  AUTO_FONT_BOLD_SIZE(A) ([UIFont boldSystemFontOfSize:([[UIScreen mainScreen] bounds].size.width/375*A)])
 
 #endif /* DJBaseMacro_h */

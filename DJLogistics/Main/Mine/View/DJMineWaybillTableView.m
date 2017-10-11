@@ -8,6 +8,7 @@
 
 #import "DJMineWaybillTableView.h"
 #import "DJMineWaybillTableViewCell.h"
+#import "DJWaybillHistoryDetailController.h"
 static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableViewCell";
 
 @interface DJMineWaybillTableView ()<UITableViewDelegate, UITableViewDataSource>
@@ -29,16 +30,17 @@ static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableView
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArr.count;
+//    return self.dataArr.count;
+    return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 5;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DJMineWaybillTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DJMineWaybillTableViewCellIdentifier forIndexPath:indexPath];
     DJWaybillModel *model = self.dataArr[indexPath.section];
-    [cell setModel:model];
+//    [cell setModel:model];
     return cell;
 }
 
@@ -77,6 +79,8 @@ static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableView
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    DJWaybillHistoryDetailController *conteroller = [[DJWaybillHistoryDetailController alloc] init];
+    [self.rootVc.navigationController pushViewController:conteroller animated:YES];
 }
 
 @end

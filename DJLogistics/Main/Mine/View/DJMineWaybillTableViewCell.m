@@ -31,7 +31,7 @@
 {
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = FONT_SIZE(16);
+        _titleLabel.font = AUTO_FONT_SIZE(16);
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.textColor = COLOR_FontTitle;
         _titleLabel.text = @"泉州印象";
@@ -43,7 +43,7 @@
 {
     if (_overtimeLabel == nil) {
         _overtimeLabel = [[UILabel alloc] init];
-        _overtimeLabel.font = FONT_SIZE(11);
+        _overtimeLabel.font = AUTO_FONT_SIZE(11);
         _overtimeLabel.textAlignment = NSTextAlignmentRight;
         _overtimeLabel.textColor = COLOR_FontText;
         _overtimeLabel.text = @"未超时";
@@ -70,7 +70,7 @@
 {
     if (_addressInfoLabel == nil) {
         _addressInfoLabel = [[UILabel alloc] init];
-        _addressInfoLabel.font = FONT_SIZE(14);
+        _addressInfoLabel.font = AUTO_FONT_SIZE(14);
         _addressInfoLabel.textAlignment = NSTextAlignmentLeft;
         _addressInfoLabel.textColor = COLOR_FontText;
         _addressInfoLabel.numberOfLines = 0;
@@ -83,7 +83,7 @@
 {
     if (_deliveryNameLabel == nil) {
         _deliveryNameLabel = [[UILabel alloc] init];
-        _deliveryNameLabel.font = FONT_SIZE(14);
+        _deliveryNameLabel.font = AUTO_FONT_SIZE(14);
         _deliveryNameLabel.textAlignment = NSTextAlignmentLeft;
         _deliveryNameLabel.textColor = COLOR_FontText;
         _deliveryNameLabel.text = @"饿了么";
@@ -94,7 +94,7 @@
 {
     if (_orderTimeLabel== nil) {
         _orderTimeLabel = [[UILabel alloc] init];
-        _orderTimeLabel.font = FONT_SIZE(14);
+        _orderTimeLabel.font = AUTO_FONT_SIZE(14);
         _orderTimeLabel.textAlignment = NSTextAlignmentLeft;
         _orderTimeLabel.textColor = COLOR_FontTitle;
         _orderTimeLabel.text =@"12:12 接单";
@@ -105,7 +105,7 @@
 {
     if (_arriveTimeLabel== nil) {
         _arriveTimeLabel = [[UILabel alloc] init];
-        _arriveTimeLabel.font = FONT_SIZE(14);
+        _arriveTimeLabel.font = AUTO_FONT_SIZE(14);
         _arriveTimeLabel.textAlignment = NSTextAlignmentRight;
         _arriveTimeLabel.textColor = COLOR_FontTitle;
         _arriveTimeLabel.text =@"12:12 送达";
@@ -116,7 +116,7 @@
 {
     if (_arriveShopTimeLabel== nil) {
         _arriveShopTimeLabel = [[UILabel alloc] init];
-        _arriveShopTimeLabel.font = FONT_SIZE(14);
+        _arriveShopTimeLabel.font = AUTO_FONT_SIZE(14);
         _arriveShopTimeLabel.textAlignment = NSTextAlignmentCenter;
         _arriveShopTimeLabel.textColor = COLOR_FontTitle;
         _arriveShopTimeLabel.text =@"12:12 到店";
@@ -127,7 +127,7 @@
 {
     if (_fetchTimeLabel== nil) {
         _fetchTimeLabel = [[UILabel alloc] init];
-        _fetchTimeLabel.font = FONT_SIZE(14);
+        _fetchTimeLabel.font = AUTO_FONT_SIZE(14);
         _fetchTimeLabel.textAlignment = NSTextAlignmentCenter;
         _fetchTimeLabel.textColor = COLOR_FontTitle;
         _fetchTimeLabel.text =@"12:12 取餐";

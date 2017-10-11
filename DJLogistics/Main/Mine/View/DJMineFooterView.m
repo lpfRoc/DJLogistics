@@ -65,6 +65,7 @@ static NSString *DJMineFooterCollectionViewCellIdentifier = @"DJMineFooterCollec
         _workCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _workCollectionView.showsVerticalScrollIndicator = NO;
         _workCollectionView.showsHorizontalScrollIndicator = NO;
+        _workCollectionView.scrollEnabled = NO;
         _workCollectionView.delegate = self;
         _workCollectionView.dataSource = self;
         _workCollectionView.decelerationRate = 0;

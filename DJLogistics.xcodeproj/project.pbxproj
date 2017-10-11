@@ -43,6 +43,8 @@
 		D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6861F7DF76400EE8F2A /* UIImage+ZDExtension.m */; };
 		D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */; };
 		D81AD68D1F7DF94900EE8F2A /* DJMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD68C1F7DF94900EE8F2A /* DJMineViewController.m */; };
+		D8C62E961F8E168A0015FF32 /* DJWaybillHistoryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */; };
+		D8C62E991F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C62E981F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m */; };
 		D8FFA6FA1F8C995400326AA1 /* DJChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA6F91F8C995400326AA1 /* DJChangePasswordViewController.m */; };
 		D8FFA6FD1F8CA2F100326AA1 /* DJChangePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA6FC1F8CA2F100326AA1 /* DJChangePasswordView.m */; };
 		D8FFA7001F8CC64C00326AA1 /* DJMineWaybillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA6FF1F8CC64C00326AA1 /* DJMineWaybillViewController.m */; };
@@ -146,6 +148,10 @@
 		D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWorkViewController.m; sourceTree = "<group>"; };
 		D81AD68B1F7DF94900EE8F2A /* DJMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineViewController.h; sourceTree = "<group>"; };
 		D81AD68C1F7DF94900EE8F2A /* DJMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineViewController.m; sourceTree = "<group>"; };
+		D8C62E941F8E168A0015FF32 /* DJWaybillHistoryDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillHistoryDetailController.h; sourceTree = "<group>"; };
+		D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillHistoryDetailController.m; sourceTree = "<group>"; };
+		D8C62E971F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillHistoryDetailTableView.h; sourceTree = "<group>"; };
+		D8C62E981F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillHistoryDetailTableView.m; sourceTree = "<group>"; };
 		D8FFA6F81F8C995400326AA1 /* DJChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJChangePasswordViewController.h; sourceTree = "<group>"; };
 		D8FFA6F91F8C995400326AA1 /* DJChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJChangePasswordViewController.m; sourceTree = "<group>"; };
 		D8FFA6FB1F8CA2F100326AA1 /* DJChangePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJChangePasswordView.h; sourceTree = "<group>"; };
@@ -513,6 +519,8 @@
 				D8FFA6F91F8C995400326AA1 /* DJChangePasswordViewController.m */,
 				D8FFA6FE1F8CC64C00326AA1 /* DJMineWaybillViewController.h */,
 				D8FFA6FF1F8CC64C00326AA1 /* DJMineWaybillViewController.m */,
+				D8C62E941F8E168A0015FF32 /* DJWaybillHistoryDetailController.h */,
+				D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -550,6 +558,8 @@
 				D8FFA7021F8CC6DB00326AA1 /* DJMineWaybillTableView.m */,
 				D8FFA7041F8CC7A700326AA1 /* DJMineWaybillTableViewCell.h */,
 				D8FFA7051F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m */,
+				D8C62E971F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.h */,
+				D8C62E981F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -829,7 +839,9 @@
 				D81AD6731F7DEBC000EE8F2A /* ZDBaseRequestManager.m in Sources */,
 				D81AD66B1F7DEBC000EE8F2A /* AppDelegate.m in Sources */,
 				D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */,
+				D8C62E961F8E168A0015FF32 /* DJWaybillHistoryDetailController.m in Sources */,
 				D814B3FE1F8B263D001E424C /* DJMineFooterCollectionViewCell.m in Sources */,
+				D8C62E991F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m in Sources */,
 				D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */,
 				D81AD6081F7DD94100EE8F2A /* main.m in Sources */,
 				D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */,
