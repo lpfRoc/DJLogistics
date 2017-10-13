@@ -24,4 +24,5 @@
 @property (strong, nonatomic)  UILabel *fetchTimeLabel;//取餐时间
 @property (strong, nonatomic)  UILabel *arriveTimeLabel;//送达时间
 
++(CGFloat)getWaybillCellHeightByModel:(DJWaybillModel *)model;
 @end

@@ -32,7 +32,7 @@
 {
     if (_merchantTitle == nil) {
         _merchantTitle = [[UILabel alloc] init];
-        _merchantTitle.font = AUTO_FONT_SIZE(13);
+        _merchantTitle.font = AUTO_FONT_SIZE(14);
         _merchantTitle.textAlignment = NSTextAlignmentLeft;
         _merchantTitle.textColor = COLOR_FontTitle;
         _merchantTitle.text =@"商家信息";

@@ -16,7 +16,7 @@
 /** 单号 */
 @property (nonatomic,strong) NSString *daySeq;
 /** 商户 */
-@property (nonatomic,strong) NSString *shop;
+@property (nonatomic,strong) NSString *store;
 /** 订餐人 */
 @property (nonatomic,strong) NSString *tp_er;
 /** 订餐电话 */
@@ -27,12 +27,16 @@
 @property (nonatomic,strong) NSString *order_detail;
 /** 接单时间 */
 @property (nonatomic,strong) NSString *grab;
+/** 创单时间 */
+@property (nonatomic,strong) NSString *createtime;
 /** 取餐时间 */
 @property (nonatomic,strong) NSString *get;
 /** 到店时间 */
 @property (nonatomic,strong) NSString *arrived;
-/** 送单时间 */
+/** 送达时间 */
 @property (nonatomic,strong) NSString *finish;
 /** 备注消息 */
 @property (nonatomic,strong) NSString *remark;
+/** 超时 */
+@property (nonatomic,strong) NSString *timeout;
 @end

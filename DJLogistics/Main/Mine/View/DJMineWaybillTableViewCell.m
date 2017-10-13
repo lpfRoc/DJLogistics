@@ -74,7 +74,6 @@
         _addressInfoLabel.textAlignment = NSTextAlignmentLeft;
         _addressInfoLabel.textColor = COLOR_FontText;
         _addressInfoLabel.numberOfLines = 0;
-        _addressInfoLabel.text = @"站点信息啊善良的空间阿里到家啦世界的理解啊到家了卡的啊到科技大楼看安德森";
     }
     return _addressInfoLabel;
 }
@@ -86,7 +85,6 @@
         _deliveryNameLabel.font = AUTO_FONT_SIZE(14);
         _deliveryNameLabel.textAlignment = NSTextAlignmentLeft;
         _deliveryNameLabel.textColor = COLOR_FontText;
-        _deliveryNameLabel.text = @"饿了么";
     }
     return _deliveryNameLabel;
 }
@@ -97,7 +95,7 @@
         _orderTimeLabel.font = AUTO_FONT_SIZE(14);
         _orderTimeLabel.textAlignment = NSTextAlignmentLeft;
         _orderTimeLabel.textColor = COLOR_FontTitle;
-        _orderTimeLabel.text =@"12:12 接单";
+        _orderTimeLabel.text =@"-- 接单";
     }
     return _orderTimeLabel;
 }
@@ -108,7 +106,7 @@
         _arriveTimeLabel.font = AUTO_FONT_SIZE(14);
         _arriveTimeLabel.textAlignment = NSTextAlignmentRight;
         _arriveTimeLabel.textColor = COLOR_FontTitle;
-        _arriveTimeLabel.text =@"12:12 送达";
+        _arriveTimeLabel.text =@"-- 送达";
     }
     return _arriveTimeLabel;
 }
@@ -117,9 +115,9 @@
     if (_arriveShopTimeLabel== nil) {
         _arriveShopTimeLabel = [[UILabel alloc] init];
         _arriveShopTimeLabel.font = AUTO_FONT_SIZE(14);
-        _arriveShopTimeLabel.textAlignment = NSTextAlignmentCenter;
+        _arriveShopTimeLabel.textAlignment = NSTextAlignmentRight;
         _arriveShopTimeLabel.textColor = COLOR_FontTitle;
-        _arriveShopTimeLabel.text =@"12:12 到店";
+        _arriveShopTimeLabel.text =@"-- 到店";
     }
     return _arriveShopTimeLabel;
 }
@@ -128,9 +126,9 @@
     if (_fetchTimeLabel== nil) {
         _fetchTimeLabel = [[UILabel alloc] init];
         _fetchTimeLabel.font = AUTO_FONT_SIZE(14);
-        _fetchTimeLabel.textAlignment = NSTextAlignmentCenter;
+        _fetchTimeLabel.textAlignment = NSTextAlignmentLeft;
         _fetchTimeLabel.textColor = COLOR_FontTitle;
-        _fetchTimeLabel.text =@"12:12 取餐";
+        _fetchTimeLabel.text =@"-- 取餐";
     }
     return _fetchTimeLabel;
 }
@@ -184,11 +182,11 @@
     }];
     [_arriveShopTimeLabel mas_makeConstraints:^(MASConstraintMaker *make){
         make.top.equalTo(_deliveryIcon.mas_bottom).with.offset(AUTO_SIZE(8));
-        make.right.equalTo(self.contentView.mas_centerX).with.offset(AUTO_SIZE(-5));
+        make.right.equalTo(self.contentView.mas_centerX).with.offset(AUTO_SIZE(-10));
     }];
     [_fetchTimeLabel mas_makeConstraints:^(MASConstraintMaker *make){
         make.top.equalTo(_deliveryIcon.mas_bottom).with.offset(AUTO_SIZE(8));
-        make.left.equalTo(self.contentView.mas_centerX).with.offset(AUTO_SIZE(5));
+        make.left.equalTo(self.contentView.mas_centerX).with.offset(AUTO_SIZE(10));
     }];
     [_arriveTimeLabel mas_makeConstraints:^(MASConstraintMaker *make){
         make.top.equalTo(_deliveryIcon.mas_bottom).with.offset(AUTO_SIZE(8));
@@ -203,17 +201,48 @@
         return;
     }
     _model = model;
-    _titleLabel.text = model.shop;
+    NSInteger seconds = [model.timeout integerValue];
+
+    if (seconds > 0) {
+        NSString *str_minute = [NSString stringWithFormat:@"%ld",seconds/60];
+        NSString *format_time = [NSString stringWithFormat:@"%@分钟",str_minute];
+        _overtimeLabel.text = [NSString stringWithFormat:@"超时%@",format_time];
+        _overtimeLabel.textColor = COLOR_Orange;
+    }else
+    {
+        _overtimeLabel.text = @"未超时";
+        _overtimeLabel.textColor = COLOR_FontText;
+    }
+    _titleLabel.text = model.store;
     _addressInfoLabel.text =model.tp_detail;
     _deliveryNameLabel.text = model.platform;
-    _orderTimeLabel.text = model.grab;
-    _arriveShopTimeLabel.text = model.arrived;
-    _fetchTimeLabel.text = model.get;
-    _arriveTimeLabel.text =model.finish;
+    _orderTimeLabel.text =  [[self configureTimeWithString:model.grab] stringByAppendingString:@" 接单"];
+    _arriveShopTimeLabel.text =  [[self configureTimeWithString:model.arrived] stringByAppendingString:@" 到店"] ;
+    _fetchTimeLabel.text =  [[self configureTimeWithString:model.get] stringByAppendingString:@" 取餐"];
+    _arriveTimeLabel.text = [[self configureTimeWithString:model.finish] stringByAppendingString:@" 送达"];
+}
+- (NSString *)configureTimeWithString:(NSString *)time {
+    
+    NSArray *strArr = [time componentsSeparatedByString:@" "];
+    NSString *valueTime = strArr[1];
+    
+    return [valueTime substringToIndex:5];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
+}
++(CGFloat)getWaybillCellHeightByModel:(DJWaybillModel *)model
+{
+    CGFloat titleLabelH = 20;
+    CGFloat timeLbH = 15;
+    CGFloat topSpace = AUTO_SIZE(20);
+    CGFloat midSpace = AUTO_SIZE(15);
+    CGFloat bottomSpace = AUTO_SIZE(10);
+    CGFloat timeLbTopSpace = AUTO_SIZE(10);
+    
+    CGFloat contentLabelH = [DJUtilities getStrLenByFontStyle:model.tp_detail fontStyle:FONT_SIZE(14) textWidth:UI_SCREEN_WIDTH - AUTO_SIZE(50)].height;
+    return contentLabelH + titleLabelH + topSpace + midSpace +bottomSpace+timeLbH+timeLbTopSpace+20;
 }
 
 @end

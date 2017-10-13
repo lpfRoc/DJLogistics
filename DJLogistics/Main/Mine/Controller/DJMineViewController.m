@@ -10,6 +10,7 @@
 #import "DJMineTableView.h"
 #import "DJMineFooterView.h"
 #import "DJMineWaybillViewController.h"
+#import "DJWorkReportModel.h"
 @interface DJMineViewController ()
 /** tableView */
 @property (nonatomic,strong) DJMineTableView *mineTableView;
@@ -73,9 +74,31 @@
 
     [self.view addSubview:self.mineTableView];
     [self autoLayout];
-    NSLog(@"%@",DJUser_Info.phone);
+    [self requestData];
 }
-
+-(void)requestData
+{
+    [ZDBaseRequestManager POSTJKID:@"report" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
+        DJLog(@"%@",responseObject);
+        if ([responseObject[@"code"] integerValue] == 1) {//退出成功
+            DJWorkReportModel *model = [DJWorkReportModel yy_modelWithDictionary:responseObject[@"result"]];
+            _mineFooterView.dataArr = @[
+                                        model.d_total?model.d_total:@"0",
+                                        model.d_served?model.d_served:@"0",
+                                         model.d_ing?model.d_ing:@"0",
+                                         model.d_overtime?model.d_overtime:@"0",
+                                         model.m_total?model.m_total:@"0",
+                                        model.m_served?model.m_served:@"0",
+                                        model.m_ing?model.m_ing:@"0",
+                                        model.m_overtime?model.m_overtime:@"0",
+                                        ];
+            [_mineFooterView.workCollectionView reloadData];
+        }
+        [Toast makeToast:responseObject[@"msg"]];
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        
+    }];
+}
 -(void)tapMineWaybill
 {
     [self.navigationController pushViewController:[[DJMineWaybillViewController alloc] init] animated:YES];

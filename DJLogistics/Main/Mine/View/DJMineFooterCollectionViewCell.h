@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DJWorkReportModel;
 @interface DJMineFooterCollectionViewCell : UICollectionViewCell
 /** titleLb */
 @property (nonatomic,strong) UILabel *titleLb;
 
 /** describeLb */
 @property (nonatomic,strong) UILabel *contentLb;
-/** 数据 */
+/** 常量数据 */
 @property (nonatomic,strong) NSDictionary *modeDic;
+/** 数据 */
+@property (nonatomic,strong) NSString *content;
 @end

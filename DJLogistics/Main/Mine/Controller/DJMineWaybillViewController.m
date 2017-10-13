@@ -13,9 +13,19 @@
 @interface DJMineWaybillViewController ()
 /** tableView */
 @property (nonatomic,strong) DJMineWaybillTableView *mineWaybillTableView;
+/** data */
+@property (nonatomic,strong) NSMutableArray *dataArr;
 @end
 
 @implementation DJMineWaybillViewController
+- (NSMutableArray *)dataArr
+{
+    if (_dataArr == nil) {
+        
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
 - (DJMineWaybillTableView *)mineWaybillTableView
 {
     if (_mineWaybillTableView == nil) {
@@ -45,13 +55,23 @@
 //
 -(void)requestData
 {
-    [ZDBaseRequestManager POSTJKID:@"waybill_list" parameters:@{@"id":DJUser_Info.aid} success:^(id responseObject) {
+    [ZDBaseRequestManager POSTJKID:@"waybill_list" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         DJLog(@"%@",responseObject);
         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
             DJWaybillDataSource *dataSource = [DJWaybillDataSource yy_modelWithJSON:responseObject];
             NSLog(@"%@",dataSource.result);
-            _mineWaybillTableView.dataArr = dataSource.result;
+            
+
+            
+            _mineWaybillTableView.dataArr =[self handelDataArr:dataSource.result];
             [_mineWaybillTableView reloadData];
+            [_mineWaybillTableView configBlankPage:EaseBlankPageTypeOrderCenter
+                                           hasData:dataSource.result > 0
+                                          hasError:NO
+                                 reloadButtonBlock:^(id sender) {
+                                 }clickButtonBlock:^(EaseBlankPageType type) {
+                                     
+                                 }];
         }else
         {
             [Toast makeToast:responseObject[@"msg"]];
@@ -59,6 +79,28 @@
     } failure:^(ZDURLResponseStatusCode errorCode) {
         
     }];
+}
+//整合相同日期数据
+-(NSMutableArray *)handelDataArr:(NSArray *)dataArr
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:dataArr];
+    
+    NSMutableArray *dateMutablearray = [@[] mutableCopy];
+    for (int i = 0; i < array.count; i ++) {
+        DJWaybillModel *modelI = array[i];
+        NSMutableArray *tempArray = [@[] mutableCopy];
+        [tempArray addObject:modelI];
+        for (int j = i+1; j < array.count; j ++) {
+           DJWaybillModel *modelJ = array[j];
+            if([modelI.date isEqualToString:modelJ.date]){
+                [tempArray addObject:modelJ];
+                [array removeObjectAtIndex:j];
+                j -= 1;
+            }
+        }
+        [dateMutablearray addObject:tempArray];
+    }
+    return dateMutablearray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

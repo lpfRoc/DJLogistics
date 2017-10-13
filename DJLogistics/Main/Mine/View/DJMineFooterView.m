@@ -118,14 +118,31 @@ static NSString *DJMineFooterCollectionViewCellIdentifier = @"DJMineFooterCollec
 - (void)initData
 {
     self.modelArr = @[
-                      @{@"title":@"今日运单",  @"content":@"0",@"titleColor":COLOR_BlueDark,@"contentColor":COLOR_BlueDark},
-                      @{@"title":@"已完成", @"content":@"10",@"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Blue},
-                      @{@"title":@"进行中", @"content":@"10",@"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Yellow},
-                      @{@"title":@"超时", @"content":@"100",@"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Orange},
-                      @{@"title":@"本月运单", @"content":@"0",@"titleColor":COLOR_BlueDark,@"contentColor":COLOR_BlueDark},
-                      @{@"title":@"已完成", @"content":@"10",@"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Blue},
-                      @{@"title":@"进行中", @"content":@"10",@"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Yellow},
-                      @{@"title":@"超时", @"content":@"100",@"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Orange}];
+                      @{@"title":@"今日运单",
+                        @"titleColor":COLOR_BlueDark,
+                        @"contentColor":COLOR_BlueDark},
+                      
+                      @{@"title":@"已完成",
+                        @"titleColor":COLOR_FontTitle,
+                        @"contentColor":COLOR_Blue},
+                      
+                      @{@"title":@"进行中",
+                        @"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Yellow},
+                      
+                      @{@"title":@"超时",
+                        @"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Orange},
+                      
+                      @{@"title":@"本月运单",
+                        @"titleColor":COLOR_BlueDark,@"contentColor":COLOR_BlueDark},
+                      
+                      @{@"title":@"已完成",
+                        @"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Blue},
+                      
+                      @{@"title":@"进行中",
+                        @"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Yellow},
+                      
+                      @{@"title":@"超时",
+                        @"titleColor":COLOR_FontTitle,@"contentColor":COLOR_Orange}];
 }
 - (void)initSubViews
 {
@@ -161,6 +178,8 @@ insetForSectionAtIndex:(NSInteger)section
     NSMutableDictionary *modeDic = [self.modelArr[indexPath.item] mutableCopy];
 
     [cell setModeDic:modeDic];
+    
+    [cell setContent:self.dataArr[indexPath.item]];
     
     return cell;
 }

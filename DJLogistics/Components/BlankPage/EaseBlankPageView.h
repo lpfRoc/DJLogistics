@@ -10,21 +10,7 @@
 typedef NS_ENUM(NSInteger, EaseBlankPageType) {
     EaseBlankPageTypeView = 0,
     EaseBlankPageTypeViewMessageList,//消息列表
-    EaseBlankPageTypeOrders,//订单列表
-    EaseBlankPageTypeWallets,//红包列表
-    EaseBlankPageTypeRaisingRatesTickes,//加息券列表
-    EaseBlankPageTypePoint,//积分列表
-    EaseBlankPageTypeReservationTicket,//预约券列表
-    EaseBlankPageTypeDiscountTicket,//优惠券列表
-    EaseBlankPageTypeInvestmentProductNow,//投资资产列表 --持有
-    EaseBlankPageTypeInvestmentProductHistory,//投资资产列表 -- 历史
-
-    EaseBlankPageTypeTimeProduct,//定期产品列表
-    EaseBlankPageTypeTranforProduct,//转让产品列表
-    EaseBlankPageTypePersonProduct,//散标产品列表
-    EaseBlankPageTypePlanProduct,//理财计划产品列表
-
-    EaseBlankPageTypeNoNetWork,//无网络
+    EaseBlankPageTypeOrderCenter,//运单中心列表
     EaseBlankPageTypeBank_SEARCH,
     
     

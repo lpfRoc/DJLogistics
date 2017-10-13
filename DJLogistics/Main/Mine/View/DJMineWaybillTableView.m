@@ -9,6 +9,7 @@
 #import "DJMineWaybillTableView.h"
 #import "DJMineWaybillTableViewCell.h"
 #import "DJWaybillHistoryDetailController.h"
+#import "DJWaybillModel.h"
 static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableViewCell";
 
 @interface DJMineWaybillTableView ()<UITableViewDelegate, UITableViewDataSource>
@@ -24,30 +25,32 @@ static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableView
         self.delegate = self;
         self.dataSource = self;
         self.backgroundColor = COLOR_BG;
+        self.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         [self registerClass:[DJMineWaybillTableViewCell class] forCellReuseIdentifier:DJMineWaybillTableViewCellIdentifier];
     }
     return self;
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//    return self.dataArr.count;
-    return 2;
+    return self.dataArr.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    NSArray *arr = self.dataArr[section];
+    return arr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DJMineWaybillTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DJMineWaybillTableViewCellIdentifier forIndexPath:indexPath];
-    DJWaybillModel *model = self.dataArr[indexPath.section];
-//    [cell setModel:model];
+    DJWaybillModel *model = self.dataArr[indexPath.section][indexPath.row];
+    [cell setModel:model];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    return AUTO_SIZE(140);
+    DJWaybillModel *model = self.dataArr[indexPath.section][indexPath.row];
+    return [DJMineWaybillTableViewCell getWaybillCellHeightByModel:model];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -67,7 +70,8 @@ static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableView
     timeLb.font = FONT_SIZE(11);
     timeLb.textColor = COLOR_BlueDark;
     timeLb.textAlignment = NSTextAlignmentLeft;
-    timeLb.text = @"2017-10-10";
+    DJWaybillModel *model = self.dataArr[section][0];
+    timeLb.text = model.date;
     [bgView addSubview:timeLb];
     [timeLb mas_makeConstraints:^(MASConstraintMaker *make){
         make.centerY.equalTo(bgView.mas_centerY);

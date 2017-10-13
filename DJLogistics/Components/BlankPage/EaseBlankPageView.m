@@ -96,75 +96,14 @@
         _curType=blankPageType;
         switch (blankPageType) {
             case EaseBlankPageTypeViewMessageList:{//消息列表
-                imageName = @"ico_blank";
+                imageName = @"icon_mineselect";
                 tipStr = @" 暂无数据";
             }
                 break;
-            case EaseBlankPageTypePoint:{//积分
-                imageName = @"ico_defaultticket";
-                tipStr = @" 暂无积分";
-            }
-                break;
                 
-            case EaseBlankPageTypeRaisingRatesTickes:{//加息券列表
-                imageName = @"ico_defaultticket";
-                tipStr = @" 亲，竟然一张加息券都没有哦～";
-            }
-                break;
-            case EaseBlankPageTypeReservationTicket:{//预约券列表
-                imageName = @"ico_defaultticket";
-                tipStr = @" 亲，您暂无可使用优惠券～";
-            }
-                break;
-            case EaseBlankPageTypeDiscountTicket:{//优惠券列表
-                imageName = @"ico_defaultticket";
-                tipStr = @" 亲，竟然一张预约券都没有哦～";
-            }
-                break;
-            case EaseBlankPageTypeInvestmentProductNow:{//投资产品列表
-                imageName = @"ico_defaultinvestment";
-                tipStr = @" 亲，竟然一个持有投资产品都没有哦～\n你不理财，财不理你";
-            }
-                break;
-            case EaseBlankPageTypeInvestmentProductHistory:{//投资产品列表
-                imageName = @"ico_defaultinvestment";
-                tipStr = @" 亲，竟然一个历史投资产品都没有哦～\n你不理财，财不理你";
-            }
-                break;
-            case EaseBlankPageTypeTimeProduct:{//定期产品列表
-                imageName = @"ico_defaultinvestment";
-                tipStr = @" 定期产品全被抢光啦！\n更多产品正在路上～";
-            }
-                break;
-            case EaseBlankPageTypeTranforProduct:{//定期产品列表
-                imageName = @"ico_defaultinvestment";
-                tipStr = @" 转让产品全被抢光啦！\n更多产品正在路上～";
-            }
-                break;
-            case EaseBlankPageTypePersonProduct:{//定期产品列表
-                imageName = @"ico_defaultinvestment";
-                tipStr = @" 散标产品全被抢光啦！\n更多产品正在路上～";
-            }
-                break;
-            case EaseBlankPageTypePlanProduct:{//定期产品列表
-                imageName = @"ico_defaultinvestment";
-                tipStr = @" 理财计划产品全被抢光啦！\n更多产品正在路上～";
-            }
-                break;
-            case EaseBlankPageTypeNoNetWork:{//无网络
-                imageName = @"ico_nonetwork";
-                tipStr = @" 当前网络状况不太好, 请点击按钮重试 ~";
-            }
-                break;
-                
-            case EaseBlankPageTypeOrders:{
-                imageName = @"blankpage_image_Sleep";
-                tipStr = @"您还木有订单呢～";
-            }
-                break;
-            case EaseBlankPageTypeWallets:{
-                imageName = @"ico_defaultticket";
-                tipStr = @"亲，竟然一张红包都没有哦～";
+            case EaseBlankPageTypeOrderCenter:{
+                imageName = @"icon_mineselect";
+                tipStr = @"没有新的订单";
             }
                 break;
             case EaseBlankPageTypeBank_SEARCH:{
@@ -187,86 +126,37 @@
                 make.bottom.equalTo(self.mas_centerY).offset(-50);
             }];
             
-            if (blankPageType == EaseBlankPageTypeInvestmentProductNow || blankPageType == EaseBlankPageTypeInvestmentProductHistory) {
-                [_monkeyView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                    make.centerX.equalTo(self);
-                    make.top.equalTo(self.mas_top).offset(AUTO_SIZE(50));
-                    make.width.height.equalTo(@(AUTO_SIZE(60)));
-                }];
-
-            }
-            
             //新增按钮
             UIButton *actionBtn=({
                 UIButton *button=[UIButton new];
+                button.enabled = NO;
                 button.backgroundColor=[UIColor clearColor];
                 button.titleLabel.font=[UIFont systemFontOfSize:14];
-                [button setTitleColor:COLOR_Yellow forState:(UIControlStateNormal)];
-                [button addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-                button.layer.cornerRadius=4;
-                button.layer.borderColor = COLOR_Yellow.CGColor;
-                button.layer.borderWidth = ISRetina_Min_Line;
-                button.layer.masksToBounds=TRUE;
+                [button setTitleColor:COLOR_FontText forState:(UIControlStateNormal)];
                 button;
             });
             [self addSubview:actionBtn];
             
             [actionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(80 , 34));
+                make.size.mas_equalTo(CGSizeMake(100 , 20));
                 make.top.equalTo(_tipLabel.mas_bottom).offset(15);
                 make.centerX.equalTo(self);
             }];
             
             NSString *titleStr;
             switch (blankPageType) {
-                case EaseBlankPageTypeOrders:{
-                    titleStr=@"立即投资";
-                    
+                case EaseBlankPageTypeOrderCenter:{
+                
                 }
                     break;
-                case EaseBlankPageTypeWallets:
-                case EaseBlankPageTypeRaisingRatesTickes:
-                case EaseBlankPageTypeReservationTicket:
-                {
-                    titleStr=@"去兑换";
-                }
-                    break;
+              
                 case EaseBlankPageTypeViewMessageList:{
-                    actionBtn.hidden = YES;
                 }
                     break;
-                case EaseBlankPageTypeDiscountTicket:{
-                    actionBtn.hidden = YES;
-                }
-                    break;
-                case EaseBlankPageTypePoint:{
-                    actionBtn.hidden = YES;
-                }
-                    break;
-                case EaseBlankPageTypeInvestmentProductNow:{
-                    titleStr=@"去购买";
-                }
-                    break;
-                case EaseBlankPageTypeInvestmentProductHistory:{
-                    titleStr=@"去购买";
-                }
-                    break;
-                case EaseBlankPageTypeTimeProduct:
-                case EaseBlankPageTypeTranforProduct:
-                case EaseBlankPageTypePersonProduct:
-                case EaseBlankPageTypePlanProduct:
-                {
-                    actionBtn.hidden = YES;
-                }
-                    break;
-                case EaseBlankPageTypeNoNetWork:{
-                    titleStr=@"重新加载";
-                }
-                    break;
-                    
                 default:
                     break;
             }
+                titleStr=@"下拉刷新试试...";
             _clickButtonBlock = nil;
             _clickButtonBlock = clickButtonBlock;
             [actionBtn setTitle:titleStr forState:UIControlStateNormal];

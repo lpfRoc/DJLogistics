@@ -15,7 +15,6 @@
     // Initialization code
 }
 #pragma mark - 界面初始化
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -32,7 +31,7 @@
 {
     if (_orderTitle == nil) {
         _orderTitle = [[UILabel alloc] init];
-        _orderTitle.font = AUTO_FONT_SIZE(13);
+        _orderTitle.font = AUTO_FONT_SIZE(14);
         _orderTitle.textAlignment = NSTextAlignmentLeft;
         _orderTitle.textColor = COLOR_FontTitle;
         _orderTitle.text =@"订单信息";
@@ -52,7 +51,7 @@
 {
     if (_menuLabel == nil) {
         _menuLabel = [[UILabel alloc] init];
-        _menuLabel.font = AUTO_FONT_SIZE(13);
+        _menuLabel.font = AUTO_FONT_SIZE(14);
         _menuLabel.textAlignment = NSTextAlignmentLeft;
         _menuLabel.textColor = COLOR_FontText;
         _menuLabel.numberOfLines = 0;
@@ -70,7 +69,7 @@
 {
     if (_moneyLabel == nil) {
         _moneyLabel = [[UILabel alloc] init];
-        _moneyLabel.font = AUTO_FONT_SIZE(12);
+        _moneyLabel.font = AUTO_FONT_SIZE(14);
         _moneyLabel.textAlignment = NSTextAlignmentCenter;
         _moneyLabel.textColor = COLOR_FontText;
         _moneyLabel.numberOfLines = 0;
@@ -82,7 +81,7 @@
 {
     if (_remarkLabel == nil) {
         _remarkLabel = [[UILabel alloc] init];
-        _remarkLabel.font = AUTO_FONT_SIZE(12);
+        _remarkLabel.font = AUTO_FONT_SIZE(14);
         _remarkLabel.textAlignment = NSTextAlignmentCenter;
         _remarkLabel.textColor = COLOR_FontText;
         _remarkLabel.numberOfLines = 0;
@@ -94,11 +93,11 @@
 {
     if (_platformLabel== nil) {
         _platformLabel = [[UILabel alloc] init];
-        _platformLabel.font = AUTO_FONT_SIZE(12);
+        _platformLabel.font = AUTO_FONT_SIZE(14);
         _platformLabel.textAlignment = NSTextAlignmentCenter;
         _platformLabel.textColor = COLOR_FontText;
         _platformLabel.numberOfLines = 0;
-        _platformLabel.text = @"饿了么";
+        _platformLabel.text = @"平台：饿了么";
     }
     return _platformLabel;
 }

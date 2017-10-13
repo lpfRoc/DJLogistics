@@ -29,7 +29,7 @@
         _contentLb.font = AUTO_FONT_SIZE(18);
         _contentLb.textAlignment = NSTextAlignmentCenter;
         _contentLb.textColor = COLOR_Blue;
-        
+        _contentLb.text = @"--";
     }
     return _contentLb;
 }
@@ -71,9 +71,14 @@
     
     _titleLb.text = modeDic[@"title"];
     _titleLb.textColor = modeDic[@"titleColor"];
-
-    _contentLb.text = modeDic[@"content"];
     _contentLb.textColor = modeDic[@"contentColor"];
+
+}
+
+-(void)setContent:(NSString *)content
+{
+    _content = content;
+    _contentLb.text = content;
 
 }
 @end

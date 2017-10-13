@@ -32,7 +32,7 @@
 {
     if (_deliveryTitle == nil) {
         _deliveryTitle = [[UILabel alloc] init];
-        _deliveryTitle.font = AUTO_FONT_SIZE(13);
+        _deliveryTitle.font = AUTO_FONT_SIZE(14);
         _deliveryTitle.textAlignment = NSTextAlignmentLeft;
         _deliveryTitle.textColor = COLOR_FontTitle;
         _deliveryTitle.text =@"配送信息";

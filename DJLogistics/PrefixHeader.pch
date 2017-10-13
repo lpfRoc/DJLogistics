@@ -20,6 +20,9 @@
 #import "DJContextModel.h"
 #import "DJCacheDataModel.h"
 #import "DJUserModel.h"
+#import "UIView+Extension.h"
+#import "DJUtilities.h"
+
 //第三方
 #import <Masonry/Masonry.h>
 #import <YYModel/YYModel.h>

@@ -114,7 +114,7 @@
 - (void)logoutAction:(UIButton *)btn
 {
     DJLog(@"退出登陆");
-    [ZDBaseRequestManager POSTJKID:@"logout" parameters:@{@"id":DJUser_Info.aid} success:^(id responseObject) {
+    [ZDBaseRequestManager POSTJKID:@"logout" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         DJLog(@"%@",responseObject);
         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
             

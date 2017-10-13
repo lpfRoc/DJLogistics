@@ -39,7 +39,7 @@ static NSString *DJCustomInfoCellIdentifier = @"DJCustomInfoCell";
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 4;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -68,6 +68,7 @@ static NSString *DJCustomInfoCellIdentifier = @"DJCustomInfoCell";
         case 3:
         {
                 DJCustomInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:DJCustomInfoCellIdentifier forIndexPath:indexPath];
+            [cell setCustomInfoCellTpe:DJCustomInfoCellTypeBtn];
             return cell;
 
         }
@@ -90,7 +91,14 @@ static NSString *DJCustomInfoCellIdentifier = @"DJCustomInfoCell";
             return AUTO_SIZE(256);
             break;
         case 3:
-            return AUTO_SIZE(205);
+        {
+            if ( 1 ) {
+                return AUTO_SIZE(205);
+            }else
+            {
+                return AUTO_SIZE(162);
+            }
+        }
             break;
     }
     return AUTO_SIZE(100);

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface DJMineFooterView : UIView
 /** icon */
 @property (nonatomic,strong) UIImageView *icon;
@@ -19,4 +18,6 @@
 @property (nonatomic,strong) UIImageView *devideLine;
 /** collectionView */
 @property (nonatomic,strong) UICollectionView *workCollectionView;
+/** model */
+@property (nonatomic,strong) NSArray *dataArr;
 @end
