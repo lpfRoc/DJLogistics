@@ -19,7 +19,7 @@
         self.mineTableViewCellStyle = DJMineTableViewCellStyleMineleInit;
         self.backgroundColor = COLOR_W;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        
+        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://djwl.zicmg.com/",DJUser_Info.avatar]]];
         
     }
     return self;
@@ -62,6 +62,8 @@
 {
     if (_iconImageView == nil) {
         _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
+        _iconImageView.clipsToBounds =YES;
+        _iconImageView.layer.cornerRadius = 25;
     }
     return _iconImageView;
 }

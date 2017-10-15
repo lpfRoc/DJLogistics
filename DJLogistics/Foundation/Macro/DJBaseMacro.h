@@ -12,6 +12,10 @@
 #define COLOR_W (DJColorFromRGB(0xFFFFFF))
 /** 深蓝 */
 #define COLOR_BlueDark  (DJColorFromRGB(0x075ad7))
+/** 浅蓝色的线 */
+#define COLOR_Line_FIrst (DJColorFromRGB(0xbed7fd))
+/** 首页的消息背景色 */
+#define COLOR_First_Background (DJColorFromRGB(0xf4f9ff))
 /** 浅蓝 */
 #define COLOR_Blue  (DJColorFromRGB(0x25abfa))
 /** 橘色 */

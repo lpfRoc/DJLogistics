@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBar.translucent = NO;
     
     /**** 设置所有UITabBarItem的文字属性 ****/
     [self setupItemTitleTextAttributes];

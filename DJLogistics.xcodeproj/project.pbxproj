@@ -61,6 +61,11 @@
 		D8FFA7031F8CC6DB00326AA1 /* DJMineWaybillTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA7021F8CC6DB00326AA1 /* DJMineWaybillTableView.m */; };
 		D8FFA7061F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA7051F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m */; };
 		D8FFA7091F8CCCE400326AA1 /* DJWaybillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */; };
+		E258BFD41F9351930032E04D /* icon_get_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */; };
+		E258BFD51F9351970032E04D /* icon_today_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */; };
+		E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */; };
+		E258BFDB1F9377060032E04D /* icon_contact_kefu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */; };
+		E258BFDC1F93770B0032E04D /* icon_notify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +200,12 @@
 		D8FFA7071F8CCCE400326AA1 /* DJWaybillModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillModel.h; sourceTree = "<group>"; };
 		D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillModel.m; sourceTree = "<group>"; };
 		E258BFBC1F8F99FB0032E04D /* icon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_logo@2x.png"; sourceTree = "<group>"; };
+		E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_get_order@2x.png"; sourceTree = "<group>"; };
+		E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_today_order@2x.png"; sourceTree = "<group>"; };
+		E258BFD61F936E7F0032E04D /* DJSyOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSyOrderListVC.h; sourceTree = "<group>"; };
+		E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSyOrderListVC.m; sourceTree = "<group>"; };
+		E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_contact_kefu@2x.png"; sourceTree = "<group>"; };
+		E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_notify@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +633,8 @@
 			children = (
 				D81AD6881F7DF93B00EE8F2A /* DJWorkViewController.h */,
 				D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */,
+				E258BFD61F936E7F0032E04D /* DJSyOrderListVC.h */,
+				E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */,
 				D800927C1F8F60C00027A7D2 /* DJMessageCenterViewController.h */,
 				D800927D1F8F60C00027A7D2 /* DJMessageCenterViewController.m */,
 				D80F07591F908DDB00F45ABB /* DJMessageDetailViewController.h */,
@@ -659,6 +672,10 @@
 		D81AD6691F7DEBC000EE8F2A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */,
+				E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */,
+				E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */,
+				E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */,
 				E258BFBC1F8F99FB0032E04D /* icon_logo@2x.png */,
 				D814B3F11F8B011C001E424C /* Assets.xcassets */,
 			);
@@ -792,7 +809,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E258BFDC1F93770B0032E04D /* icon_notify@2x.png in Resources */,
+				E258BFD51F9351970032E04D /* icon_today_order@2x.png in Resources */,
 				D814B3F21F8B011C001E424C /* Assets.xcassets in Resources */,
+				E258BFDB1F9377060032E04D /* icon_contact_kefu@2x.png in Resources */,
+				E258BFD41F9351930032E04D /* icon_get_order@2x.png in Resources */,
 				D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -898,6 +919,7 @@
 				D814B40A1F8B7867001E424C /* DJPersonInfoTableViewCell.m in Sources */,
 				D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */,
 				D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */,
+				E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */,
 				D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */,
 				D81AD6701F7DEBC000EE8F2A /* DJCacheDataModel.m in Sources */,
 				D81AD6731F7DEBC000EE8F2A /* ZDBaseRequestManager.m in Sources */,
