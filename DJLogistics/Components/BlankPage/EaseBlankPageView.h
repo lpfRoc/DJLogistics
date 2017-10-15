@@ -10,7 +10,8 @@
 typedef NS_ENUM(NSInteger, EaseBlankPageType) {
     EaseBlankPageTypeView = 0,
     EaseBlankPageTypeViewMessageList,//消息列表
-    EaseBlankPageTypeOrderCenter,//运单中心列表
+    EaseBlankPageTypeOrderCenter,//订单中心列表
+    EaseBlankPageTypeWaybillCenter,//运单中心
     EaseBlankPageTypeBank_SEARCH,
     
     

@@ -93,8 +93,10 @@
                                         model.m_overtime?model.m_overtime:@"0",
                                         ];
             [_mineFooterView.workCollectionView reloadData];
+        }else
+        {
+            [Toast makeToast:responseObject[@"msg"]];
         }
-        [Toast makeToast:responseObject[@"msg"]];
     } failure:^(ZDURLResponseStatusCode errorCode) {
         
     }];

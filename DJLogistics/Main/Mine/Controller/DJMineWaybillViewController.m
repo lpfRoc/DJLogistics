@@ -60,17 +60,15 @@
         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
             DJWaybillDataSource *dataSource = [DJWaybillDataSource yy_modelWithJSON:responseObject];
             NSLog(@"%@",dataSource.result);
-            
-
-            
             _mineWaybillTableView.dataArr =[self handelDataArr:dataSource.result];
+            _mineWaybillTableView.dataArr = @[];
             [_mineWaybillTableView reloadData];
+            
             [_mineWaybillTableView configBlankPage:EaseBlankPageTypeOrderCenter
-                                           hasData:dataSource.result > 0
+                                           hasData:dataSource.result.count > 0
                                           hasError:NO
                                  reloadButtonBlock:^(id sender) {
                                  }clickButtonBlock:^(EaseBlankPageType type) {
-                                     
                                  }];
         }else
         {

@@ -46,8 +46,8 @@
         _tipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _tipLabel.backgroundColor = [UIColor clearColor];
         _tipLabel.numberOfLines = 0;
-        _tipLabel.font = [UIFont systemFontOfSize:14];
-        _tipLabel.textColor = DJComnonRGBAColor(180, 1);
+        _tipLabel.font = [UIFont systemFontOfSize:16];
+        _tipLabel.textColor = COLOR_FontText;
         _tipLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_tipLabel];
     }
@@ -106,6 +106,11 @@
                 tipStr = @"没有新的订单";
             }
                 break;
+            case EaseBlankPageTypeWaybillCenter:{
+                imageName = @"icon_mineselect";
+                tipStr = @"运单空空如也～";
+            }
+                break;
             case EaseBlankPageTypeBank_SEARCH:{
                 imageName = @"blankpage_image_Sleep";
                 tipStr = @"什么都木有搜到，换个词再试试？";
@@ -129,34 +134,38 @@
             //新增按钮
             UIButton *actionBtn=({
                 UIButton *button=[UIButton new];
-                button.enabled = NO;
-                button.backgroundColor=[UIColor clearColor];
+                button.backgroundColor=COLOR_BlueDark;
                 button.titleLabel.font=[UIFont systemFontOfSize:14];
-                [button setTitleColor:COLOR_FontText forState:(UIControlStateNormal)];
+                button.layer.cornerRadius = 5;
+                button.layer.masksToBounds = YES;
+                [button addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+                [button setTitleColor:COLOR_W forState:(UIControlStateNormal)];
                 button;
             });
             [self addSubview:actionBtn];
             
             [actionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(100 , 20));
-                make.top.equalTo(_tipLabel.mas_bottom).offset(15);
+                make.size.mas_equalTo(CGSizeMake(100 , 32));
+                make.top.equalTo(_tipLabel.mas_bottom).offset(35);
                 make.centerX.equalTo(self);
             }];
             
             NSString *titleStr;
             switch (blankPageType) {
                 case EaseBlankPageTypeOrderCenter:{
-                
+                    titleStr=@"";
+
                 }
                     break;
               
-                case EaseBlankPageTypeViewMessageList:{
+                case EaseBlankPageTypeWaybillCenter:{
+                    titleStr=@"去运单添加";
+
                 }
                     break;
                 default:
                     break;
             }
-                titleStr=@"下拉刷新试试...";
             _clickButtonBlock = nil;
             _clickButtonBlock = clickButtonBlock;
             [actionBtn setTitle:titleStr forState:UIControlStateNormal];
