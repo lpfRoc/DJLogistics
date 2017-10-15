@@ -194,6 +194,7 @@
 		D8FFA7051F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineWaybillTableViewCell.m; sourceTree = "<group>"; };
 		D8FFA7071F8CCCE400326AA1 /* DJWaybillModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillModel.h; sourceTree = "<group>"; };
 		D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillModel.m; sourceTree = "<group>"; };
+		E258BFBC1F8F99FB0032E04D /* icon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_logo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -658,6 +659,7 @@
 		D81AD6691F7DEBC000EE8F2A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E258BFBC1F8F99FB0032E04D /* icon_logo@2x.png */,
 				D814B3F11F8B011C001E424C /* Assets.xcassets */,
 			);
 			path = Resource;
