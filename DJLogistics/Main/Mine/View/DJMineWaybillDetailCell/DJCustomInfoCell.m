@@ -88,7 +88,7 @@
         _GPSBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
         _GPSBtn.tag = 100;
         [_GPSBtn addTarget:self action:@selector(btnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        [_GPSBtn setImage:[UIImage imageNamed:@"icon_mineselect"] forState:(UIControlStateNormal)];
+        [_GPSBtn setImage:[UIImage imageNamed:@"icon_gpsbtn"] forState:(UIControlStateNormal)];
     }
     return _GPSBtn;
 }

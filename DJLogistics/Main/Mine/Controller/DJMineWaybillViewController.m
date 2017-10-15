@@ -61,7 +61,6 @@
             DJWaybillDataSource *dataSource = [DJWaybillDataSource yy_modelWithJSON:responseObject];
             NSLog(@"%@",dataSource.result);
             _mineWaybillTableView.dataArr =[self handelDataArr:dataSource.result];
-            _mineWaybillTableView.dataArr = @[];
             [_mineWaybillTableView reloadData];
             
             [_mineWaybillTableView configBlankPage:EaseBlankPageTypeOrderCenter

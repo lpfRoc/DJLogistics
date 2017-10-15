@@ -154,12 +154,14 @@
             switch (blankPageType) {
                 case EaseBlankPageTypeOrderCenter:{
                     titleStr=@"";
+                    actionBtn.hidden = YES;
 
                 }
                     break;
               
                 case EaseBlankPageTypeWaybillCenter:{
                     titleStr=@"去运单添加";
+                    actionBtn.hidden = NO;
 
                 }
                     break;

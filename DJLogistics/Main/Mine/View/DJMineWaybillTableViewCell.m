@@ -201,10 +201,15 @@
         return;
     }
     _model = model;
-    NSInteger seconds = [model.timeout integerValue];
+    
+    NSInteger researchTime = [self configureSecondTimeWithString:[self configureTimeWithString:model.finish]];
+    NSInteger grabTime = [self configureSecondTimeWithString:[self configureTimeWithString:model.grab]];
+    NSInteger timeout = [model.timeout integerValue];
 
-    if (seconds > 0) {
-        NSString *str_minute = [NSString stringWithFormat:@"%ld",seconds/60];
+    NSInteger overTime = researchTime - grabTime- timeout;
+    if (researchTime >grabTime+timeout) {
+        //送达时间 > timeout + 接单时间
+        NSString *str_minute = [NSString stringWithFormat:@"%ld",overTime/60];
         NSString *format_time = [NSString stringWithFormat:@"%@分钟",str_minute];
         _overtimeLabel.text = [NSString stringWithFormat:@"超时%@",format_time];
         _overtimeLabel.textColor = COLOR_Orange;
@@ -227,6 +232,14 @@
     NSString *valueTime = strArr[1];
     
     return [valueTime substringToIndex:5];
+}
+- (NSInteger )configureSecondTimeWithString:(NSString *)time {
+    
+    NSArray *strArr = [time componentsSeparatedByString:@":"];
+    NSString *minute = strArr[1];
+    NSString *hour = strArr[0];
+    
+    return [hour integerValue]*3600 + [minute integerValue]*60;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
