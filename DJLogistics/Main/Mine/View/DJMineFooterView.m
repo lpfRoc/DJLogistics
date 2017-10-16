@@ -34,7 +34,7 @@ static NSString *DJMineFooterCollectionViewCellIdentifier = @"DJMineFooterCollec
 {
     if (_icon == nil) {
         
-        _icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
+        _icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_shanxing"]];
     }
     return _icon;
 }
@@ -80,7 +80,6 @@ static NSString *DJMineFooterCollectionViewCellIdentifier = @"DJMineFooterCollec
     [_icon mas_makeConstraints:^(MASConstraintMaker *make){
         make.top.equalTo(self.mas_top).with.offset(AUTO_SIZE(15));
         make.left.equalTo(self.mas_left).with.offset(AUTO_SIZE(20));
-        make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
     [_describeTitle mas_makeConstraints:^(MASConstraintMaker *make){
         make.centerY.equalTo(_icon.mas_centerY);

@@ -54,8 +54,9 @@ static NSString *DJMessageCenterTableViewCellIdentifier = @"DJMessageCenterTable
 }
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DJMessageModel *model = self.messageModelArr[indexPath.section];
-    return [DJMessageCenterTableViewCell getRemarkCellHeightByModel:model];
+//    DJMessageModel *model = self.messageModelArr[indexPath.section];
+//    return [DJMessageCenterTableViewCell getRemarkCellHeightByModel:model];
+    return AUTO_SIZE(120);
 }
 
 

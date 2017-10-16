@@ -71,8 +71,7 @@
 {
     if (_logoView == nil) {
         
-        _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
-        _logoView.backgroundColor = COLOR_Yellow;
+        _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_logo"]];
 
     }
     return _logoView;
@@ -81,8 +80,7 @@
 {
     if (_phoneImage == nil) {
         
-        _phoneImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
-        _phoneImage.backgroundColor = COLOR_Yellow;
+        _phoneImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_user"]];
     }
     return _phoneImage;
 }
@@ -90,8 +88,7 @@
 {
     if (_pwImge == nil) {
         
-        _pwImge = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
-        _pwImge.backgroundColor = COLOR_Yellow;
+        _pwImge = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_pw"]];
 
     }
     return _pwImge;
@@ -101,7 +98,9 @@
     if (_showHideImage == nil) {
         _showHideImage = [UIButton buttonWithType:(UIButtonTypeCustom)];
         [_showHideImage addTarget:self action:@selector(showHindeAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        [_showHideImage setImage:[UIImage imageNamed:@"icon_mineselect"] forState:(UIControlStateNormal)];
+        [_showHideImage setImage:[UIImage imageNamed:@"icon_unsee"] forState:(UIControlStateNormal)];
+        [_showHideImage setImage:[UIImage imageNamed:@"icon_see"] forState:(UIControlStateSelected)];
+
     }
     return _showHideImage;
 }
@@ -134,6 +133,7 @@
         
         _phoneTextField = [[UITextField alloc] init];
         _phoneTextField.placeholder = @"请输入账号";
+        _phoneTextField.tag = 100;
         _phoneTextField.delegate = self;
         _phoneTextField.backgroundColor = COLOR_BGFont;
         _phoneTextField.textColor = COLOR_FontText;
@@ -154,11 +154,13 @@
     if (_passWordTextField == nil) {
         
         _passWordTextField = [[UITextField alloc] init];
+        _passWordTextField.tag = 101;
+        _passWordTextField.delegate = self;
         _passWordTextField.placeholder = @"请输入密码";
         _passWordTextField.backgroundColor = COLOR_BGFont;
         _passWordTextField.textColor = COLOR_BlueDark;
         _passWordTextField.layer.cornerRadius = 25;
-        _passWordTextField.layer.borderColor = COLOR_BlueDark.CGColor;
+        _passWordTextField.layer.borderColor = COLOR_GragDark.CGColor;
         _passWordTextField.layer.borderWidth = 1;
         _passWordTextField.layer.masksToBounds = YES;
         _passWordTextField.font = FONT_SIZE(14);
@@ -166,6 +168,7 @@
         _passWordTextField.rightView = self.showHideImageContentView;
         _passWordTextField.rightViewMode = UITextFieldViewModeAlways;
         _passWordTextField.leftView =self.pwImgeContentView;
+        _passWordTextField.secureTextEntry = YES;
         _passWordTextField.leftViewMode = UITextFieldViewModeAlways;
     }
     return _passWordTextField;
@@ -199,8 +202,7 @@
 {
     [_logoView mas_makeConstraints:^(MASConstraintMaker *make){
         make.centerX.equalTo(self.mas_centerX);
-        make.top.equalTo(self.mas_top).with.offset(AUTO_SIZE(45));
-        make.size.mas_equalTo(CGSizeMake(AUTO_SIZE(90), AUTO_SIZE(65)));
+        make.top.equalTo(self.mas_top).with.offset(AUTO_SIZE(50));
         
     }];
     
@@ -250,11 +252,36 @@
     }
     [self loginAutoLayout];
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ([textField isEqual:self.phoneTextField] && textField.isFirstResponder) {
+        _phoneImage.image = [UIImage imageNamed:@"icon_selectuser"];
+        _pwImge.image = [UIImage imageNamed:@"icon_pw"];
+        _phoneTextField.layer.borderColor = COLOR_BlueDark.CGColor;
+        _phoneTextField.textColor = COLOR_BlueDark;
+        _passWordTextField.layer.borderColor = COLOR_GragDark.CGColor;
+        _passWordTextField.textColor = COLOR_GragDark;
+
+    }else  if ([textField isEqual:self.passWordTextField] && textField.isFirstResponder)
+    {
+        _pwImge.image = [UIImage imageNamed:@"icon_selectpw"];
+        _phoneImage.image = [UIImage imageNamed:@"icon_user"];
+        _passWordTextField.layer.borderColor = COLOR_BlueDark.CGColor;
+        _phoneTextField.layer.borderColor = COLOR_GragDark.CGColor;
+        _passWordTextField.textColor = COLOR_BlueDark;
+        _phoneTextField.textColor = COLOR_GragDark;
+
+    }
+
+
+    return YES;
+}
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (!string.length) {
         return YES;
     }
+
     if ([textField isEqual:self.phoneTextField]) {
         if (textField.text.length == 11 && range.location == textField.text.length) {
             return NO;
@@ -272,7 +299,7 @@
 -(void)showHindeAction:(UIButton*) button
 {
     button.selected = !button.selected;
-    _passWordTextField.secureTextEntry = button.selected;
+    _passWordTextField.secureTextEntry = !button.selected;
 }
 -(void)loginAction:(UIButton *)btn
 {

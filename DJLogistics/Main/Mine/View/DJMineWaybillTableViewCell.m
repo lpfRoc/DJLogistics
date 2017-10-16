@@ -54,14 +54,14 @@
 - (UIImageView *)addressIcon
 {
     if (_addressIcon == nil) {
-        _addressIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
+        _addressIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_tp"]];
     }
     return _addressIcon;
 }
 - (UIImageView *)deliveryIcon
 {
     if (_deliveryIcon == nil) {
-        _deliveryIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
+        _deliveryIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_platform"]];
     }
     return _deliveryIcon;
 }

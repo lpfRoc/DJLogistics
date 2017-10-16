@@ -60,7 +60,7 @@
     if (_noticeContentLb == nil) {
         _noticeContentLb = [[UILabel alloc] init];
         _noticeContentLb.font = FONT_SIZE(13);
-        _noticeContentLb.numberOfLines = 0;
+        _noticeContentLb.numberOfLines = 2;
         _noticeContentLb.textAlignment = NSTextAlignmentLeft;
         _noticeContentLb.textColor = COLOR_FontText;
     }
@@ -99,7 +99,7 @@
     }];
     
     [_timeLb mas_makeConstraints:^(MASConstraintMaker *make){
-        make.top.equalTo(_noticeContentLb.mas_bottom).with.offset(AUTO_SIZE(15));
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(AUTO_SIZE(-15));
         make.right.equalTo(self.contentView.mas_right).with.offset(AUTO_SIZE(-15));
         
     }];

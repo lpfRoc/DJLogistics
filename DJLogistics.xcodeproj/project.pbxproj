@@ -199,7 +199,6 @@
 		D8FFA7051F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineWaybillTableViewCell.m; sourceTree = "<group>"; };
 		D8FFA7071F8CCCE400326AA1 /* DJWaybillModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillModel.h; sourceTree = "<group>"; };
 		D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillModel.m; sourceTree = "<group>"; };
-		E258BFBC1F8F99FB0032E04D /* icon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_logo@2x.png"; sourceTree = "<group>"; };
 		E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_get_order@2x.png"; sourceTree = "<group>"; };
 		E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_today_order@2x.png"; sourceTree = "<group>"; };
 		E258BFD61F936E7F0032E04D /* DJSyOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSyOrderListVC.h; sourceTree = "<group>"; };
@@ -676,7 +675,6 @@
 				E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */,
 				E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */,
 				E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */,
-				E258BFBC1F8F99FB0032E04D /* icon_logo@2x.png */,
 				D814B3F11F8B011C001E424C /* Assets.xcassets */,
 			);
 			path = Resource;

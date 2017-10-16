@@ -70,7 +70,7 @@
 - (UIImageView *)stationIcon
 {
     if (_stationIcon == nil) {
-        _stationIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
+        _stationIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_station"]];
     }
     return _stationIcon;
 }
@@ -165,7 +165,6 @@
             [_stationIcon mas_makeConstraints:^(MASConstraintMaker *make){
                 make.top.equalTo(self.contentView.mas_top).with.offset(AUTO_SIZE(15));
                 make.left.equalTo(self.contentView.mas_left).with.offset(AUTO_SIZE(20));
-                make.size.mas_equalTo(CGSizeMake(20, 20));
             }];
             
             [_stationInfoDescLabel mas_makeConstraints:^(MASConstraintMaker *make){

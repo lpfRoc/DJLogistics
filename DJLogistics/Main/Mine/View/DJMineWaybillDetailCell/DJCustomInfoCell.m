@@ -99,7 +99,7 @@
         _callBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
         _callBtn.tag = 101;
         [_callBtn addTarget:self action:@selector(btnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        [_callBtn setImage:[UIImage imageNamed:@"icon_mineselect"] forState:(UIControlStateNormal)];
+        [_callBtn setImage:[UIImage imageNamed:@"icon_callbtn"] forState:(UIControlStateNormal)];
     }
     return _callBtn;
 }
@@ -109,7 +109,7 @@
         _messageBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
         _messageBtn.tag = 102;
         [_messageBtn addTarget:self action:@selector(btnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        [_messageBtn setImage:[UIImage imageNamed:@"icon_mineselect"] forState:(UIControlStateNormal)];
+        [_messageBtn setImage:[UIImage imageNamed:@"icon_messagebtn"] forState:(UIControlStateNormal)];
     }
     return _messageBtn;
 }
