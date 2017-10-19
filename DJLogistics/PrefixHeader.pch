@@ -24,6 +24,8 @@
 #import "DJUtilities.h"
 
 //第三方
+#import <XGSetting.h>
+#import <XGPush.h>
 #import <Masonry/Masonry.h>
 #import <YYModel/YYModel.h>
 #import <MBProgressHUD/MBProgressHUD.h>

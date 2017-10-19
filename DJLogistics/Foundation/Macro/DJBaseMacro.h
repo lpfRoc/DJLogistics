@@ -8,6 +8,12 @@
 
 #ifndef DJBaseMacro_h
 #define DJBaseMacro_h
+
+
+
+// 信鸽开发者网站中申请App时，注册的AppId、AppKey
+#define kXGAppKey          @"PGfgenSpJK8ByatQk6dcW2"
+
 //颜色
 #define COLOR_W (DJColorFromRGB(0xFFFFFF))
 /** 深蓝 */
@@ -49,6 +55,27 @@ alpha:1.0]
 #define  DJUser_Info [DJContextModel sharedInstance].currentUserInfo
 
 #define IMAGE_BUNDLE_(__image_name__) [UIImage imageNamed:(__image_name__)]//图片
+
+#define OCT_SYNTHESIZE_SINGLETON_FOR_CLASS(__class_name__) \
+static __class_name__ *_instance; \
+\
++ (__class_name__ *)shared##__class_name__ \
+{ \
+if (_instance == nil) { \
+_instance = [[self alloc] init]; \
+} \
+return _instance; \
+} \
+\
++ (id)allocWithZone:(NSZone *)zone \
+{ \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+_instance = [super allocWithZone:zone]; \
+}); \
+return _instance; \
+}
+
 /**
  * 强弱引用转换，用于解决代码块（block）与强引用self之间的循环引用问题
  * 调用方式: `@ZDWeakify_self`实现弱引用转换，`@ZDStrongify_self`实现强引用转换

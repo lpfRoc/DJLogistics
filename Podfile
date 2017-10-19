@@ -14,5 +14,6 @@ target ‘DJLogistics’ do
     pod 'PPNetworkHelper', '~> 0.8.0'
     
     pod 'iCarousel', '~> 1.8.3'
+    pod 'QQ_XGPush'
 
 end
