@@ -47,7 +47,7 @@
     [item setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] = [UIColor redColor];
+    selectedAttrs[NSForegroundColorAttributeName] = COLOR_BlueDark;
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
 }
@@ -70,7 +70,7 @@
     self.viewControllers = @[workNac,MineCenteNav];
 
     NSArray * selectedImages = @[@"icon_workselect", @"icon_mineselect"];
-    NSArray * notSelectedImages = @[@"icon_work", @"icon_mine"];
+    NSArray * notSelectedImages = @[@"icon_worknormal", @"icon_minenormal"];
     NSArray * itemArray = self.tabBar.items;
     for (int i = 0; i < itemArray.count; i ++) {
         UITabBarItem * item = itemArray[i];

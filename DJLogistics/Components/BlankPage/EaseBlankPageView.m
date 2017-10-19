@@ -96,18 +96,18 @@
         _curType=blankPageType;
         switch (blankPageType) {
             case EaseBlankPageTypeViewMessageList:{//消息列表
-                imageName = @"icon_mineselect";
+                imageName = @"icon_blank";
                 tipStr = @" 暂无数据";
             }
                 break;
                 
             case EaseBlankPageTypeOrderCenter:{
-                imageName = @"icon_mineselect";
+                imageName = @"icon_blank";
                 tipStr = @"没有新的订单";
             }
                 break;
             case EaseBlankPageTypeWaybillCenter:{
-                imageName = @"icon_mineselect";
+                imageName = @"icon_blank";
                 tipStr = @"运单空空如也～";
             }
                 break;

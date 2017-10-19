@@ -12,7 +12,7 @@
 #import "DJMessageDataSource.h"
 #import "DJMessageModel.h"
 #import "DJMessageDetailViewController.h"
-
+#import "DJWayBillCenterViewController.h"
 @interface DJWorkViewController ()
 
 @property (nonatomic , strong) UILabel *headLb;
@@ -118,7 +118,6 @@
         {
 //            _loginView.passWordDescribeLb.text = responseObject[@"msg"];
         }
-        [Toast makeToast:responseObject[@"msg"]];
     } failure:^(ZDURLResponseStatusCode errorCode) {
         
     }];
@@ -230,7 +229,8 @@
 }
 
 -(void)getOrder{
-    
+    DJWayBillCenterViewController *controller = [[DJWayBillCenterViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)todayOrder{

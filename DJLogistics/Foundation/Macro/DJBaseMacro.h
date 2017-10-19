@@ -48,6 +48,7 @@ alpha:1.0]
 
 #define  DJUser_Info [DJContextModel sharedInstance].currentUserInfo
 
+#define IMAGE_BUNDLE_(__image_name__) [UIImage imageNamed:(__image_name__)]//图片
 /**
  * 强弱引用转换，用于解决代码块（block）与强引用self之间的循环引用问题
  * 调用方式: `@ZDWeakify_self`实现弱引用转换，`@ZDStrongify_self`实现强引用转换

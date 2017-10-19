@@ -10,4 +10,6 @@
 
 @interface NSString (Extension)
 + (BOOL)validateMobile:(NSString *)mobile;
+- (CGFloat)getWidthWithFont:(UIFont *)font constrainedToSize:(CGSize)size;
+- (CGSize)getSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size;
 @end
