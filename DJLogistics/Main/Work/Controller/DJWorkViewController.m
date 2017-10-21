@@ -13,6 +13,7 @@
 #import "DJMessageModel.h"
 #import "DJMessageDetailViewController.h"
 #import "DJWayBillCenterViewController.h"
+#import "DJSyOrderListVC.h"
 @interface DJWorkViewController ()
 
 @property (nonatomic , strong) UILabel *headLb;
@@ -85,7 +86,6 @@
                 _leftBtn.hidden=YES;
                 _rioghtBtn.hidden =YES;
                 [workBtn setTitle:@"上班" forState:UIControlStateNormal];
-                
             }
             
             [ZDBaseRequestManager POSTJKID:@"notify" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
@@ -162,7 +162,7 @@
     [self.headLb addGestureRecognizer:tap];
     
     UIImageView *im = [UIImageView new];
-    im.image = [UIImage imageNamed:@"icon_today_order"];
+    im.image = [UIImage imageNamed:@"ic_logo"];
     [self.view addSubview:im];
     [im mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
@@ -179,7 +179,7 @@
         make.width.equalTo(@150);
         make.height.equalTo(@150);
         make.top.equalTo(im.mas_bottom).offset(10);
-        make.centerX.equalTo(@(5+75));
+        make.centerX.equalTo(@(-5-75));
     }];
     
     self.rioghtBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -190,7 +190,7 @@
         make.width.equalTo(@150);
         make.height.equalTo(@150);
         make.top.equalTo(im.mas_bottom).offset(10);
-        make.centerX.equalTo(@(-(5+75)));
+        make.centerX.equalTo(@((5+75)));
     }];
     
     
@@ -229,12 +229,14 @@
 }
 
 -(void)getOrder{
-    DJWayBillCenterViewController *controller = [[DJWayBillCenterViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
+    DJSyOrderListVC *vc = [[DJSyOrderListVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 -(void)todayOrder{
-    
+    DJWayBillCenterViewController *controller = [[DJWayBillCenterViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)work{

@@ -77,6 +77,16 @@
 		E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */; };
 		E258BFDB1F9377060032E04D /* icon_contact_kefu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */; };
 		E258BFDC1F93770B0032E04D /* icon_notify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */; };
+		E2FB93E21F97B6F400B9B266 /* DJGetOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB93E01F97B6F400B9B266 /* DJGetOrderCell.m */; };
+		E2FB93E31F97B6F400B9B266 /* DJGetOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93E11F97B6F400B9B266 /* DJGetOrderCell.xib */; };
+		E2FB93E71F97BA2E00B9B266 /* btn_waybill_arrived@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93E41F97BA2A00B9B266 /* btn_waybill_arrived@2x.png */; };
+		E2FB93E81F97BA3100B9B266 /* btn_waybill_finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93E51F97BA2A00B9B266 /* btn_waybill_finish@2x.png */; };
+		E2FB93E91F97BA3300B9B266 /* btn_waybill_get@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93E61F97BA2B00B9B266 /* btn_waybill_get@2x.png */; };
+		E2FB93ED1F97C0D100B9B266 /* DJSpaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB93EB1F97C0D100B9B266 /* DJSpaceCell.m */; };
+		E2FB93EE1F97C0D100B9B266 /* DJSpaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93EC1F97C0D100B9B266 /* DJSpaceCell.xib */; };
+		E2FB93F11F97C91E00B9B266 /* DJOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB93F01F97C91E00B9B266 /* DJOrderModel.m */; };
+		E2FB94061F9AF66400B9B266 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94051F9AF66400B9B266 /* NSDate+Extension.m */; };
+		E2FB94091F9AF99F00B9B266 /* UIViewController+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94071F9AF99F00B9B266 /* UIViewController+FYCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +244,21 @@
 		E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSyOrderListVC.m; sourceTree = "<group>"; };
 		E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_contact_kefu@2x.png"; sourceTree = "<group>"; };
 		E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_notify@2x.png"; sourceTree = "<group>"; };
+		E2FB93DF1F97B6F400B9B266 /* DJGetOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJGetOrderCell.h; sourceTree = "<group>"; };
+		E2FB93E01F97B6F400B9B266 /* DJGetOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJGetOrderCell.m; sourceTree = "<group>"; };
+		E2FB93E11F97B6F400B9B266 /* DJGetOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJGetOrderCell.xib; sourceTree = "<group>"; };
+		E2FB93E41F97BA2A00B9B266 /* btn_waybill_arrived@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_waybill_arrived@2x.png"; sourceTree = "<group>"; };
+		E2FB93E51F97BA2A00B9B266 /* btn_waybill_finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_waybill_finish@2x.png"; sourceTree = "<group>"; };
+		E2FB93E61F97BA2B00B9B266 /* btn_waybill_get@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_waybill_get@2x.png"; sourceTree = "<group>"; };
+		E2FB93EA1F97C0D100B9B266 /* DJSpaceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSpaceCell.h; sourceTree = "<group>"; };
+		E2FB93EB1F97C0D100B9B266 /* DJSpaceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSpaceCell.m; sourceTree = "<group>"; };
+		E2FB93EC1F97C0D100B9B266 /* DJSpaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJSpaceCell.xib; sourceTree = "<group>"; };
+		E2FB93EF1F97C91E00B9B266 /* DJOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJOrderModel.h; sourceTree = "<group>"; };
+		E2FB93F01F97C91E00B9B266 /* DJOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJOrderModel.m; sourceTree = "<group>"; };
+		E2FB94041F9AF66400B9B266 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		E2FB94051F9AF66400B9B266 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		E2FB94071F9AF99F00B9B266 /* UIViewController+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FYCategory.m"; sourceTree = "<group>"; };
+		E2FB94081F9AF99F00B9B266 /* UIViewController+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FYCategory.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +461,10 @@
 		D81AD63D1F7DEBC000EE8F2A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB94081F9AF99F00B9B266 /* UIViewController+FYCategory.h */,
+				E2FB94071F9AF99F00B9B266 /* UIViewController+FYCategory.m */,
+				E2FB94041F9AF66400B9B266 /* NSDate+Extension.h */,
+				E2FB94051F9AF66400B9B266 /* NSDate+Extension.m */,
 				D81AD6851F7DF76400EE8F2A /* UIImage+ZDExtension.h */,
 				D81AD6861F7DF76400EE8F2A /* UIImage+ZDExtension.m */,
 				D81AD63E1F7DEBC000EE8F2A /* UIView */,
@@ -706,6 +735,8 @@
 				D80092861F8F67AD0027A7D2 /* DJMessageModel.m */,
 				D80092881F8F68CD0027A7D2 /* DJMessageDataSource.h */,
 				D80092891F8F68CD0027A7D2 /* DJMessageDataSource.m */,
+				E2FB93EF1F97C91E00B9B266 /* DJOrderModel.h */,
+				E2FB93F01F97C91E00B9B266 /* DJOrderModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -723,6 +754,12 @@
 				D80F07601F908E0700F45ABB /* DJMessageDetailTableViewCell.m */,
 				D814145C1F98404E00AE5800 /* DJFinishWayBillTableView.h */,
 				D814145D1F98404E00AE5800 /* DJFinishWayBillTableView.m */,
+				E2FB93EA1F97C0D100B9B266 /* DJSpaceCell.h */,
+				E2FB93EB1F97C0D100B9B266 /* DJSpaceCell.m */,
+				E2FB93EC1F97C0D100B9B266 /* DJSpaceCell.xib */,
+				E2FB93DF1F97B6F400B9B266 /* DJGetOrderCell.h */,
+				E2FB93E01F97B6F400B9B266 /* DJGetOrderCell.m */,
+				E2FB93E11F97B6F400B9B266 /* DJGetOrderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -730,6 +767,9 @@
 		D81AD6691F7DEBC000EE8F2A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB93E41F97BA2A00B9B266 /* btn_waybill_arrived@2x.png */,
+				E2FB93E51F97BA2A00B9B266 /* btn_waybill_finish@2x.png */,
+				E2FB93E61F97BA2B00B9B266 /* btn_waybill_get@2x.png */,
 				E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */,
 				E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */,
 				E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */,
@@ -875,10 +915,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FB93E31F97B6F400B9B266 /* DJGetOrderCell.xib in Resources */,
 				E258BFDC1F93770B0032E04D /* icon_notify@2x.png in Resources */,
+				E2FB93E71F97BA2E00B9B266 /* btn_waybill_arrived@2x.png in Resources */,
+				E2FB93E91F97BA3300B9B266 /* btn_waybill_get@2x.png in Resources */,
 				E258BFD51F9351970032E04D /* icon_today_order@2x.png in Resources */,
 				D814B3F21F8B011C001E424C /* Assets.xcassets in Resources */,
+				E2FB93EE1F97C0D100B9B266 /* DJSpaceCell.xib in Resources */,
 				E258BFDB1F9377060032E04D /* icon_contact_kefu@2x.png in Resources */,
+				E2FB93E81F97BA3100B9B266 /* btn_waybill_finish@2x.png in Resources */,
 				E258BFD41F9351930032E04D /* icon_get_order@2x.png in Resources */,
 				D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -964,6 +1009,7 @@
 				D8FFA7031F8CC6DB00326AA1 /* DJMineWaybillTableView.m in Sources */,
 				D80F07611F908E0700F45ABB /* DJMessageDetailTableViewCell.m in Sources */,
 				D814146A1F98967C00AE5800 /* DJAppManagerInit.m in Sources */,
+				E2FB93E21F97B6F400B9B266 /* DJGetOrderCell.m in Sources */,
 				D80F07581F904A6200F45ABB /* DJUtilities.m in Sources */,
 				D8FFA7001F8CC64C00326AA1 /* DJMineWaybillViewController.m in Sources */,
 				D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */,
@@ -974,11 +1020,13 @@
 				D80F075B1F908DDB00F45ABB /* DJMessageDetailViewController.m in Sources */,
 				D81AD6721F7DEBC000EE8F2A /* DJUserModel.m in Sources */,
 				D81AD66C1F7DEBC000EE8F2A /* UIView+Extension.m in Sources */,
+				E2FB93ED1F97C0D100B9B266 /* DJSpaceCell.m in Sources */,
 				D8FFA6FD1F8CA2F100326AA1 /* DJChangePasswordView.m in Sources */,
 				D814B3F51F8B0EF7001E424C /* DJMineTableView.m in Sources */,
 				D80DFBE21F8E06BA0015E413 /* DJDeliveryInfoTableViewCell.m in Sources */,
 				D80092871F8F67AD0027A7D2 /* DJMessageModel.m in Sources */,
 				D811FF731F7F72D400BD8552 /* NSString+Extension.m in Sources */,
+				E2FB94091F9AF99F00B9B266 /* UIViewController+FYCategory.m in Sources */,
 				D80DFBE81F8E07830015E413 /* DJOrderInfoCell.m in Sources */,
 				D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */,
 				D814B4041F8B7116001E424C /* DJPersonInfoTableView.m in Sources */,
@@ -997,6 +1045,7 @@
 				D81AD66B1F7DEBC000EE8F2A /* AppDelegate.m in Sources */,
 				D811FF701F7F3E7100BD8552 /* DJLoginView.m in Sources */,
 				D8C62E961F8E168A0015FF32 /* DJWaybillHistoryDetailController.m in Sources */,
+				E2FB93F11F97C91E00B9B266 /* DJOrderModel.m in Sources */,
 				D814B3FE1F8B263D001E424C /* DJMineFooterCollectionViewCell.m in Sources */,
 				D8C62E991F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m in Sources */,
 				D800927E1F8F60C00027A7D2 /* DJMessageCenterViewController.m in Sources */,
@@ -1006,6 +1055,7 @@
 				D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */,
 				D81414551F9837B400AE5800 /* XTSegmentControl.m in Sources */,
 				D81AD6781F7DECF800EE8F2A /* DJRootViewController.m in Sources */,
+				E2FB94061F9AF66400B9B266 /* NSDate+Extension.m in Sources */,
 				D81AD6711F7DEBC000EE8F2A /* DJContextModel.m in Sources */,
 				D80DFBDE1F8DFE620015E413 /* DJWaybillDataSource.m in Sources */,
 				D81AD67E1F7DEE0500EE8F2A /* DJTabBarController.m in Sources */,
