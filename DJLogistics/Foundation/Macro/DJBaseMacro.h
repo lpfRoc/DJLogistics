@@ -12,7 +12,7 @@
 
 
 // 信鸽开发者网站中申请App时，注册的AppId、AppKey
-#define kXGAppKey          @"PGfgenSpJK8ByatQk6dcW2"
+#define kXGAppKey          @"IRIX5Q9P515P"
 
 //颜色
 #define COLOR_W (DJColorFromRGB(0xFFFFFF))

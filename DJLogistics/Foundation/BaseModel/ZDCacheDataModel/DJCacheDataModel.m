@@ -9,6 +9,8 @@
 #import "DJCacheDataModel.h"
 static NSString *const cacheUserinfoKey = @"CACHE_USERINFO_KEY";                 //用户信息Key
 static NSString *const cacheUserLoginCellPhoneKey = @"CACHE_USELOGIONCELLPHONE_KEY";        //用户登录手机号Key
+static NSString *const cacheDeviceTokenPhoneKey = @"cacheDeviceTokenPhoneKey";        //推送token
+
 @implementation DJCacheDataModel
 static DJCacheDataModel *sharedCacheDataModel = nil;
 static dispatch_once_t onceToken;
@@ -41,6 +43,20 @@ static dispatch_once_t onceToken;
 -(NSDictionary *)userLoginCellPhone
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:cacheUserLoginCellPhoneKey];
+}
+
+- (void)setPushDeviceToken:(NSDictionary *)pushDeviceToken
+{
+    if (pushDeviceToken) {
+        [[NSUserDefaults standardUserDefaults] setObject:pushDeviceToken forKey:cacheDeviceTokenPhoneKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:cacheDeviceTokenPhoneKey];
+    }
+}
+-(NSDictionary *)pushDeviceToken
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:cacheDeviceTokenPhoneKey];
 }
 
 #pragma mark - 用户信息 本地存储用户登录信息

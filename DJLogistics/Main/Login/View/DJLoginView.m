@@ -71,7 +71,7 @@
 {
     if (_logoView == nil) {
         
-        _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_logo"]];
+        _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_logo"]];
 
     }
     return _logoView;

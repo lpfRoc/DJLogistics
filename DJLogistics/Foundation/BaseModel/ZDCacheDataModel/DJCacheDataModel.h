@@ -14,6 +14,8 @@
  *  存储手机号用户清除用户信息后，在登录界面仍可获取手机号
  */
 @property (nonatomic, strong) NSDictionary *userLoginCellPhone;   //本地存储用户手机号
+/** 推送token */
+@property (nonatomic,strong) NSDictionary *pushDeviceToken;
 /**
  * @brief 创建单例
  */

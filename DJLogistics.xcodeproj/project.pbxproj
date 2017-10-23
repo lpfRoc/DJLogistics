@@ -160,10 +160,10 @@
 		D81414611F98947900AE5800 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D81414631F9894A100AE5800 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D81414651F9894BE00AE5800 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		D81414671F98960100AE5800 /* DJLogistics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DJLogistics.entitlements; sourceTree = "<group>"; };
 		D81414681F98967C00AE5800 /* DJAppManagerInit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJAppManagerInit.h; sourceTree = "<group>"; };
 		D81414691F98967C00AE5800 /* DJAppManagerInit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJAppManagerInit.m; sourceTree = "<group>"; };
 		D814146B1F989BCF00AE5800 /* libXG-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libXG-SDK.a"; path = "Pods/QQ_XGPush/XGPush/libXG-SDK.a"; sourceTree = "<group>"; };
+		D814290C1F9DDD1B0067CDE1 /* DJLogistics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DJLogistics.entitlements; sourceTree = "<group>"; };
 		D814B3F11F8B011C001E424C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D814B3F31F8B0EF7001E424C /* DJMineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineTableView.h; sourceTree = "<group>"; };
 		D814B3F41F8B0EF7001E424C /* DJMineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineTableView.m; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		D81AD6051F7DD94100EE8F2A /* DJLogistics */ = {
 			isa = PBXGroup;
 			children = (
-				D81414671F98960100AE5800 /* DJLogistics.entitlements */,
+				D814290C1F9DDD1B0067CDE1 /* DJLogistics.entitlements */,
 				D81AD64A1F7DEBC000EE8F2A /* Foundation */,
 				D81AD6391F7DEBC000EE8F2A /* AppInter */,
 				D81AD6601F7DEBC000EE8F2A /* Main */,
@@ -867,7 +867,7 @@
 				TargetAttributes = {
 					D81AD6021F7DD94100EE8F2A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5E6EZZ7JT4;
+						DevelopmentTeam = WLUJNW49DA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1208,7 +1208,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DJLogistics/DJLogistics.entitlements;
-				DEVELOPMENT_TEAM = 5E6EZZ7JT4;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WLUJNW49DA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DJLogistics/PrefixHeader.pch;
 				INFOPLIST_FILE = DJLogistics/Info.plist;
@@ -1217,8 +1219,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/QQ_XGPush/XGPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.DJLogistics;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zicmg.djwl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1228,7 +1232,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DJLogistics/DJLogistics.entitlements;
-				DEVELOPMENT_TEAM = 5E6EZZ7JT4;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WLUJNW49DA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DJLogistics/PrefixHeader.pch;
 				INFOPLIST_FILE = DJLogistics/Info.plist;
@@ -1237,8 +1243,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/QQ_XGPush/XGPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.DJLogistics;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zicmg.djwl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -67,8 +67,18 @@
             //存储用户登录数据
             DJUser_Info = userModel;
             
+            NSString *token = [[DJCacheDataModel sharedInstance].pushDeviceToken objectForKey:@"pushDeviceToken"];
+
+            if(token.length&&userModel.phone.length)
+            {
+                [self bindTokenByPhone:userModel.phone Token:token];
+
+            }
+            
             DJTabBarController *tabBarViewController = [[DJTabBarController alloc] init];
             [[[UIApplication sharedApplication] delegate] window].rootViewController =tabBarViewController;
+            
+            
         }else
         {
             _loginView.passWordDescribeLb.text = responseObject[@"msg"];
@@ -78,11 +88,30 @@
         
     }];
 }
+
+-(void)bindTokenByPhone:(NSString *)phoneNum Token:(NSString *)token
+{
+    NSDictionary *parameters = @{
+                                 @"phone":phoneNum,
+                                 @"token":token,
+                                 };
+    [ZDBaseRequestManager POSTJKID:@"bind" parameters:parameters success:^(id responseObject) {
+        DJLog(@"%@",responseObject);
+        if ([responseObject[@"code"] integerValue] == 1) {//成功
+            
+        }
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 @end

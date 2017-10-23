@@ -11,7 +11,7 @@
 #import "DJNavgationViewController.h"
 #import "DJTabBarController.h"
 #import "DJAppManagerInit.h"
-
+#import "DJCacheDataModel.h"
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
 #import <UserNotifications/UserNotifications.h>
@@ -55,12 +55,21 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    NSString *deviceTokenStr = [XGPush registerDevice:deviceToken account:@"myAccount" successCallback:^{
+    NSString *deviceTokenStr = [XGPush registerDevice:deviceToken account:nil successCallback:^{
         DJLog(@"[DLLogistics] register push success");
     } errorCallback:^{
         DJLog(@"[DLLogistics] register push error");
     }];
     DJLog(@"[DLLogistics] device token is %@", deviceTokenStr);
+    
+    //保存token
+    [DJCacheDataModel sharedInstance].pushDeviceToken = [NSDictionary dictionaryWithObjects:@[deviceTokenStr] forKeys:@[@"pushDeviceToken"]];
+
+    NSLog(@"%@",deviceTokenStr);
+    if(deviceTokenStr.length && DJUser_Info.phone)
+    {
+        [self bindTokenByPhone: DJUser_Info.phone Token:deviceTokenStr];
+    }
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -155,6 +164,23 @@
 - (void)registerPushBefore8{
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 }
+
+-(void)bindTokenByPhone:(NSString *)phoneNum Token:(NSString *)token
+{
+    NSDictionary *parameters = @{
+                                 @"phone":phoneNum,
+                                 @"token":token,
+                                 };
+    [ZDBaseRequestManager POSTJKID:@"bind" parameters:parameters success:^(id responseObject) {
+        DJLog(@"%@",responseObject);
+        if ([responseObject[@"code"] integerValue] == 1) {//成功
+
+        }
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        
+    }];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

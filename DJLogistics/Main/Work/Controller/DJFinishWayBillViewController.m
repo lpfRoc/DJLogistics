@@ -55,7 +55,7 @@
 -(void)requestData
 {
     [Toast makeToastActivity];
-    [ZDBaseRequestManager POSTJKID:@"waybill_list" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
+    [ZDBaseRequestManager POSTJKID:@"waybill_finish" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         DJLog(@"%@",responseObject);
         [_finishWayBillTableView.mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {

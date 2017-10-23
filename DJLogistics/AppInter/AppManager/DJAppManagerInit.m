@@ -32,7 +32,7 @@ OCT_SYNTHESIZE_SINGLETON_FOR_CLASS(DJAppManagerInit);
      @param appId 通过前台申请的应用ID
      @param appKey 通过前台申请的appKey
      */
-    [XGPush startApp:13131313 appKey:kXGAppKey];
+    [XGPush startApp:2200268867 appKey:kXGAppKey];
     
 }
 
