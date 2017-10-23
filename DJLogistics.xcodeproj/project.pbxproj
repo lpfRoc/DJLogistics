@@ -87,6 +87,12 @@
 		E2FB93F11F97C91E00B9B266 /* DJOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB93F01F97C91E00B9B266 /* DJOrderModel.m */; };
 		E2FB94061F9AF66400B9B266 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94051F9AF66400B9B266 /* NSDate+Extension.m */; };
 		E2FB94091F9AF99F00B9B266 /* UIViewController+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94071F9AF99F00B9B266 /* UIViewController+FYCategory.m */; };
+		E2FB940C1F9B06BB00B9B266 /* DJSyMyOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB940B1F9B06BB00B9B266 /* DJSyMyOrderListVC.m */; };
+		E2FB94101F9B1AF100B9B266 /* DJWayBillIngCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB940E1F9B1AF100B9B266 /* DJWayBillIngCell.m */; };
+		E2FB94111F9B1AF100B9B266 /* DJWayBillIngCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FB940F1F9B1AF100B9B266 /* DJWayBillIngCell.xib */; };
+		E2FB94161F9B2D7C00B9B266 /* FYWGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94131F9B2D7B00B9B266 /* FYWGS84TOGCJ02.m */; };
+		E2FB94171F9B2D7C00B9B266 /* FYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94141F9B2D7C00B9B266 /* FYLocationManager.m */; };
+		E2FB94191F9B9D4A00B9B266 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB94181F9B9D4A00B9B266 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +265,16 @@
 		E2FB94051F9AF66400B9B266 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		E2FB94071F9AF99F00B9B266 /* UIViewController+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FYCategory.m"; sourceTree = "<group>"; };
 		E2FB94081F9AF99F00B9B266 /* UIViewController+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FYCategory.h"; sourceTree = "<group>"; };
+		E2FB940A1F9B06BB00B9B266 /* DJSyMyOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSyMyOrderListVC.h; sourceTree = "<group>"; };
+		E2FB940B1F9B06BB00B9B266 /* DJSyMyOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSyMyOrderListVC.m; sourceTree = "<group>"; };
+		E2FB940D1F9B1AF100B9B266 /* DJWayBillIngCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJWayBillIngCell.h; sourceTree = "<group>"; };
+		E2FB940E1F9B1AF100B9B266 /* DJWayBillIngCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJWayBillIngCell.m; sourceTree = "<group>"; };
+		E2FB940F1F9B1AF100B9B266 /* DJWayBillIngCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJWayBillIngCell.xib; sourceTree = "<group>"; };
+		E2FB94121F9B2D7B00B9B266 /* FYLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLocationManager.h; sourceTree = "<group>"; };
+		E2FB94131F9B2D7B00B9B266 /* FYWGS84TOGCJ02.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYWGS84TOGCJ02.m; sourceTree = "<group>"; };
+		E2FB94141F9B2D7C00B9B266 /* FYLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLocationManager.m; sourceTree = "<group>"; };
+		E2FB94151F9B2D7C00B9B266 /* FYWGS84TOGCJ02.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYWGS84TOGCJ02.h; sourceTree = "<group>"; };
+		E2FB94181F9B9D4A00B9B266 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FB94191F9B9D4A00B9B266 /* CoreLocation.framework in Frameworks */,
 				D814146C1F989BCF00AE5800 /* libXG-SDK.a in Frameworks */,
 				D81414641F9894B200AE5800 /* SystemConfiguration.framework in Frameworks */,
 				D81414621F98949200AE5800 /* CoreTelephony.framework in Frameworks */,
@@ -295,6 +312,7 @@
 		A598005ABA04F6A96BB43967 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB94181F9B9D4A00B9B266 /* CoreLocation.framework */,
 				D814146B1F989BCF00AE5800 /* libXG-SDK.a */,
 				D81414651F9894BE00AE5800 /* libz.tbd */,
 				D81414631F9894A100AE5800 /* SystemConfiguration.framework */,
@@ -714,6 +732,8 @@
 				D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */,
 				E258BFD61F936E7F0032E04D /* DJSyOrderListVC.h */,
 				E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */,
+				E2FB940A1F9B06BB00B9B266 /* DJSyMyOrderListVC.h */,
+				E2FB940B1F9B06BB00B9B266 /* DJSyMyOrderListVC.m */,
 				D800927C1F8F60C00027A7D2 /* DJMessageCenterViewController.h */,
 				D800927D1F8F60C00027A7D2 /* DJMessageCenterViewController.m */,
 				D80F07591F908DDB00F45ABB /* DJMessageDetailViewController.h */,
@@ -731,6 +751,10 @@
 		D81AD6671F7DEBC000EE8F2A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB94121F9B2D7B00B9B266 /* FYLocationManager.h */,
+				E2FB94141F9B2D7C00B9B266 /* FYLocationManager.m */,
+				E2FB94151F9B2D7C00B9B266 /* FYWGS84TOGCJ02.h */,
+				E2FB94131F9B2D7B00B9B266 /* FYWGS84TOGCJ02.m */,
 				D80092851F8F67AD0027A7D2 /* DJMessageModel.h */,
 				D80092861F8F67AD0027A7D2 /* DJMessageModel.m */,
 				D80092881F8F68CD0027A7D2 /* DJMessageDataSource.h */,
@@ -754,6 +778,9 @@
 				D80F07601F908E0700F45ABB /* DJMessageDetailTableViewCell.m */,
 				D814145C1F98404E00AE5800 /* DJFinishWayBillTableView.h */,
 				D814145D1F98404E00AE5800 /* DJFinishWayBillTableView.m */,
+				E2FB940D1F9B1AF100B9B266 /* DJWayBillIngCell.h */,
+				E2FB940E1F9B1AF100B9B266 /* DJWayBillIngCell.m */,
+				E2FB940F1F9B1AF100B9B266 /* DJWayBillIngCell.xib */,
 				E2FB93EA1F97C0D100B9B266 /* DJSpaceCell.h */,
 				E2FB93EB1F97C0D100B9B266 /* DJSpaceCell.m */,
 				E2FB93EC1F97C0D100B9B266 /* DJSpaceCell.xib */,
@@ -916,6 +943,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FB93E31F97B6F400B9B266 /* DJGetOrderCell.xib in Resources */,
+				E2FB94111F9B1AF100B9B266 /* DJWayBillIngCell.xib in Resources */,
 				E258BFDC1F93770B0032E04D /* icon_notify@2x.png in Resources */,
 				E2FB93E71F97BA2E00B9B266 /* btn_waybill_arrived@2x.png in Resources */,
 				E2FB93E91F97BA3300B9B266 /* btn_waybill_get@2x.png in Resources */,
@@ -1005,11 +1033,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FB94161F9B2D7C00B9B266 /* FYWGS84TOGCJ02.m in Sources */,
 				D81AD66E1F7DEBC000EE8F2A /* MBProgressHUD+SCustomHUD.m in Sources */,
 				D8FFA7031F8CC6DB00326AA1 /* DJMineWaybillTableView.m in Sources */,
 				D80F07611F908E0700F45ABB /* DJMessageDetailTableViewCell.m in Sources */,
 				D814146A1F98967C00AE5800 /* DJAppManagerInit.m in Sources */,
 				E2FB93E21F97B6F400B9B266 /* DJGetOrderCell.m in Sources */,
+				E2FB94101F9B1AF100B9B266 /* DJWayBillIngCell.m in Sources */,
 				D80F07581F904A6200F45ABB /* DJUtilities.m in Sources */,
 				D8FFA7001F8CC64C00326AA1 /* DJMineWaybillViewController.m in Sources */,
 				D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */,
@@ -1030,6 +1060,7 @@
 				D80DFBE81F8E07830015E413 /* DJOrderInfoCell.m in Sources */,
 				D814B3F81F8B1086001E424C /* DJMineTableViewCell.m in Sources */,
 				D814B4041F8B7116001E424C /* DJPersonInfoTableView.m in Sources */,
+				E2FB940C1F9B06BB00B9B266 /* DJSyMyOrderListVC.m in Sources */,
 				D8FFA7061F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m in Sources */,
 				D814B40A1F8B7867001E424C /* DJPersonInfoTableViewCell.m in Sources */,
 				D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */,
@@ -1050,6 +1081,7 @@
 				D8C62E991F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m in Sources */,
 				D800927E1F8F60C00027A7D2 /* DJMessageCenterViewController.m in Sources */,
 				D80F075E1F908DF500F45ABB /* DJMessageDetailTableView.m in Sources */,
+				E2FB94171F9B2D7C00B9B266 /* FYLocationManager.m in Sources */,
 				D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */,
 				D81AD6081F7DD94100EE8F2A /* main.m in Sources */,
 				D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */,

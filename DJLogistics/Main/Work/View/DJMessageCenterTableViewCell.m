@@ -26,8 +26,6 @@
             [self.contentView addSubview:view];
         }
         [self autoLayout];
-        
-        
     }
     return self;
 }

@@ -1,34 +1,24 @@
 //
-//  DJSyOrderListVC.m
+//  DJSyMyOrderListVC.m
 //  DJLogistics
 //
-//  Created by 段世宜 on 2017/10/15.
+//  Created by 段世宜 on 2017/10/21.
 //  Copyright © 2017年 Roc. All rights reserved.
 //
 
-#import "DJSyOrderListVC.h"
-#import "DJGetOrderCell.h"
+#import "DJSyMyOrderListVC.h"
 #import "DJSpaceCell.h"
-#import "ZDBaseRequestManager.h"
-#import "DJOrderModel.h"
+#import "DJGetOrderCell.h"
+@interface DJSyMyOrderListVC ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic , strong) UITableView *tableView ;
 
-
-
-
-
-@interface DJSyOrderListVC ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic , strong) UITableView *tableView;
 @property (nonatomic , strong) NSMutableArray *dataArr;
-
-
 @end
 
-@implementation DJSyOrderListVC
+@implementation DJSyMyOrderListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-     self.navigationItem.title = @"我的订单";
     UIView *view = [UIView new];
     [self.view addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -62,8 +52,9 @@
     }];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.titleLabel.font = [UIFont systemFontOfSize:10];
-    [btn setTitle:@"点击刷新" forState:UIControlStateNormal];
-    [btn setTitleColor:color_808080 forState:UIControlStateNormal];
+    btn.backgroundColor = COLOR_Blue;
+    [btn setTitle:@"去订单添加" forState:UIControlStateNormal];
+    [btn setTitleColor:COLOR_W forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
     
@@ -90,19 +81,23 @@
     line.backgroundColor = COLOR_Line;
     [headView addSubview:line];
     
+    
+    
+    
+    
+    // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self constructData];
 }
-
 -(void)refreshData{
     [self constructData];
 }
 
 -(void)constructData{
     [Toast showHud:self.view text:@""];
-    [ZDBaseRequestManager POSTJKID:@"order" parameters:@{@"sid":DJUser_Info.sid} success:^(id responseObject) {
+    [ZDBaseRequestManager POSTJKID:@"waybill_ing" parameters:@{@"id":DJUser_Info.aid} success:^(id responseObject) {
         
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [self.dataArr removeAllObjects];
@@ -120,15 +115,14 @@
                 [_tableView reloadData];
             }
             
-            
         }else{
             self.tableView.hidden=YES;
             [Toast makeToast:responseObject[@"msg"]];
         }
         
-     } failure:^(ZDURLResponseStatusCode errorCode) {
-         [Toast hideHud:self.view];
-         self.tableView.hidden=YES;
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        [Toast hideHud:self.view];
+        self.tableView.hidden=YES;
     }];
     
 }
@@ -159,7 +153,7 @@
         DJGetOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJGetOrderCell" forIndexPath:indexPath];
         DJOrderModel *model = self.dataArr[indexPath.row/2];
         cell.model = model;
-        __weak DJSyOrderListVC *weakSelf = self;
+        __weak DJSyMyOrderListVC *weakSelf = self;
         cell.failureTableBlock = ^(id requestObject) {
             [weakSelf constructData];
         };
@@ -168,7 +162,7 @@
                 [weakSelf.navigationController popViewControllerAnimated:NO];
                 
             }else{
-                 [weakSelf constructData];
+                [weakSelf constructData];
             }
             
         };
@@ -182,10 +176,6 @@
     }
     return self.dataArr.count*2;
 }
-
-
-
-
 
 
 
