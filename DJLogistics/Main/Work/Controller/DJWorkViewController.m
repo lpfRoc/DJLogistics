@@ -14,6 +14,7 @@
 #import "DJMessageDetailViewController.h"
 #import "DJWayBillCenterViewController.h"
 #import "DJSyOrderListVC.h"
+#import "FYLocationManager.h"
 @interface DJWorkViewController ()
 
 @property (nonatomic , strong) UILabel *headLb;
@@ -21,7 +22,12 @@
 @property (nonatomic , strong) UIButton *rioghtBtn;
 @property (nonatomic , copy) NSString *servicePhone;
 
+@property (nonatomic , strong) CLLocation *currentLocation;
+
 @property (nonatomic , strong) DJMessageDataSource *messageArr;
+
+//实时上传位置的定时器
+@property (nonatomic , strong) NSTimer *timer;
 
 @end
 
@@ -57,17 +63,34 @@
     self.navigationItem.title = @"工作台";
     self.view.backgroundColor = COLOR_BG;
     
+//    FYLocationManager *manager = [FYLocationManager shareInstance];
     [self constuctView];
-    
-    
     // Do any additional setup after loading the view.
     [self setUpItemBtn];
 }
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     [self createData];
 }
+
+-(void)startTimer{
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(sendLocationInfoToSever) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    }
+}
+
+-(void) stopTImer{
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
 
 -(void)createData{
     [ZDBaseRequestManager POSTJKID:@"getuserinfo" parameters:@{@"phone":DJUser_Info.phone} success:^(id responseObject) {
@@ -82,10 +105,14 @@
                 [workBtn setTitle:@"送完收工" forState:UIControlStateNormal];
                 _leftBtn.hidden=NO;
                 _rioghtBtn.hidden =NO;
+                [[FYLocationManager shareInstance] start];
+                [self startTimer];
             }else{
+                [[FYLocationManager shareInstance] stopLocation];
                 _leftBtn.hidden=YES;
                 _rioghtBtn.hidden =YES;
                 [workBtn setTitle:@"上班" forState:UIControlStateNormal];
+                [self stopTImer];
             }
             
             [ZDBaseRequestManager POSTJKID:@"notify" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
@@ -206,7 +233,6 @@
         _leftBtn.hidden=YES;
         _rioghtBtn.hidden =YES;
         [workBtn setTitle:@"上班" forState:UIControlStateNormal];
-        
     }
 //    [workBtn setTitle:@"" forState:UIControlStateNormal];
     workBtn.backgroundColor = COLOR_Blue;
@@ -220,12 +246,6 @@
         make.height.equalTo(@50);
         make.bottom.equalTo(@-20);
     }];
-    
-    
-    
-    
-    
-    
 }
 
 -(void)getOrder{
@@ -238,6 +258,47 @@
     DJWayBillCenterViewController *controller = [[DJWayBillCenterViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+
+
+
+
+
+-(void)sendLocationInfoToSever{
+    CLLocation *locaiton;
+    if ([FYLocationManager shareInstance].locationArr.count >0) {
+        locaiton = [[FYLocationManager shareInstance].locationArr lastObject];
+    }else {
+        return;
+    }
+    if (locaiton == _currentLocation) {
+        return;
+    }else{
+        _currentLocation =locaiton;
+    }
+    
+    
+    [ZDBaseRequestManager POSTJKID:@"points" parameters:@{
+                                                          @"mid":DJUser_Info.sid,
+                                                          @"lng":[NSNumber numberWithDouble:_currentLocation.coordinate.longitude],
+                                                          @"lat":[NSNumber numberWithDouble:_currentLocation.coordinate.latitude]
+                                                          } success:^(id responseObject) {
+                                                              
+                                                              
+                                                              
+                                                              
+                                                          } failure:^(ZDURLResponseStatusCode errorCode) {
+                                                              
+                                                          }];
+    
+    
+    
+}
+
+
+
+
+
 
 -(void)work{
     if ([DJUser_Info.status integerValue]==1) {
@@ -252,6 +313,8 @@
                 _leftBtn.hidden=YES;
                 _rioghtBtn.hidden =YES;
                 [workBtn setTitle:@"上班" forState:UIControlStateNormal];
+                [[FYLocationManager shareInstance] stopLocation];
+                [self stopTImer];
             }else
             {
                 [Toast makeToast:responseObject[@"msg"]];
@@ -273,6 +336,9 @@
                 [workBtn setTitle:@"送完收工" forState:UIControlStateNormal];
                 _leftBtn.hidden=NO;
                 _rioghtBtn.hidden =NO;
+                [[FYLocationManager shareInstance] start];
+                [self startTimer];
+                
                 
             }else
             {
@@ -293,6 +359,11 @@
     detailVC.messageModel = model;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
+
+
+
+
+
 
 -(void)leftBarButtonClick:(UIButton *)btn
 {

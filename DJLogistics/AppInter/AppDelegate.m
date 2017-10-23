@@ -12,9 +12,12 @@
 #import "DJTabBarController.h"
 #import "DJAppManagerInit.h"
 #import "DJCacheDataModel.h"
+#import <AVFoundation/AVFoundation.h>
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
 #import <UserNotifications/UserNotifications.h>
+
 @interface AppDelegate() <UNUserNotificationCenterDelegate>
 @end
 #endif
@@ -29,6 +32,20 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    NSError *setCategoryErr =nil;
+    NSError *activationErr=nil;
+    
+    [[AVAudioSession sharedInstance]
+     
+     setCategory: AVAudioSessionCategoryPlayback
+     
+     error:&setCategoryErr];
+    
+    [[AVAudioSession sharedInstance]
+     
+     setActive: YES
+     
+     error:&activationErr];
     
     if ([[DJCacheDataModel sharedInstance] isAutoLogin]){
         self.window.rootViewController = [[DJTabBarController alloc] init];
@@ -190,6 +207,36 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    __block UIBackgroundTaskIdentifier bgTask;
+    
+    bgTask= [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        
+        dispatch_async(dispatch_get_main_queue(),^{if(bgTask !=UIBackgroundTaskInvalid)
+            
+        {
+            
+            bgTask=UIBackgroundTaskInvalid;
+            
+        }
+            
+        });
+        
+    }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
+        
+        dispatch_async(dispatch_get_main_queue(),^{if(bgTask !=UIBackgroundTaskInvalid)
+            
+        {
+            
+            bgTask=UIBackgroundTaskInvalid;
+            
+        }
+            
+        });
+        
+    });
+    
 }
 
 
