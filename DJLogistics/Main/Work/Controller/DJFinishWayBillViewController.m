@@ -8,7 +8,9 @@
 
 #import "DJFinishWayBillViewController.h"
 #import "DJFinishWayBillTableView.h"
-#import "DJWaybillDataSource.h"
+#import "DJMineWayBillDataSource.h"
+#import "DJFoodBillModel.h"
+#import "DJMineWayBillModel.h"
 @interface DJFinishWayBillViewController ()
 /** tableView */
 @property (nonatomic,strong) DJFinishWayBillTableView *finishWayBillTableView;
@@ -60,7 +62,7 @@
         [_finishWayBillTableView.mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {
             [Toast hideToastActivity];
-            DJWaybillDataSource *dataSource = [DJWaybillDataSource yy_modelWithJSON:responseObject];
+            DJMineWayBillDataSource *dataSource = [DJMineWayBillDataSource yy_modelWithJSON:responseObject];
             NSLog(@"%@",dataSource.result);
             [_finishWayBillTableView.dataArr removeAllObjects];
             

@@ -50,18 +50,23 @@ static NSString *DJCustomInfoCellIdentifier = @"DJCustomInfoCell";
         case 0:
         {
                 DJDeliveryInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DJDeliveryInfoTableViewCellIdentifier forIndexPath:indexPath];
+            [cell setModel:self.model];
             return cell;
         }
             break;
         case 1:
         {
                 DJMerchantInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:DJMerchantInfoCellIdentifier forIndexPath:indexPath];
+            [cell setModel:self.model];
+
             return cell;
         }
             break;
         case 2:
         {
                 DJOrderInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:DJOrderInfoCellIdentifier forIndexPath:indexPath];
+            [cell setModel:self.model];
+
             return cell;
         }
             break;
@@ -69,6 +74,8 @@ static NSString *DJCustomInfoCellIdentifier = @"DJCustomInfoCell";
         {
                 DJCustomInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:DJCustomInfoCellIdentifier forIndexPath:indexPath];
             [cell setCustomInfoCellTpe:DJCustomInfoCellTypeBtn];
+            [cell setModel:self.model];
+
             return cell;
 
         }
@@ -88,7 +95,12 @@ static NSString *DJCustomInfoCellIdentifier = @"DJCustomInfoCell";
             return AUTO_SIZE(112);
             break;
         case 2:
-            return AUTO_SIZE(256);
+        {
+            NSData *data = [_model.order_detail dataUsingEncoding:(NSUTF8StringEncoding)];
+            NSArray *dicArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            return AUTO_SIZE(150+dicArr.count*20);
+
+        }
             break;
         case 3:
         {

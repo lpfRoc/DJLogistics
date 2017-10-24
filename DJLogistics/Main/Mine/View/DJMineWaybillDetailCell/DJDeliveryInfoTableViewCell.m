@@ -138,6 +138,22 @@
     }];
     
 }
+-(void)setModel:(DJMineWayBillModel *)model
+{
+    _model = model;
+    _orderTimeLabel.text =  [NSString stringWithFormat:@"接单\n%@",[self configureTimeWithString:model.grab] ];
+    _arriveShopTimeLabel.text =  [NSString stringWithFormat:@"到店\n%@",[self configureTimeWithString:model.arrived] ];;
+    _fetchTimeLabel.text = [NSString stringWithFormat:@"取餐\n%@",[self configureTimeWithString:model.get] ];
+    _arriveTimeLabel.text = [NSString stringWithFormat:@"送达\n%@",[self configureTimeWithString:model.finish] ];
+    
+}
+- (NSString *)configureTimeWithString:(NSString *)time {
+    
+    NSArray *strArr = [time componentsSeparatedByString:@" "];
+    NSString *valueTime = strArr[1];
+    
+    return [valueTime substringToIndex:5];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

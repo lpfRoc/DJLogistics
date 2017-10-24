@@ -37,6 +37,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"运单历史详情";
     [self.view addSubview:self.waybillHistoryDetailTableView];
+    _waybillHistoryDetailTableView.model = self.model;
     [self autoLayout];
 }
 

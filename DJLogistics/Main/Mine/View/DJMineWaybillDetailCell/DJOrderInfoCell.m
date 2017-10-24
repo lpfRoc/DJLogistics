@@ -7,7 +7,7 @@
 //
 
 #import "DJOrderInfoCell.h"
-
+#import "DJFoodBillModel.h"
 @implementation DJOrderInfoCell
 
 - (void)awakeFromNib {
@@ -129,7 +129,7 @@
     }];
     
     [_moneyLabel mas_makeConstraints:^(MASConstraintMaker *make){
-        make.top.equalTo(_menuLabel.mas_bottom).with.offset(AUTO_SIZE(20));
+        make.top.equalTo(_menuLabel.mas_bottom).with.offset(AUTO_SIZE(10));
         make.left.equalTo(self.contentView.mas_left).with.offset(AUTO_SIZE(15));
     }];
     [_remarkLabel mas_makeConstraints:^(MASConstraintMaker *make){
@@ -140,6 +140,44 @@
         make.top.equalTo(_remarkLabel.mas_bottom).with.offset(AUTO_SIZE(5));
         make.left.equalTo(self.contentView.mas_left).with.offset(AUTO_SIZE(15));
     }];
+    
+}
+-(void)setModel:(DJMineWayBillModel *)model
+{
+    _model = model;
+    NSData *data = [model.order_detail dataUsingEncoding:(NSUTF8StringEncoding)];
+    NSArray *dicArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+
+    NSMutableArray*modelArr = [NSMutableArray array];
+    NSString *str = @"";
+
+    if ([dicArr[0] isKindOfClass:[NSString class]]) {
+        for (NSString *string in dicArr) {
+        str =  [str stringByAppendingString:[NSString stringWithFormat:@"%@\n",string]];
+        }
+    }else
+    {
+        for (NSDictionary *dic in dicArr) {
+            DJFoodBillModel *model = [[DJFoodBillModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [modelArr addObject:model];
+        }
+        for (DJFoodBillModel *model in modelArr) {
+            str =  [str stringByAppendingString:[NSString stringWithFormat:@"%@  %@%@\n",model.food_name,model.quantity,model.unit]];
+        }
+    }
+
+
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:str];
+    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:5];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [str length])];
+    _menuLabel.attributedText = attributedString;
+    
+    _moneyLabel.text = [NSString stringWithFormat:@"合计：%@元",model.order_total?model.order_total:@""];
+    _remarkLabel.text = model.order_caution.length ? [NSString stringWithFormat:@"备注：%@",model.order_caution]:@"";
+    _platformLabel.text = [NSString stringWithFormat:@"平台：%@",model.platform];
+
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

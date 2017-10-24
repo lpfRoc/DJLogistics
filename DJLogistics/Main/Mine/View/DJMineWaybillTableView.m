@@ -85,9 +85,7 @@ static NSString *DJMineWaybillTableViewCellIdentifier = @"DJMineWaybillTableView
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    DJWaybillHistoryDetailController *conteroller = [[DJWaybillHistoryDetailController alloc] init];
-    [self.rootVc.navigationController pushViewController:conteroller animated:YES];
+
 }
 
 @end

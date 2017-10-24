@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DJMineWayBillModel.h"
 @interface DJWaybillHistoryDetailTableView : UITableView
 /** rootVc */
 @property (nonatomic,weak) UIViewController *rootVc;
+/** model */
+@property (nonatomic,strong) DJMineWayBillModel *model;
 @end

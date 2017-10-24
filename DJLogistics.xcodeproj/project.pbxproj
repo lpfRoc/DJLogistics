@@ -64,6 +64,9 @@
 		D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6861F7DF76400EE8F2A /* UIImage+ZDExtension.m */; };
 		D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */; };
 		D81AD68D1F7DF94900EE8F2A /* DJMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81AD68C1F7DF94900EE8F2A /* DJMineViewController.m */; };
+		D81B97A41F9F18F7004BE532 /* DJMineWayBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B97A31F9F18F7004BE532 /* DJMineWayBillModel.m */; };
+		D81B97A71F9F1EE8004BE532 /* DJFoodBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B97A61F9F1EE8004BE532 /* DJFoodBillModel.m */; };
+		D81B97AA1F9F1F81004BE532 /* DJMineWayBillDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B97A91F9F1F81004BE532 /* DJMineWayBillDataSource.m */; };
 		D8C62E961F8E168A0015FF32 /* DJWaybillHistoryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */; };
 		D8C62E991F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C62E981F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m */; };
 		D8FFA6FA1F8C995400326AA1 /* DJChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA6F91F8C995400326AA1 /* DJChangePasswordViewController.m */; };
@@ -228,6 +231,12 @@
 		D81AD6891F7DF93B00EE8F2A /* DJWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWorkViewController.m; sourceTree = "<group>"; };
 		D81AD68B1F7DF94900EE8F2A /* DJMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJMineViewController.h; sourceTree = "<group>"; };
 		D81AD68C1F7DF94900EE8F2A /* DJMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineViewController.m; sourceTree = "<group>"; };
+		D81B97A21F9F18F7004BE532 /* DJMineWayBillModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJMineWayBillModel.h; sourceTree = "<group>"; };
+		D81B97A31F9F18F7004BE532 /* DJMineWayBillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJMineWayBillModel.m; sourceTree = "<group>"; };
+		D81B97A51F9F1EE8004BE532 /* DJFoodBillModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJFoodBillModel.h; sourceTree = "<group>"; };
+		D81B97A61F9F1EE8004BE532 /* DJFoodBillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJFoodBillModel.m; sourceTree = "<group>"; };
+		D81B97A81F9F1F81004BE532 /* DJMineWayBillDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJMineWayBillDataSource.h; sourceTree = "<group>"; };
+		D81B97A91F9F1F81004BE532 /* DJMineWayBillDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJMineWayBillDataSource.m; sourceTree = "<group>"; };
 		D8C62E941F8E168A0015FF32 /* DJWaybillHistoryDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillHistoryDetailController.h; sourceTree = "<group>"; };
 		D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillHistoryDetailController.m; sourceTree = "<group>"; };
 		D8C62E971F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillHistoryDetailTableView.h; sourceTree = "<group>"; };
@@ -761,6 +770,12 @@
 				D80092891F8F68CD0027A7D2 /* DJMessageDataSource.m */,
 				E2FB93EF1F97C91E00B9B266 /* DJOrderModel.h */,
 				E2FB93F01F97C91E00B9B266 /* DJOrderModel.m */,
+				D81B97A81F9F1F81004BE532 /* DJMineWayBillDataSource.h */,
+				D81B97A91F9F1F81004BE532 /* DJMineWayBillDataSource.m */,
+				D81B97A21F9F18F7004BE532 /* DJMineWayBillModel.h */,
+				D81B97A31F9F18F7004BE532 /* DJMineWayBillModel.m */,
+				D81B97A51F9F1EE8004BE532 /* DJFoodBillModel.h */,
+				D81B97A61F9F1EE8004BE532 /* DJFoodBillModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1066,6 +1081,7 @@
 				D81AD66F1F7DEBC000EE8F2A /* Toast.m in Sources */,
 				D81414511F98373900AE5800 /* DJWayBillCenterViewController.m in Sources */,
 				D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */,
+				D81B97A41F9F18F7004BE532 /* DJMineWayBillModel.m in Sources */,
 				E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */,
 				D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */,
 				D81AD6701F7DEBC000EE8F2A /* DJCacheDataModel.m in Sources */,
@@ -1082,6 +1098,7 @@
 				D800927E1F8F60C00027A7D2 /* DJMessageCenterViewController.m in Sources */,
 				D80F075E1F908DF500F45ABB /* DJMessageDetailTableView.m in Sources */,
 				E2FB94171F9B2D7C00B9B266 /* FYLocationManager.m in Sources */,
+				D81B97AA1F9F1F81004BE532 /* DJMineWayBillDataSource.m in Sources */,
 				D81AD6741F7DEBC000EE8F2A /* DJNavgationViewController.m in Sources */,
 				D81AD6081F7DD94100EE8F2A /* main.m in Sources */,
 				D814B3FB1F8B1F44001E424C /* DJMineFooterView.m in Sources */,
@@ -1097,6 +1114,7 @@
 				D814B4011F8B70D7001E424C /* DJPersonInfoViewController.m in Sources */,
 				D80F07641F909A5800F45ABB /* DJWorkReportModel.m in Sources */,
 				D800928A1F8F68CD0027A7D2 /* DJMessageDataSource.m in Sources */,
+				D81B97A71F9F1EE8004BE532 /* DJFoodBillModel.m in Sources */,
 				D80092811F8F62AC0027A7D2 /* DJMessageCenterTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

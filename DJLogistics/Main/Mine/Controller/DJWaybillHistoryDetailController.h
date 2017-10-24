@@ -7,7 +7,8 @@
 //
 
 #import "DJRootViewController.h"
-
+#import "DJMineWayBillModel.h"
 @interface DJWaybillHistoryDetailController : DJRootViewController
-
+/** model */
+@property (nonatomic,strong) DJMineWayBillModel *model;
 @end

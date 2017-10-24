@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DJMineWayBillModel.h"
 
 @interface DJMerchantInfoCell : UITableViewCell
 @property (strong, nonatomic)  UILabel *merchantTitle;//商家信息
@@ -15,4 +16,6 @@
 @property (strong, nonatomic)  UILabel *addressLabel;//地址
 /** 导航btn */
 @property (nonatomic,strong) UIButton *GPSBtn;
+/** model */
+@property (nonatomic,strong) DJMineWayBillModel *model;
 @end

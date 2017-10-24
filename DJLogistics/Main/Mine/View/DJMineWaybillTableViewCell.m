@@ -22,6 +22,7 @@
     if (self) {
         self.backgroundColor = COLOR_W;
         [self initSubViews];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }

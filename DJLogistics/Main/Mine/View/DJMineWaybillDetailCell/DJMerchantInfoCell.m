@@ -124,6 +124,14 @@
     }];
     
 }
+
+-(void)setModel:(DJMineWayBillModel *)model
+{
+    _model = model;
+    _merchantName.text = model.store;
+    _addressLabel.text = model.store_address;
+}
+
 -(void)GPSAction:(UIButton *)btn
 {
     

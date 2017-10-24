@@ -11,6 +11,7 @@ typedef NS_ENUM(NSInteger, DJCustomInfoCellTpe) {
     DJCustomInfoCellTypeDefault,      //不带btn
     DJCustomInfoCellTypeBtn,         //包含btn测cell
 };
+#import "DJMineWayBillModel.h"
 
 @interface DJCustomInfoCell : UITableViewCell
 /** cellstyle */
@@ -29,4 +30,6 @@ typedef NS_ENUM(NSInteger, DJCustomInfoCellTpe) {
 @property (nonatomic,strong) UIButton *messageBtn;
 /** 导航btn */
 @property (nonatomic,strong) UIButton *GPSBtn;
+/** model */
+@property (nonatomic,strong) DJMineWayBillModel *model;
 @end

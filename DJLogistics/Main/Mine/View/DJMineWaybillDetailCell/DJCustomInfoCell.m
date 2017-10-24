@@ -217,6 +217,14 @@
             break;
     }
 }
+-(void)setModel:(DJMineWayBillModel *)model
+{
+    _model = model;
+    _customNameLabel.text =model.tp_er;
+    _phoneLabel.text =model.tp_phone;
+    _addressLabel.text =model.tp_detail;
+
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

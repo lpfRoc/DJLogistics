@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DJMineWayBillModel.h"
 
 @interface DJOrderInfoCell : UITableViewCell
 @property (strong, nonatomic)  UILabel *orderTitle;//订单信息
@@ -16,4 +17,6 @@
 @property (strong, nonatomic)  UILabel *moneyLabel;//合计钱
 @property (strong, nonatomic)  UILabel *remarkLabel;//备注
 @property (strong, nonatomic)  UILabel *platformLabel;//平台
+/** model */
+@property (nonatomic,strong) DJMineWayBillModel *model;
 @end

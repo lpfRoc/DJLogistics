@@ -69,7 +69,8 @@ static NSString *DJFinishWayBillTableViewCellIdentifier = @"DJFinishWayBillTable
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     DJWaybillHistoryDetailController *conteroller = [[DJWaybillHistoryDetailController alloc] init];
-    [self.rootVc.navigationController pushViewController:conteroller animated:YES];
+    conteroller.model = self.dataArr[indexPath.row];
+   [self.rootVc.navigationController pushViewController:conteroller animated:YES];
 }
 
 
