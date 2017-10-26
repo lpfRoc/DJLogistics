@@ -7,7 +7,7 @@ target ‘DJLogistics’ do
     pod 'JSONKit-NoWarning', '~> 1.2'
     pod 'SDWebImage', '~> 3.7.3'
     pod 'Masonry'
-    pod 'IQKeyboardManager', '~> 3.3.2'
+    pod 'IQKeyboardManager', '~>  4.0.13'
     pod 'MBProgressHUD', '~> 0.7'        #HUD
     pod 'MJRefresh', '~> 3.0.2'
     pod 'YYModel', '~> 1.0.4'

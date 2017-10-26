@@ -30,7 +30,7 @@
 - (void)autoLayout
 {
     [_loginView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuide);
+        make.top.equalTo(self.view.mas_top);
         make.bottom.equalTo(self.view.mas_bottom);
         make.left.right.equalTo(self.view);
     }];

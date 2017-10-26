@@ -1,5 +1,5 @@
 //
-// IQToolbar.h
+// IQPreviousNextView.h
 // https://github.com/hackiftekhar/IQKeyboardManager
 // Copyright (c) 2013-16 Iftekhar Qurashi.
 //
@@ -21,33 +21,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIToolbar.h>
-#import "IQTitleBarButtonItem.h"
+#import <UIKit/UIKit.h>
 
 /**
- IQToolbar for IQKeyboardManager.
+ If you need to enable previous/next toolbar button with some complex hierarchy where your textFields are not in same view, then make the top view as IQPreviousNextView.
  */
-@interface IQToolbar : UIToolbar <UIInputViewAudioFeedback>
-
-/**
- Previous bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *previousBarButton;
-
-/**
- Next bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *nextBarButton;
-
-/**
- Title bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong, readonly) IQTitleBarButtonItem *titleBarButton;
-
-/**
- Done bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *doneBarButton;
+@interface IQPreviousNextView : UIView
 
 @end
-

@@ -59,6 +59,7 @@
     [Toast makeToastActivity];
     [ZDBaseRequestManager POSTJKID:@"waybill_finish" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         DJLog(@"%@",responseObject);
+        DJLog(@"%@",DJUser_Info.ID);
         [_finishWayBillTableView.mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {
             [Toast hideToastActivity];
