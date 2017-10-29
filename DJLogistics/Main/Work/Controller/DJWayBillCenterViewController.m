@@ -11,6 +11,7 @@
 #import <iCarousel/iCarousel.h>
 #import "DJFinishWayBillViewController.h"
 #import "DJDispatchingViewController.h"
+#import "DJSyMyOrderListVC.h"
 @interface DJWayBillCenterViewController ()<iCarouselDelegate, iCarouselDataSource>
 @property (strong, nonatomic) XTSegmentControl *mySegmentControl;
 @property (strong, nonatomic) iCarousel *carousel;
@@ -55,11 +56,14 @@
 -(void)rightBarButtonItemClick
 {
     DJLog(@"客服");
+    if (self.phone) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.phone]]];
+    }
 }
 #pragma mark - 初始化头部滑动title
 - (void)setUpHeaderSegmentControl
 {
-    self.navigationItem.title = @"我的福利";
+    self.navigationItem.title = @"运单中心";
     __weak typeof(self) weakSelf = self;
     self.mySegmentControl = [[XTSegmentControl alloc] initWithFrame:CGRectMake(0, 0, UI_SCREEN_WIDTH, AUTO_SIZE(50)) Items:self.titlesArray selectedBlock:^(NSInteger index) {
         [weakSelf.carousel scrollToItemAtIndex:index animated:NO];
@@ -102,7 +106,7 @@
     switch (index) {
         case 0:
         {
-            DJDispatchingViewController *dispatchingViewController = [[DJDispatchingViewController alloc] init];
+            DJSyMyOrderListVC *dispatchingViewController = [[DJSyMyOrderListVC alloc] init];
             controller = dispatchingViewController;
         }
             break;

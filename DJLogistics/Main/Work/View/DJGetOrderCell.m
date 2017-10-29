@@ -36,7 +36,7 @@
         _model = model;
     }
     
-    self.nameLb.text =  [NSString stringWithFormat:@"%@ (%@)",model.shop,model.numbers ];
+    self.nameLb.text =  [NSString stringWithFormat:@"%@ (%@)",model.store,model.daySeq ];
     self.addrLb.text = model.tp_detail;
     self.orderTimeLb.text = [NSString stringWithFormat:@"下单时间: %@", [model.createtime substringFromIndex:6]];
     self.btnImage.image = [UIImage imageNamed:@"btn_waybill_arrived"];
@@ -56,9 +56,9 @@
 }
 
 - (IBAction)getOrder:(UIButton *)sender {
-    [Toast showHud:[UIViewController currentViewController].view text:@""];
+    [Toast makeToastActivity];
     [ZDBaseRequestManager POSTJKID:@"grab" parameters:@{@"unique" : self.model.unique} success:^(id responseObject) {
-        [Toast hideHud:[UIViewController currentViewController].view];
+        [Toast hideToastActivity];
         if (self.refreshTableBlock) {
             self.refreshTableBlock(responseObject);
         }
@@ -66,11 +66,10 @@
         
         
     } failure:^(ZDURLResponseStatusCode errorCode) {
-        [Toast hideHud:[UIViewController currentViewController].view];
+        [Toast hideToastActivity];
         if (self.failureTableBlock) {
             self.failureTableBlock(nil);
         }
-        
     }];
     
 }

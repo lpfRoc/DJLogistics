@@ -80,6 +80,8 @@
 		E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */; };
 		E258BFDB1F9377060032E04D /* icon_contact_kefu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */; };
 		E258BFDC1F93770B0032E04D /* icon_notify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */; };
+		E2A2CF501FA5064B00B1A714 /* DJMapNaviVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A2CF4F1FA5064B00B1A714 /* DJMapNaviVCViewController.m */; };
+		E2A2CF531FA5845800B1A714 /* DJSyOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A2CF521FA5845800B1A714 /* DJSyOrderDetailVC.m */; };
 		E2FB93E21F97B6F400B9B266 /* DJGetOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB93E01F97B6F400B9B266 /* DJGetOrderCell.m */; };
 		E2FB93E31F97B6F400B9B266 /* DJGetOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93E11F97B6F400B9B266 /* DJGetOrderCell.xib */; };
 		E2FB93E71F97BA2E00B9B266 /* btn_waybill_arrived@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB93E41F97BA2A00B9B266 /* btn_waybill_arrived@2x.png */; };
@@ -259,6 +261,10 @@
 		E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSyOrderListVC.m; sourceTree = "<group>"; };
 		E258BFD91F9376DE0032E04D /* icon_contact_kefu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_contact_kefu@2x.png"; sourceTree = "<group>"; };
 		E258BFDA1F9376DF0032E04D /* icon_notify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_notify@2x.png"; sourceTree = "<group>"; };
+		E2A2CF4E1FA5064B00B1A714 /* DJMapNaviVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJMapNaviVCViewController.h; sourceTree = "<group>"; };
+		E2A2CF4F1FA5064B00B1A714 /* DJMapNaviVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJMapNaviVCViewController.m; sourceTree = "<group>"; };
+		E2A2CF511FA5845800B1A714 /* DJSyOrderDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSyOrderDetailVC.h; sourceTree = "<group>"; };
+		E2A2CF521FA5845800B1A714 /* DJSyOrderDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSyOrderDetailVC.m; sourceTree = "<group>"; };
 		E2FB93DF1F97B6F400B9B266 /* DJGetOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJGetOrderCell.h; sourceTree = "<group>"; };
 		E2FB93E01F97B6F400B9B266 /* DJGetOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJGetOrderCell.m; sourceTree = "<group>"; };
 		E2FB93E11F97B6F400B9B266 /* DJGetOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJGetOrderCell.xib; sourceTree = "<group>"; };
@@ -649,6 +655,7 @@
 		D81AD6601F7DEBC000EE8F2A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E2A2CF4D1FA5061400B1A714 /* Map */,
 				D81AD6651F7DEBC000EE8F2A /* Work */,
 				D81AD6611F7DEBC000EE8F2A /* Mine */,
 				D81AD6751F7DEC9A00EE8F2A /* Login */,
@@ -753,6 +760,8 @@
 				D81414571F983BA700AE5800 /* DJDispatchingViewController.m */,
 				D81414591F983BDB00AE5800 /* DJFinishWayBillViewController.h */,
 				D814145A1F983BDB00AE5800 /* DJFinishWayBillViewController.m */,
+				E2A2CF511FA5845800B1A714 /* DJSyOrderDetailVC.h */,
+				E2A2CF521FA5845800B1A714 /* DJSyOrderDetailVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -837,6 +846,15 @@
 				D811FF6B1F7F3E4800BD8552 /* Model */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E2A2CF4D1FA5061400B1A714 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2CF4E1FA5064B00B1A714 /* DJMapNaviVCViewController.h */,
+				E2A2CF4F1FA5064B00B1A714 /* DJMapNaviVCViewController.m */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1019,7 +1037,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A650C356454C732259230B39 /* [CP] Copy Pods Resources */ = {
@@ -1060,6 +1078,7 @@
 				D81AD68A1F7DF93B00EE8F2A /* DJWorkViewController.m in Sources */,
 				D80DFBE51F8E07290015E413 /* DJMerchantInfoCell.m in Sources */,
 				D81AD66D1F7DEBC000EE8F2A /* EaseBlankPageView.m in Sources */,
+				E2A2CF501FA5064B00B1A714 /* DJMapNaviVCViewController.m in Sources */,
 				D81AD68D1F7DF94900EE8F2A /* DJMineViewController.m in Sources */,
 				D8FFA6FA1F8C995400326AA1 /* DJChangePasswordViewController.m in Sources */,
 				D80F075B1F908DDB00F45ABB /* DJMessageDetailViewController.m in Sources */,
@@ -1113,6 +1132,7 @@
 				D8FFA7091F8CCCE400326AA1 /* DJWaybillModel.m in Sources */,
 				D814B4011F8B70D7001E424C /* DJPersonInfoViewController.m in Sources */,
 				D80F07641F909A5800F45ABB /* DJWorkReportModel.m in Sources */,
+				E2A2CF531FA5845800B1A714 /* DJSyOrderDetailVC.m in Sources */,
 				D800928A1F8F68CD0027A7D2 /* DJMessageDataSource.m in Sources */,
 				D81B97A71F9F1EE8004BE532 /* DJFoodBillModel.m in Sources */,
 				D80092811F8F62AC0027A7D2 /* DJMessageCenterTableView.m in Sources */,

@@ -11,8 +11,8 @@
 #import "DJSpaceCell.h"
 #import "ZDBaseRequestManager.h"
 #import "DJOrderModel.h"
-
-
+#import "DJWorkViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 
 
@@ -61,16 +61,18 @@
         make.height.equalTo(@15);
     }];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.titleLabel.font = [UIFont systemFontOfSize:10];
+    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    btn.backgroundColor = COLOR_BlueDark;
+    btn.layer.cornerRadius =5;
     [btn setTitle:@"点击刷新" forState:UIControlStateNormal];
-    [btn setTitleColor:color_808080 forState:UIControlStateNormal];
+    [btn setTitleColor:COLOR_W forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
     
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(view);
-        make.right.equalTo(view);
-        make.top.equalTo(lb.mas_bottom).offset(0);
+        make.height.equalTo(@25);
+        make.width.equalTo(@100);
+        make.centerX.equalTo(view);
         make.bottom.equalTo(view);
     }];
     self.dataArr = [NSMutableArray new];
@@ -82,6 +84,9 @@
         make.right.equalTo(self.view);
         make.bottom.equalTo(self.view);
         make.top.equalTo(self.view);
+    }];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self constructData];
     }];
     UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, UI_SCREEN_WIDTH, 10)];
     headView.backgroundColor = COLOR_BG;
@@ -101,12 +106,13 @@
 }
 
 -(void)constructData{
-    [Toast showHud:self.view text:@""];
+    
+    [Toast makeToastActivity];
     [ZDBaseRequestManager POSTJKID:@"order" parameters:@{@"sid":DJUser_Info.sid} success:^(id responseObject) {
-        
+        [self.tableView.mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [self.dataArr removeAllObjects];
-            [Toast hideHud:self.view];
+            [Toast hideToastActivity];
             id result = responseObject[@"result"];
             if (![result isKindOfClass:[NSArray class]] || [result count]==0) {
                 self.tableView.hidden=YES;
@@ -127,7 +133,8 @@
         }
         
      } failure:^(ZDURLResponseStatusCode errorCode) {
-         [Toast hideHud:self.view];
+         [self.tableView.mj_header endRefreshing];
+         [Toast hideToastActivity];
          self.tableView.hidden=YES;
     }];
     
@@ -165,8 +172,9 @@
         };
         cell.refreshTableBlock = ^(id requestObject) {
             if ([requestObject[@"code"] integerValue]==1) {
-                [weakSelf.navigationController popViewControllerAnimated:NO];
-                
+               
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+                [(DJWorkViewController *)weakSelf.navigationController.viewControllers[0] todayOrder];
             }else{
                  [weakSelf constructData];
             }

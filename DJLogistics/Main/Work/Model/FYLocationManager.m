@@ -26,7 +26,12 @@
     });
     return obj;
 }
-
+-(NSMutableArray *)locationArr{
+    if (!_locationArr) {
+        _locationArr = [NSMutableArray new];
+    }
+    return _locationArr;
+}
 
 -(BOOL)locationEnalbe{
     _locationEnalbe = [CLLocationManager locationServicesEnabled];

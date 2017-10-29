@@ -13,6 +13,7 @@
 #import "DJAppManagerInit.h"
 #import "DJCacheDataModel.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
@@ -46,6 +47,10 @@
      setActive: YES
      
      error:&activationErr];
+    
+    
+    [AMapServices sharedServices].apiKey = @"3f843f8e909afb65f75a251c49f15571";
+    
     
     if ([[DJCacheDataModel sharedInstance] isAutoLogin]){
         self.window.rootViewController = [[DJTabBarController alloc] init];

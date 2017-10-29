@@ -9,5 +9,6 @@
 #import "DJRootViewController.h"
 
 @interface DJWorkViewController : DJRootViewController
-
+-(void)getOrder;
+-(void)todayOrder;
 @end

@@ -8,7 +8,10 @@
 
 #import "DJSyMyOrderListVC.h"
 #import "DJSpaceCell.h"
-#import "DJGetOrderCell.h"
+#import "DJWayBillIngCell.h"
+#import "UIViewController+FYCategory.h"
+#import "DJWorkViewController.h"
+#import "DJSyOrderDetailVC.h"
 @interface DJSyMyOrderListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tableView ;
 
@@ -16,16 +19,18 @@
 @end
 
 @implementation DJSyMyOrderListVC
-
+{
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIView *view = [UIView new];
     [self.view addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view.mas_centerY).offset(-50);
         make.width.equalTo(@110);
-        make.height.equalTo(@170);
+        make.height.equalTo(@200);
     }];
     
     UIImageView *im = [UIImageView new];
@@ -42,7 +47,7 @@
     lb.textColor = color_808080;
     lb.font = [UIFont systemFontOfSize:16];
     lb.textAlignment = NSTextAlignmentCenter;
-    lb.text = @"没有新的订单";
+    lb.text = @"运单空空如也~";
     [view addSubview:lb];
     [lb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(view);
@@ -51,9 +56,10 @@
         make.height.equalTo(@15);
     }];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.titleLabel.font = [UIFont systemFontOfSize:10];
-    btn.backgroundColor = COLOR_Blue;
-    [btn setTitle:@"去订单添加" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    btn.backgroundColor = COLOR_BlueDark;
+    btn.layer.cornerRadius = 5;
+    [btn setTitle:@"去运单添加" forState:UIControlStateNormal];
     [btn setTitleColor:COLOR_W forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
@@ -61,12 +67,13 @@
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(view);
         make.right.equalTo(view);
-        make.top.equalTo(lb.mas_bottom).offset(0);
+        make.height.equalTo(@30);
         make.bottom.equalTo(view);
     }];
     self.dataArr = [NSMutableArray new];
     [self.tableView registerNib:[UINib nibWithNibName:@"DJSpaceCell" bundle:nil] forCellReuseIdentifier:@"DJSpaceCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"DJGetOrderCell" bundle:nil] forCellReuseIdentifier:@"DJGetOrderCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"DJWayBillIngCell" bundle:nil] forCellReuseIdentifier:@"DJWayBillIngCell"];
+    
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view);
@@ -74,14 +81,11 @@
         make.bottom.equalTo(self.view);
         make.top.equalTo(self.view);
     }];
-    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, UI_SCREEN_WIDTH, 10)];
-    headView.backgroundColor = COLOR_BG;
-    self.tableView.tableHeaderView = headView;
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 9.5, UI_SCREEN_WIDTH, 0.5)];
-    line.backgroundColor = COLOR_Line;
-    [headView addSubview:line];
+    self.tableView.tableFooterView = [UIView new];
     
-    
+    self.tableView .mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self constructData];
+    }];
     
     
     
@@ -92,36 +96,37 @@
     [self constructData];
 }
 -(void)refreshData{
-    [self constructData];
+    [[UIViewController currentViewController].navigationController popViewControllerAnimated:NO];
+    [((DJWorkViewController *)[UIViewController currentViewController]) getOrder];
 }
 
 -(void)constructData{
-    [Toast showHud:self.view text:@""];
+    [Toast makeToastActivity];
     [ZDBaseRequestManager POSTJKID:@"waybill_ing" parameters:@{@"id":DJUser_Info.aid} success:^(id responseObject) {
-        
+        [self.tableView .mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [self.dataArr removeAllObjects];
-            [Toast hideHud:self.view];
+            [Toast hideToastActivity];
             id result = responseObject[@"result"];
             if (![result isKindOfClass:[NSArray class]] || [result count]==0) {
                 self.tableView.hidden=YES;
             }else{
                 self.tableView.hidden= NO;
                 for (NSDictionary *dic in result) {
-                    DJOrderModel *model = [[DJOrderModel alloc]init];
-                    [model setValuesForKeysWithDictionary:dic];
+                    DJMineWayBillModel *model = [DJMineWayBillModel yy_modelWithJSON:dic];
+//                    [model yy_modelSetWithJSON:dic];
                     [_dataArr addObject:model];
                 }
                 [_tableView reloadData];
             }
-            
         }else{
             self.tableView.hidden=YES;
             [Toast makeToast:responseObject[@"msg"]];
         }
         
     } failure:^(ZDURLResponseStatusCode errorCode) {
-        [Toast hideHud:self.view];
+        [self.tableView .mj_header endRefreshing];
+        [Toast hideToastActivity];
         self.tableView.hidden=YES;
     }];
     
@@ -140,7 +145,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row%2==0) {
-        return 120;
+        return 125;
     }
     return 6;
 }
@@ -150,22 +155,10 @@
         DJSpaceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJSpaceCell" forIndexPath:indexPath];
         return cell;
     }else{
-        DJGetOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJGetOrderCell" forIndexPath:indexPath];
-        DJOrderModel *model = self.dataArr[indexPath.row/2];
+        DJWayBillIngCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJWayBillIngCell" forIndexPath:indexPath];
+        DJMineWayBillModel *model = self.dataArr[indexPath.row/2];
         cell.model = model;
-        __weak DJSyMyOrderListVC *weakSelf = self;
-        cell.failureTableBlock = ^(id requestObject) {
-            [weakSelf constructData];
-        };
-        cell.refreshTableBlock = ^(id requestObject) {
-            if ([requestObject[@"code"] integerValue]==1) {
-                [weakSelf.navigationController popViewControllerAnimated:NO];
-                
-            }else{
-                [weakSelf constructData];
-            }
-            
-        };
+       
         return cell;
     }
 }
@@ -177,7 +170,17 @@
     return self.dataArr.count*2;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    DJMineWayBillModel *model = self.dataArr[indexPath.row/2];
+    DJSyOrderDetailVC *vc = [[DJSyOrderDetailVC alloc]init];
+    vc.model = model;
+    [[UIViewController currentViewController].navigationController pushViewController:vc animated:YES];
+    
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

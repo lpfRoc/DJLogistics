@@ -7,7 +7,8 @@
 //
 
 #import "DJCustomInfoCell.h"
-
+#import <AMapNaviKit/AMapNaviKit.h>
+#import "FYLocationManager.h"
 @implementation DJCustomInfoCell
 
 - (void)awakeFromNib {
@@ -198,17 +199,31 @@
         case 100:
         {
             NSLog(@"call");
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",_model.tp_phone]]];
         }
             break;
         case 101:
         {
             NSLog(@"message");
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",_model.tp_phone]]];
 
         }
             break;
         case 102:
         {
             NSLog(@"gps");
+            // 初始化
+            AMapNaviCompositeManager *compositeManager = [[AMapNaviCompositeManager alloc] init];
+            // 如果需要使用AMapNaviCompositeManagerDelegate的相关回调（如自定义语音、获取实时位置等），需要设置delegate
+            //    self.compositeManager.delegate = self;
+            // 通过present的方式显示路线规划页面, 在不传入起终点启动导航组件的模式下，options需传入nil
+            AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
+            //传入起点，并且带高德POIId
+            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart location:[AMapNaviPoint locationWithLatitude:[FYLocationManager shareInstance].latitude longitude:[FYLocationManager shareInstance].lontitue] name:@"我的位置" POIId:nil];
+            //传入终点，并且带高德POIId
+            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd location:[AMapNaviPoint locationWithLatitude:[self.model.lat doubleValue] longitude:[self.model.lng doubleValue]] name:self.model.tp_detail POIId:nil];
+            //启动
+            [compositeManager presentRoutePlanViewControllerWithOptions:nil];
 
         }
             break;

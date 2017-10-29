@@ -12,7 +12,7 @@ target ‘DJLogistics’ do
     pod 'MJRefresh', '~> 3.0.2'
     pod 'YYModel', '~> 1.0.4'
     pod 'PPNetworkHelper', '~> 0.8.0'
-    
+    pod 'AMapNavi'
     pod 'iCarousel', '~> 1.8.3'
     pod 'QQ_XGPush'
 

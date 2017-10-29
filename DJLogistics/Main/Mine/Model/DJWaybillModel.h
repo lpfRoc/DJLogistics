@@ -39,4 +39,11 @@
 @property (nonatomic,strong) NSString *remark;
 /** 超时 */
 @property (nonatomic,strong) NSString *timeout;
+
+@property (nonatomic,strong) NSString *deliveryTime;
+@property (nonatomic,strong) NSString *status;
+@property (nonatomic ,copy) NSString *lat;
+@property (nonatomic ,copy) NSString *lng;
+
+
 @end

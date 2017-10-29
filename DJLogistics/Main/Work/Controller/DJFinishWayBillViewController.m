@@ -10,6 +10,8 @@
 #import "DJFinishWayBillTableView.h"
 #import "DJMineWayBillDataSource.h"
 #import "DJFoodBillModel.h"
+#import "UIViewController+FYCategory.h"
+#import "DJWorkViewController.h"
 #import "DJMineWayBillModel.h"
 @interface DJFinishWayBillViewController ()
 /** tableView */
@@ -74,7 +76,10 @@
                                            hasData:dataSource.result.count > 0
                                           hasError:NO
                                  reloadButtonBlock:^(id sender) {
+                                     
                                  }clickButtonBlock:^(EaseBlankPageType type) {
+                                     [[UIViewController currentViewController].navigationController popViewControllerAnimated:NO];
+                                     [((DJWorkViewController *)[UIViewController currentViewController]) getOrder];
                                  }];
         }else
         {

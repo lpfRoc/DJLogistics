@@ -125,7 +125,7 @@
                     
                     [ZDBaseRequestManager POSTJKID:@"getconfig" parameters:nil success:^(id responseObject) {
                         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
-                            self.servicePhone = responseObject[@"service"];
+                            self.servicePhone = responseObject[@"result"][@"service"];
                         }else
                         {
                             [Toast makeToast:responseObject[@"msg"]];
@@ -256,6 +256,7 @@
 
 -(void)todayOrder{
     DJWayBillCenterViewController *controller = [[DJWayBillCenterViewController alloc] init];
+    controller.phone = self.servicePhone;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

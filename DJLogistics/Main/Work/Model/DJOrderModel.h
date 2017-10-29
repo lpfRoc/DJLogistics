@@ -22,7 +22,11 @@
 @property(nonatomic , copy) NSString *createtime;
 @property (nonatomic, copy) NSString *status;
 @property(nonatomic , copy) NSString *tp_detail;
-
+@property (nonatomic ,copy) NSString *lat;
+@property (nonatomic ,copy) NSString *lng;
+@property (nonatomic ,copy) NSString *store;
+@property (nonatomic ,copy) NSString *deliveryTime;
+@property (nonatomic ,copy) NSString *daySeq;
 
 
 @end

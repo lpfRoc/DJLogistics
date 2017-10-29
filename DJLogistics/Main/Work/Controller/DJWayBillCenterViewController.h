@@ -9,5 +9,5 @@
 #import "DJRootViewController.h"
 
 @interface DJWayBillCenterViewController : DJRootViewController
-
+@property (nonatomic , copy) NSString *phone;
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DJMineWayBillModel.h"
 @interface DJWayBillIngCell : UITableViewCell
 
+@property (nonatomic , strong) DJMineWayBillModel *model;
 @end
