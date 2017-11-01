@@ -117,15 +117,16 @@
             
             [ZDBaseRequestManager POSTJKID:@"notify" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
                 DJLog(@"%@",responseObject);
-                if ([responseObject[@"code"] integerValue] == 1) {//退出成功
+                if ([responseObject[@"code"] integerValue] == 1) {
                     DJMessageDataSource *dataSource = [DJMessageDataSource yy_modelWithJSON:responseObject];
                     NSLog(@"%@",dataSource.result);
                     self.messageArr  = dataSource;
                     self.headLb.text = ((DJMessageModel *)self.messageArr.result[0]).content;
                     
                     [ZDBaseRequestManager POSTJKID:@"getconfig" parameters:nil success:^(id responseObject) {
-                        if ([responseObject[@"code"] integerValue] == 1) {//退出成功
+                        if ([responseObject[@"code"] integerValue] == 1) {
                             self.servicePhone = responseObject[@"result"][@"service"];
+                            [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"result"][@"sms"] forKey:@"sms"];
                         }else
                         {
                             [Toast makeToast:responseObject[@"msg"]];
@@ -241,8 +242,8 @@
     [self.view addSubview:workBtn];
     
     [workBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@16);
-        make.right.equalTo(@-16);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@250);
         make.height.equalTo(@50);
         make.bottom.equalTo(@-20);
     }];
@@ -280,7 +281,7 @@
     
     
     [ZDBaseRequestManager POSTJKID:@"points" parameters:@{
-                                                          @"mid":DJUser_Info.sid,
+                                                          @"mid":DJUser_Info.ID,
                                                           @"lng":[NSNumber numberWithDouble:_currentLocation.coordinate.longitude],
                                                           @"lat":[NSNumber numberWithDouble:_currentLocation.coordinate.latitude]
                                                           } success:^(id responseObject) {

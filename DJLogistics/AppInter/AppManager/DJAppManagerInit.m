@@ -24,8 +24,11 @@ OCT_SYNTHESIZE_SINGLETON_FOR_CLASS(DJAppManagerInit);
 {
     //打开debug开关
     XGSetting *setting = [XGSetting getInstance];
-    [setting enableDebug:YES];
-    
+#if DEBUG
+        [setting enableDebug:YES];
+#else
+        [setting enableDebug:NO];
+#endif
     /**
      初始化信鸽
      

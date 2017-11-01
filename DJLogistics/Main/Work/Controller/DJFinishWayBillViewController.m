@@ -32,7 +32,6 @@
 - (DJFinishWayBillTableView *)finishWayBillTableView
 {
     if (_finishWayBillTableView == nil) {
-        
         _finishWayBillTableView = [[DJFinishWayBillTableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
         _finishWayBillTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
         _finishWayBillTableView.rootVc = self;
@@ -78,8 +77,17 @@
                                  reloadButtonBlock:^(id sender) {
                                      
                                  }clickButtonBlock:^(EaseBlankPageType type) {
-                                     [[UIViewController currentViewController].navigationController popViewControllerAnimated:NO];
-                                     [((DJWorkViewController *)[UIViewController currentViewController]) getOrder];
+                                     [Toast makeToastActivity];
+                                     [ZDBaseRequestManager POSTJKID:@"request" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
+                                         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
+                                             [Toast hideToastActivity];
+                                         }else{
+                                             [Toast makeToast:responseObject[@"msg"]];
+                                         }
+                                         
+                                     } failure:^(ZDURLResponseStatusCode errorCode) {
+                                         [Toast hideToastActivity];
+                                     }];
                                  }];
         }else
         {

@@ -23,6 +23,8 @@
     self.navigationItem.title = @"运单详情";
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
     self.tableView.backgroundColor =COLOR_BG;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[DJMerchantInfoCell class] forCellReuseIdentifier:@"DJMerchantInfoCell"];
      [self.tableView registerClass:[DJOrderInfoCell class] forCellReuseIdentifier:@"DJOrderInfoCell"];
@@ -43,50 +45,50 @@
         make.height.equalTo(@45);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_top).offset(0);
-    }];
-    if ([_model.status integerValue] ==1) {
+        make.bottom.equalTo(self.view);
+    }];if ([_model.status integerValue] ==0) {
+        [btn setTitle:@"确认到店" forState:UIControlStateNormal];
+    }else if ([_model.status integerValue] ==1) {
         [btn setTitle:@"完成取餐" forState:UIControlStateNormal];
     }else if ([_model.status integerValue] ==2) {
         [btn setTitle:@"确认送达" forState:UIControlStateNormal];
     }else if ([_model.status integerValue] ==3) {
            [btn setTitle:@"订单完成" forState:UIControlStateNormal];
-                                                                  
     }else{
     }
     
 }
 -(void)changeStatus:(UIButton *)sender{
-    if ([_model.status integerValue] ==1) {
+    if ([_model.status integerValue] ==0) {
         [ZDBaseRequestManager POSTJKID:@"arrived" parameters:@{
                                                                @"unique":_model.unique
                                                                } success:^(id responseObject) {
                                                                    [sender setTitle:@"完成取餐" forState:UIControlStateNormal];
 //                                                                   self.im.image = [UIImage imageNamed:@"btn_waybill_get"];
 //                                                                   self.statusLb.text = @"";
-                                                                   self.model.status =@"2";
+                                                                   self.model.status =@"1";
                                                                    
                                                                    
                                                                } failure:^(ZDURLResponseStatusCode errorCode) {
                                                                    
                                                                }];
-    }else if ([_model.status integerValue] ==2) {
+    }else if ([_model.status integerValue] ==1) {
         [ZDBaseRequestManager POSTJKID:@"get" parameters:@{
                                                            @"unique":_model.unique
                                                            } success:^(id responseObject) {
                                                                [sender setTitle:@"确认送达" forState:UIControlStateNormal];
-                                                               self.model.status =@"3";
+                                                               self.model.status =@"2";
                                                                
                                                                
                                                            } failure:^(ZDURLResponseStatusCode errorCode) {
                                                                
                                                            }];
-    }else if ([_model.status integerValue] ==3) {
+    }else if ([_model.status integerValue] ==2) {
         [ZDBaseRequestManager POSTJKID:@"finish" parameters:@{
                                                               @"unique":_model.unique
                                                               } success:^(id responseObject) {
                                                                   [sender setTitle:@"订单完成" forState:UIControlStateNormal];
-                                                                  self.model.status =@"4";
+                                                                  self.model.status =@"3";
                                                                   
                                                                   
                                                               } failure:^(ZDURLResponseStatusCode errorCode) {
@@ -115,7 +117,7 @@
             break;
         case 1:
         {
-            DJOrderInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJMerchantInfoCell" forIndexPath:indexPath];
+            DJOrderInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJOrderInfoCell" forIndexPath:indexPath];
             [cell setModel:self.model];
             
             return cell;
@@ -123,7 +125,7 @@
             break;
         case 2:
         {
-            DJCustomInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJMerchantInfoCell" forIndexPath:indexPath];
+            DJCustomInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJCustomInfoCell" forIndexPath:indexPath];
             [cell setCustomInfoCellTpe:DJCustomInfoCellTypeBtn];
             [cell setModel:self.model];
             

@@ -20,6 +20,7 @@
         for (UIView *view in viewArray) {
             [self.contentView addSubview:view];
         }
+        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:DJUser_Info.avatar]];
         [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make){
             make.centerY.equalTo(self.contentView.mas_centerY);
             make.right.equalTo(self.contentView.mas_right).with.offset(AUTO_SIZE(-15));
@@ -50,6 +51,7 @@
 - (UIImageView *)iconImageView
 {
     if (_iconImageView == nil) {
+        
         _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_mineselect"]];
     }
     return _iconImageView;

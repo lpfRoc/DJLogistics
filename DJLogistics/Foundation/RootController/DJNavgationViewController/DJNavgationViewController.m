@@ -56,10 +56,10 @@
         [backButton setImage:[UIImage imageNamed:@"ico_back"] forState:UIControlStateHighlighted];
 //        [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 //        [backButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        [backButton sizeToFit];
+//        [backButton sizeToFit];
         // 这句代码放在sizeToFit后面
-//        backButton.frame = CGRectMake(0, 0, 44, 44);
-        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        backButton.frame = CGRectMake(0, 0, 44, 44);
+        backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20);
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
         

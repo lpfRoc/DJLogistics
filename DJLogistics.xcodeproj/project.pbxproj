@@ -75,6 +75,7 @@
 		D8FFA7031F8CC6DB00326AA1 /* DJMineWaybillTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA7021F8CC6DB00326AA1 /* DJMineWaybillTableView.m */; };
 		D8FFA7061F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA7051F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m */; };
 		D8FFA7091F8CCCE400326AA1 /* DJWaybillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */; };
+		E24A5A741FA8634500D38C4B /* DJSendMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E24A5A731FA8634500D38C4B /* DJSendMessageManager.m */; };
 		E258BFD41F9351930032E04D /* icon_get_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */; };
 		E258BFD51F9351970032E04D /* icon_today_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */; };
 		E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E258BFD71F936E7F0032E04D /* DJSyOrderListVC.m */; };
@@ -255,6 +256,8 @@
 		D8FFA7051F8CC7A700326AA1 /* DJMineWaybillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJMineWaybillTableViewCell.m; sourceTree = "<group>"; };
 		D8FFA7071F8CCCE400326AA1 /* DJWaybillModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillModel.h; sourceTree = "<group>"; };
 		D8FFA7081F8CCCE400326AA1 /* DJWaybillModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillModel.m; sourceTree = "<group>"; };
+		E24A5A721FA8634500D38C4B /* DJSendMessageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSendMessageManager.h; sourceTree = "<group>"; };
+		E24A5A731FA8634500D38C4B /* DJSendMessageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSendMessageManager.m; sourceTree = "<group>"; };
 		E258BFD21F9345DC0032E04D /* icon_get_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_get_order@2x.png"; sourceTree = "<group>"; };
 		E258BFD31F9345DC0032E04D /* icon_today_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_today_order@2x.png"; sourceTree = "<group>"; };
 		E258BFD61F936E7F0032E04D /* DJSyOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSyOrderListVC.h; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 		D81AD6411F7DEBC000EE8F2A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E24A5A711FA8630D00D38C4B /* DJSendMessage */,
 				D80F07551F904A5700F45ABB /* Utilities */,
 				D81AD6421F7DEBC000EE8F2A /* BlankPage */,
 				D81AD6451F7DEBC000EE8F2A /* Hud */,
@@ -848,6 +852,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		E24A5A711FA8630D00D38C4B /* DJSendMessage */ = {
+			isa = PBXGroup;
+			children = (
+				E24A5A721FA8634500D38C4B /* DJSendMessageManager.h */,
+				E24A5A731FA8634500D38C4B /* DJSendMessageManager.m */,
+			);
+			path = DJSendMessage;
+			sourceTree = "<group>";
+		};
 		E2A2CF4D1FA5061400B1A714 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -1101,6 +1114,7 @@
 				D81414511F98373900AE5800 /* DJWayBillCenterViewController.m in Sources */,
 				D811FF6D1F7F3E4800BD8552 /* DJLoginViewController.m in Sources */,
 				D81B97A41F9F18F7004BE532 /* DJMineWayBillModel.m in Sources */,
+				E24A5A741FA8634500D38C4B /* DJSendMessageManager.m in Sources */,
 				E258BFD81F936E7F0032E04D /* DJSyOrderListVC.m in Sources */,
 				D81AD6871F7DF76400EE8F2A /* UIImage+ZDExtension.m in Sources */,
 				D81AD6701F7DEBC000EE8F2A /* DJCacheDataModel.m in Sources */,

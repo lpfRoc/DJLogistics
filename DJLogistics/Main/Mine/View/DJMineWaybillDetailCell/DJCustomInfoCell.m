@@ -9,7 +9,17 @@
 #import "DJCustomInfoCell.h"
 #import <AMapNaviKit/AMapNaviKit.h>
 #import "FYLocationManager.h"
+#import "DJSendMessageManager.h"
+
+@interface DJCustomInfoCell ()
+@property (nonatomic , strong) AMapNaviCompositeManager *compositeManager;
+@property (nonatomic , strong) DJSendMessageManager *manager;
+@end
+
 @implementation DJCustomInfoCell
+
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -198,32 +208,40 @@
     switch (btn.tag) {
         case 100:
         {
-            NSLog(@"call");
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",_model.tp_phone]]];
-        }
-            break;
-        case 101:
-        {
-            NSLog(@"message");
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",_model.tp_phone]]];
-
-        }
-            break;
-        case 102:
-        {
             NSLog(@"gps");
             // 初始化
-            AMapNaviCompositeManager *compositeManager = [[AMapNaviCompositeManager alloc] init];
+            self.compositeManager = [[AMapNaviCompositeManager alloc] init];
             // 如果需要使用AMapNaviCompositeManagerDelegate的相关回调（如自定义语音、获取实时位置等），需要设置delegate
             //    self.compositeManager.delegate = self;
             // 通过present的方式显示路线规划页面, 在不传入起终点启动导航组件的模式下，options需传入nil
             AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
             //传入起点，并且带高德POIId
-            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart location:[AMapNaviPoint locationWithLatitude:[FYLocationManager shareInstance].latitude longitude:[FYLocationManager shareInstance].lontitue] name:@"我的位置" POIId:nil];
+//            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart location:[AMapNaviPoint locationWithLatitude:[FYLocationManager shareInstance].latitude longitude:[FYLocationManager shareInstance].lontitue] name:@"我的位置" POIId:nil];
             //传入终点，并且带高德POIId
             [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd location:[AMapNaviPoint locationWithLatitude:[self.model.lat doubleValue] longitude:[self.model.lng doubleValue]] name:self.model.tp_detail POIId:nil];
+             [config setStartNaviDirectly:YES];
             //启动
-            [compositeManager presentRoutePlanViewControllerWithOptions:nil];
+            [self.compositeManager presentRoutePlanViewControllerWithOptions:config];
+            
+        }
+            break;
+        case 101:
+        {
+            
+            NSLog(@"call");
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",_model.tp_phone]]];
+           
+
+        }
+            break;
+        case 102:
+        {
+            NSLog(@"message");
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",_model.tp_phone]]];
+            if (!self.manager) {
+                self.manager = [[DJSendMessageManager alloc]init];
+            }
+            [self.manager SendMessage:_model.tp_phone message:[[NSUserDefaults standardUserDefaults] objectForKey:@"sms"] ];
 
         }
             break;

@@ -160,7 +160,7 @@
                     break;
               
                 case EaseBlankPageTypeWaybillCenter:{
-                    titleStr=@"去运单添加";
+                    titleStr=@"我要运单";
                     actionBtn.hidden = NO;
 
                 }

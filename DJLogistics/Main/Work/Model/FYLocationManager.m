@@ -52,6 +52,9 @@
             
             locationManager.distanceFilter = kCLDistanceFilterNone;
             locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            if ([[UIDevice currentDevice].systemVersion floatValue]>=9.0) {
+                locationManager.allowsBackgroundLocationUpdates = YES;
+            }
         }
          [locationManager startUpdatingLocation];
     }else{
@@ -126,10 +129,7 @@
             NSString *subLocality=[addressDic objectForKey:@"SubLocality"];
             
             NSString *street=[addressDic objectForKey:@"Street"];
-            
-            
-           
-            NSLog(@"所在城市====%@ %@ %@ %@", state, city, subLocality, street);
+            DJLog(@"所在城市====%@ %@ %@ %@", state, city, subLocality, street);
             NSString *str = [NSString stringWithFormat:@"%@%@%@", city, subLocality, street];
             self.areaStr = str;
             if (self.locationBlock) {

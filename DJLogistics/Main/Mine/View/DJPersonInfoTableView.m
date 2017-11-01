@@ -56,6 +56,7 @@
     switch (indexPath.section) {
         case 0:
         {
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:DJUser_Info.avatar]];
         }
             break;
         case 1:

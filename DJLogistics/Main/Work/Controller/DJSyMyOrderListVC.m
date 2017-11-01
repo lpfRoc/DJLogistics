@@ -58,8 +58,8 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.titleLabel.font = [UIFont systemFontOfSize:15];
     btn.backgroundColor = COLOR_BlueDark;
-    btn.layer.cornerRadius = 5;
-    [btn setTitle:@"去运单添加" forState:UIControlStateNormal];
+    btn.layer.cornerRadius = 3;
+    [btn setTitle:@"我要运单" forState:UIControlStateNormal];
     [btn setTitleColor:COLOR_W forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
@@ -96,13 +96,24 @@
     [self constructData];
 }
 -(void)refreshData{
-    [[UIViewController currentViewController].navigationController popViewControllerAnimated:NO];
-    [((DJWorkViewController *)[UIViewController currentViewController]) getOrder];
+     [Toast makeToastActivity];
+    [ZDBaseRequestManager POSTJKID:@"request" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
+        if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
+            [Toast hideToastActivity];
+        }else{
+            [Toast makeToast:responseObject[@"msg"]];
+        }
+        
+    } failure:^(ZDURLResponseStatusCode errorCode) {
+        [Toast hideToastActivity];
+    }];
+    
+    
 }
 
 -(void)constructData{
     [Toast makeToastActivity];
-    [ZDBaseRequestManager POSTJKID:@"waybill_ing" parameters:@{@"id":DJUser_Info.aid} success:^(id responseObject) {
+    [ZDBaseRequestManager POSTJKID:@"waybill_ing" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         [self.tableView .mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [self.dataArr removeAllObjects];
@@ -145,7 +156,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row%2==0) {
-        return 125;
+        return 175;
     }
     return 6;
 }

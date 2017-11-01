@@ -16,21 +16,13 @@ typedef void(^LocationBlock)(NSString *str);
     CLLocationManager *locationManager;
 }
 + (instancetype)shareInstance;
-
 - (void)start;
-
-
-
-
 -(void)stopLocation;
-
 @property (nonatomic, assign) double lontitue;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic , copy) NSString *areaStr;
 @property (nonatomic , assign ) BOOL locationEnalbe;
 @property (nonatomic , copy) LocationBlock locationBlock;
-
 @property (nonatomic , strong) NSMutableArray *locationArr;
-
 
 @end
