@@ -14,12 +14,16 @@
 #import "DJSyOrderDetailVC.h"
 @interface DJSyMyOrderListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tableView ;
-
+@property (nonatomic , strong) NSTimer *timer;
 @property (nonatomic , strong) NSMutableArray *dataArr;
 @end
 
 @implementation DJSyMyOrderListVC
 {
+}
+-(void)dealloc{
+    [_timer invalidate];
+    _timer = nil;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,11 +90,16 @@
     self.tableView .mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self constructData];
     }];
-    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [self constructData];
+    }];
+    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
     
     
     // Do any additional setup after loading the view.
 }
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self constructData];

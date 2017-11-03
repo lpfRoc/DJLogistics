@@ -20,6 +20,7 @@
 @property (nonatomic , strong) UITableView *tableView;
 @property (nonatomic , strong) NSMutableArray *dataArr;
 
+@property (nonatomic , strong) NSTimer *refreshTimer;
 
 @end
 
@@ -94,7 +95,15 @@
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 9.5, UI_SCREEN_WIDTH, 0.5)];
     line.backgroundColor = COLOR_Line;
     [headView addSubview:line];
+    _refreshTimer = [NSTimer scheduledTimerWithTimeInterval:60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [self refreshData];
+    }];
+    [[NSRunLoop currentRunLoop] addTimer:_refreshTimer forMode:NSRunLoopCommonModes];
     
+}
+-(void)dealloc {
+    [_refreshTimer invalidate];
+    _refreshTimer = nil;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
