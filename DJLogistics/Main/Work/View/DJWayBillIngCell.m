@@ -112,13 +112,13 @@
     // 初始化
     self.compositeManager = [[AMapNaviCompositeManager alloc] init];
     // 如果需要使用AMapNaviCompositeManagerDelegate的相关回调（如自定义语音、获取实时位置等），需要设置delegate
-//    self.compositeManager.delegate = self;
+    self.compositeManager.delegate = self;
     // 通过present的方式显示路线规划页面, 在不传入起终点启动导航组件的模式下，options需传入nil
     AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
     //传入终点，并且带高德POIId
     [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd location:[AMapNaviPoint locationWithLatitude:[self.model.lat doubleValue] longitude:[self.model.lng doubleValue]] name:self.model.tp_detail POIId:nil];
     //直接进入导航界面
-    [config setStartNaviDirectly:YES];
+//    [config setStartNaviDirectly:YES];
 //    self.compositeManager.delegate = self;
     //启动
     [self.compositeManager presentRoutePlanViewControllerWithOptions:config];
@@ -166,6 +166,10 @@
         self.statusLb.text = @"订单完成";
     }
 }
+// 当前位置更新回调
+- (void)compositeManager:(AMapNaviCompositeManager *)compositeManager updateNaviLocation:(AMapNaviLocation *)naviLocation {
+    NSLog(@"updateNaviLocation,%@",naviLocation);
+}
 
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager error:(NSError *)error {
     NSLog(@"error:{%ld - %@}", (long)error.code, error.localizedDescription);
@@ -180,9 +184,6 @@
 }
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager didStartNavi:(AMapNaviMode)naviMode {
     NSLog(@"didStartNavi,%ld",(long)naviMode);
-}
-- (void)compositeManager:(AMapNaviCompositeManager *)compositeManager updateNaviLocation:(AMapNaviLocation *)naviLocation {
-    NSLog(@"updateNaviLocation,%@",naviLocation);
 }
 // 导航到达目的地后的回调函数
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager didArrivedDestination:(AMapNaviMode)naviMode {

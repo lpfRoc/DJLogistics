@@ -219,7 +219,7 @@
 //            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart location:[AMapNaviPoint locationWithLatitude:[FYLocationManager shareInstance].latitude longitude:[FYLocationManager shareInstance].lontitue] name:@"我的位置" POIId:nil];
             //传入终点，并且带高德POIId
             [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd location:[AMapNaviPoint locationWithLatitude:[self.model.lat doubleValue] longitude:[self.model.lng doubleValue]] name:self.model.tp_detail POIId:nil];
-             [config setStartNaviDirectly:YES];
+//             [config setStartNaviDirectly:YES];
             //启动
             [self.compositeManager presentRoutePlanViewControllerWithOptions:config];
             

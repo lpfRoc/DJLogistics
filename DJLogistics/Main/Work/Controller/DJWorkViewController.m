@@ -124,9 +124,10 @@
                     self.headLb.text = ((DJMessageModel *)self.messageArr.result[0]).content;
                     
                     [ZDBaseRequestManager POSTJKID:@"getconfig" parameters:nil success:^(id responseObject) {
+                        
                         if ([responseObject[@"code"] integerValue] == 1) {
                             self.servicePhone = responseObject[@"result"][@"service"];
-                            [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"result"][@"sms"] forKey:@"sms"];
+                            [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"result"][@"sms"]?:[NSNull null] forKey:@"sms"];
                         }else
                         {
                             [Toast makeToast:responseObject[@"msg"]];
