@@ -78,11 +78,11 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     NSString *deviceTokenStr = [XGPush registerDevice:deviceToken account:nil successCallback:^{
-        DJLog(@"[DLLogistics] register push success");
+        NSLog(@"[DLLogistics] register push success");
     } errorCallback:^{
-        DJLog(@"[DLLogistics] register push error");
+        NSLog(@"[DLLogistics] register push error");
     }];
-    DJLog(@"[DLLogistics] device token is %@", deviceTokenStr);
+    NSLog(@"[DLLogistics] device token is %@", deviceTokenStr);
     
     //保存token
     [DJCacheDataModel sharedInstance].pushDeviceToken = [NSDictionary dictionaryWithObjects:@[deviceTokenStr] forKeys:@[@"pushDeviceToken"]];
@@ -113,6 +113,26 @@
                           DJLog(@"[DLLogistics] Handle receive error");
                       }];
 }
+/**
+ 收到静默推送的回调
+ 
+ @param application  UIApplication 实例
+ @param userInfo 推送时指定的参数
+ @param completionHandler 完成回调
+ */
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"[DLLogistics] receive slient Notification");
+    NSLog(@"[DLLogistics] userinfo %@", userInfo);
+    [XGPush handleReceiveNotification:userInfo
+                      successCallback:^{
+                          NSLog(@"[DLLogistics] Handle receive success");
+                      } errorCallback:^{
+                          NSLog(@"[DLLogistics] Handle receive error");
+                      }];
+    
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
 // iOS 10 新增 API
 // iOS 10 会走新 API, iOS 10 以前会走到老 API
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0

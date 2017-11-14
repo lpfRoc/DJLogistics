@@ -9,5 +9,8 @@
 #import "DJFoodBillModel.h"
 
 @implementation DJFoodBillModel
-
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
 @end

@@ -163,7 +163,7 @@
             [modelArr addObject:model];
         }
         for (DJFoodBillModel *model in modelArr) {
-            str =  [str stringByAppendingString:[NSString stringWithFormat:@"%@  %@%@\n",model.food_name,model.quantity,model.unit]];
+            str =  [str stringByAppendingString:[NSString stringWithFormat:@"%@  %@%@\n",model.food_name?model.food_name:@"",model.quantity?model.quantity:@"",model.unit?model.unit:@""]];
         }
     }
 

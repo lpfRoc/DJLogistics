@@ -121,12 +121,10 @@
 }
 
 -(void)constructData{
-    [Toast makeToastActivity];
     [ZDBaseRequestManager POSTJKID:@"waybill_ing" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         [self.tableView .mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [self.dataArr removeAllObjects];
-            [Toast hideToastActivity];
             id result = responseObject[@"result"];
             if (![result isKindOfClass:[NSArray class]] || [result count]==0) {
                 self.tableView.hidden=YES;
