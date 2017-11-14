@@ -114,6 +114,7 @@
 - (void)logoutAction:(UIButton *)btn
 {
     DJLog(@"退出登陆");
+    NSLog(@"%@",DJUser_Info.ID);
     [ZDBaseRequestManager POSTJKID:@"logout" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         DJLog(@"%@",responseObject);
         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
@@ -123,8 +124,11 @@
                 DJNavgationViewController*nav = [[DJNavgationViewController alloc]initWithRootViewController:[[DJLoginViewController alloc] init]];
                 [[[UIApplication sharedApplication] delegate] window].rootViewController =nav;
             });
+        }else
+        {
+            [Toast makeToast:responseObject[@"msg"]];
+
         }
-        [Toast makeToast:responseObject[@"msg"]];
     } failure:^(ZDURLResponseStatusCode errorCode) {
         
     }];

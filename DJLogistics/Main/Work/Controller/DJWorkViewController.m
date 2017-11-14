@@ -282,7 +282,7 @@
     
     
     [ZDBaseRequestManager POSTJKID:@"points" parameters:@{
-                                                          @"mid":DJUser_Info.ID,
+                                                          @"mid":DJUser_Info.ID?DJUser_Info.ID?:@"",
                                                           @"lng":[NSNumber numberWithDouble:_currentLocation.coordinate.longitude],
                                                           @"lat":[NSNumber numberWithDouble:_currentLocation.coordinate.latitude]
                                                           } success:^(id responseObject) {
