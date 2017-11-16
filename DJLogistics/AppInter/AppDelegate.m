@@ -19,6 +19,7 @@
 
 #import <UserNotifications/UserNotifications.h>
 
+
 @interface AppDelegate() <UNUserNotificationCenterDelegate>
 @end
 #endif
@@ -47,7 +48,6 @@
      setActive: YES
      
      error:&activationErr];
-    
     
     [AMapServices sharedServices].apiKey = @"3f843f8e909afb65f75a251c49f15571";
     
