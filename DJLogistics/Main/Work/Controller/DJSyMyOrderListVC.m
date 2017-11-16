@@ -126,6 +126,7 @@
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [self.dataArr removeAllObjects];
             id result = responseObject[@"result"];
+            DJLog(@"%@",result);
             if (![result isKindOfClass:[NSArray class]] || [result count]==0) {
                 self.tableView.hidden=YES;
             }else{

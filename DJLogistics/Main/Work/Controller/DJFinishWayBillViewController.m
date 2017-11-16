@@ -52,8 +52,13 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.finishWayBillTableView];
     [self autoLayout];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self requestData];
 }
+
 //
 -(void)requestData
 {
@@ -65,7 +70,7 @@
         if ([responseObject[@"code"] integerValue] == 1) {
             [Toast hideToastActivity];
             DJMineWayBillDataSource *dataSource = [DJMineWayBillDataSource yy_modelWithJSON:responseObject];
-            NSLog(@"%@",dataSource.result);
+            DJLog(@"%@",dataSource.result);
             [_finishWayBillTableView.dataArr removeAllObjects];
             
             _finishWayBillTableView.dataArr =[dataSource.result mutableCopy];

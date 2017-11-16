@@ -45,11 +45,12 @@
     if (_model != model) {
         _model = model;
     }
-    self.nameLb.text = model.store;
+    self.nameLb.text =  [NSString stringWithFormat:@"%@ (%@)",model.store,model.daySeq];
     self.addrLb.text = model.tp_detail;
     self.sourceLb.text = model.platform;
     self.retimeLb.text = [NSString stringWithFormat:@"下单时间: %@",model.createtime];
-    NSDate *delivery = [NSDate  getDateWithyyyyMMddHHmmssStr:model.deliveryTime];
+    
+    NSDate *delivery = [[NSDate  getDateWithyyyyMMddHHmmssStr:model.createtime ] dateByAddingTimeInterval:[model.timeout floatValue]];
     NSTimeInterval time = [delivery timeIntervalSinceDate:[NSDate date]];
     if ([model.status integerValue] ==0) {
         self.im.image = [UIImage imageNamed:@"btn_waybill_arrived"];
@@ -112,7 +113,7 @@
     // 初始化
     self.compositeManager = [[AMapNaviCompositeManager alloc] init];
     // 如果需要使用AMapNaviCompositeManagerDelegate的相关回调（如自定义语音、获取实时位置等），需要设置delegate
-    self.compositeManager.delegate = self;
+//    self.compositeManager.delegate = self;
     // 通过present的方式显示路线规划页面, 在不传入起终点启动导航组件的模式下，options需传入nil
     AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
     //传入终点，并且带高德POIId
@@ -133,7 +134,7 @@
                                                               } success:^(id responseObject) {
                                                                   self.im.image = [UIImage imageNamed:@"btn_waybill_get"];
                                                                   self.statusLb.text = @"完成取餐";
-                                                                  self.model.status =@"2";
+                                                                  self.model.status =@"1";
                                                               } failure:^(ZDURLResponseStatusCode errorCode) {
                                                                   
                                                               }];
@@ -143,7 +144,7 @@
                                                                } success:^(id responseObject) {
                                                                    self.im.image = [UIImage imageNamed:@"btn_waybill_finish"];
                                                                    self.statusLb.text = @"确认送达";
-                                                                   self.model.status =@"3";
+                                                                   self.model.status =@"2";
                                                                    
                                                                    
                                                                } failure:^(ZDURLResponseStatusCode errorCode) {
@@ -155,7 +156,7 @@
                                                                } success:^(id responseObject) {
                                                                    self.im.image = [UIImage imageNamed:@"btn_waybill_finish"];
                                                                    self.statusLb.text = @"订单完成";
-                                                                   self.model.status =@"4";
+                                                                   self.model.status =@"3";
                                                                    
                                                                    
                                                                } failure:^(ZDURLResponseStatusCode errorCode) {
@@ -164,29 +165,30 @@
     }else{
         self.im.image = [UIImage imageNamed:@"btn_waybill_finish"];
         self.statusLb.text = @"订单完成";
+        self.model.status =@"4";
     }
 }
 // 当前位置更新回调
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager updateNaviLocation:(AMapNaviLocation *)naviLocation {
-    NSLog(@"updateNaviLocation,%@",naviLocation);
+    DJLog(@"updateNaviLocation,%@",naviLocation);
 }
 
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager error:(NSError *)error {
-    NSLog(@"error:{%ld - %@}", (long)error.code, error.localizedDescription);
+    DJLog(@"error:{%ld - %@}", (long)error.code, error.localizedDescription);
 }
 
 - (void)compositeManagerOnCalculateRouteSuccess:(AMapNaviCompositeManager *)compositeManager {
-    NSLog(@"onCalculateRouteSuccess,%ld",(long)compositeManager.naviRouteID);
+    DJLog(@"onCalculateRouteSuccess,%ld",(long)compositeManager.naviRouteID);
 }
 
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager onCalculateRouteFailure:(NSError *)error {
-    NSLog(@"onCalculateRouteFailure error:{%ld - %@}", (long)error.code, error.localizedDescription);
+    DJLog(@"onCalculateRouteFailure error:{%ld - %@}", (long)error.code, error.localizedDescription);
 }
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager didStartNavi:(AMapNaviMode)naviMode {
-    NSLog(@"didStartNavi,%ld",(long)naviMode);
+    DJLog(@"didStartNavi,%ld",(long)naviMode);
 }
 // 导航到达目的地后的回调函数
 - (void)compositeManager:(AMapNaviCompositeManager *)compositeManager didArrivedDestination:(AMapNaviMode)naviMode {
-    NSLog(@"didArrivedDestination,%ld",(long)naviMode);
+    DJLog(@"didArrivedDestination,%ld",(long)naviMode);
 }
 @end

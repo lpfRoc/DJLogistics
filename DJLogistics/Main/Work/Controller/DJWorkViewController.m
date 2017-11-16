@@ -79,7 +79,7 @@
 
 -(void)startTimer{
     if (!self.timer) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(sendLocationInfoToSever) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sendLocationInfoToSever) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     }
 }
@@ -119,7 +119,7 @@
                 DJLog(@"%@",responseObject);
                 if ([responseObject[@"code"] integerValue] == 1) {
                     DJMessageDataSource *dataSource = [DJMessageDataSource yy_modelWithJSON:responseObject];
-                    NSLog(@"%@",dataSource.result);
+                    DJLog(@"%@",dataSource.result);
                     self.messageArr  = dataSource;
                     self.headLb.text = ((DJMessageModel *)self.messageArr.result[0]).content;
                     
@@ -127,7 +127,10 @@
                         
                         if ([responseObject[@"code"] integerValue] == 1) {
                             self.servicePhone = responseObject[@"result"][@"service"];
-                            [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"result"][@"sms"]?:[NSNull null] forKey:@"sms"];
+                            DJLog(@"---------------%@",responseObject);
+                            NSDictionary *dic =[responseObject objectForKey:@"result"];
+                            
+                            [[NSUserDefaults standardUserDefaults] setValue:[[dic objectForKey:@"sms"] isEqual:[NSNull null]]?@" ":[dic objectForKey:@"sms"] forKey:@"sms"];
                         }else
                         {
                             [Toast makeToast:responseObject[@"msg"]];

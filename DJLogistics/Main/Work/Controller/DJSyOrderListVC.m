@@ -96,7 +96,7 @@
     line.backgroundColor = COLOR_Line;
     [headView addSubview:line];
     _refreshTimer = [NSTimer scheduledTimerWithTimeInterval:60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self refreshData];
+        [self constructData];
     }];
     [[NSRunLoop currentRunLoop] addTimer:_refreshTimer forMode:NSRunLoopCommonModes];
     
@@ -111,12 +111,11 @@
 }
 
 -(void)refreshData{
+     [Toast makeToastActivity];
     [self constructData];
 }
 
 -(void)constructData{
-    
-    [Toast makeToastActivity];
     [ZDBaseRequestManager POSTJKID:@"order" parameters:@{@"sid":DJUser_Info.sid} success:^(id responseObject) {
         [self.tableView.mj_header endRefreshing];
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
@@ -134,19 +133,15 @@
                 }
                 [_tableView reloadData];
             }
-            
-            
         }else{
             self.tableView.hidden=YES;
             [Toast makeToast:responseObject[@"msg"]];
         }
-        
      } failure:^(ZDURLResponseStatusCode errorCode) {
          [self.tableView.mj_header endRefreshing];
          [Toast hideToastActivity];
          self.tableView.hidden=YES;
     }];
-    
 }
 
 
@@ -160,6 +155,7 @@
     }
     return _tableView;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row%2==0) {
         return 120;

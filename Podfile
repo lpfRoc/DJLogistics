@@ -15,5 +15,6 @@ target ‘DJLogistics’ do
     pod 'AMapNavi'
     pod 'iCarousel', '~> 1.8.3'
     pod 'QQ_XGPush'
+    pod 'Bugly'
 
 end
