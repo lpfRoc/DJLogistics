@@ -61,7 +61,7 @@
         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
             [Toast hideToastActivity];
             DJWaybillDataSource *dataSource = [DJWaybillDataSource yy_modelWithJSON:responseObject];
-            NSLog(@"%@",dataSource.result);
+            DJLog(@"%@",dataSource.result);
             _mineWaybillTableView.dataArr =[self handelDataArr:dataSource.result];
             [_mineWaybillTableView reloadData];
             

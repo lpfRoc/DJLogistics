@@ -19,6 +19,7 @@
 
 #import <UserNotifications/UserNotifications.h>
 
+
 @interface AppDelegate() <UNUserNotificationCenterDelegate>
 @end
 #endif
@@ -47,7 +48,6 @@
      setActive: YES
      
      error:&activationErr];
-    
     
     [AMapServices sharedServices].apiKey = @"3f843f8e909afb65f75a251c49f15571";
     
@@ -78,16 +78,16 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     NSString *deviceTokenStr = [XGPush registerDevice:deviceToken account:nil successCallback:^{
-        NSLog(@"[DLLogistics] register push success");
+        DJLog(@"[DLLogistics] register push success");
     } errorCallback:^{
-        NSLog(@"[DLLogistics] register push error");
+        DJLog(@"[DLLogistics] register push error");
     }];
-    NSLog(@"[DLLogistics] device token is %@", deviceTokenStr);
+    DJLog(@"[DLLogistics] device token is %@", deviceTokenStr);
     
     //保存token
     [DJCacheDataModel sharedInstance].pushDeviceToken = [NSDictionary dictionaryWithObjects:@[deviceTokenStr] forKeys:@[@"pushDeviceToken"]];
 
-    NSLog(@"%@",deviceTokenStr);
+    DJLog(@"%@",deviceTokenStr);
     if(deviceTokenStr.length && DJUser_Info.phone)
     {
         [self bindTokenByPhone: DJUser_Info.phone Token:deviceTokenStr];
@@ -121,13 +121,13 @@
  @param completionHandler 完成回调
  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    NSLog(@"[DLLogistics] receive slient Notification");
-    NSLog(@"[DLLogistics] userinfo %@", userInfo);
+    DJLog(@"[DLLogistics] receive slient Notification");
+    DJLog(@"[DLLogistics] userinfo %@", userInfo);
     [XGPush handleReceiveNotification:userInfo
                       successCallback:^{
-                          NSLog(@"[DLLogistics] Handle receive success");
+                          DJLog(@"[DLLogistics] Handle receive success");
                       } errorCallback:^{
-                          NSLog(@"[DLLogistics] Handle receive error");
+                          DJLog(@"[DLLogistics] Handle receive error");
                       }];
     
     completionHandler(UIBackgroundFetchResultNewData);

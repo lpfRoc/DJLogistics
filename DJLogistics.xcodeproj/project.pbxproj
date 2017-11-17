@@ -100,6 +100,7 @@
 		E2FB94161F9B2D7C00B9B266 /* FYWGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94131F9B2D7B00B9B266 /* FYWGS84TOGCJ02.m */; };
 		E2FB94171F9B2D7C00B9B266 /* FYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB94141F9B2D7C00B9B266 /* FYLocationManager.m */; };
 		E2FB94191F9B9D4A00B9B266 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB94181F9B9D4A00B9B266 /* CoreLocation.framework */; };
+		E2FF9CF61FB8571D004D728F /* DJAMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FF9CF51FB8571D004D728F /* DJAMapManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +296,8 @@
 		E2FB94141F9B2D7C00B9B266 /* FYLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLocationManager.m; sourceTree = "<group>"; };
 		E2FB94151F9B2D7C00B9B266 /* FYWGS84TOGCJ02.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYWGS84TOGCJ02.h; sourceTree = "<group>"; };
 		E2FB94181F9B9D4A00B9B266 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E2FF9CF41FB8571D004D728F /* DJAMapManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJAMapManager.h; sourceTree = "<group>"; };
+		E2FF9CF51FB8571D004D728F /* DJAMapManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJAMapManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +528,7 @@
 		D81AD6411F7DEBC000EE8F2A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E2FF9CF31FB85666004D728F /* AMapManager */,
 				E24A5A711FA8630D00D38C4B /* DJSendMessage */,
 				D80F07551F904A5700F45ABB /* Utilities */,
 				D81AD6421F7DEBC000EE8F2A /* BlankPage */,
@@ -873,6 +877,15 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		E2FF9CF31FB85666004D728F /* AMapManager */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF9CF41FB8571D004D728F /* DJAMapManager.h */,
+				E2FF9CF51FB8571D004D728F /* DJAMapManager.m */,
+			);
+			path = AMapManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1085,6 +1098,7 @@
 			files = (
 				E2FB94161F9B2D7C00B9B266 /* FYWGS84TOGCJ02.m in Sources */,
 				D81AD66E1F7DEBC000EE8F2A /* MBProgressHUD+SCustomHUD.m in Sources */,
+				E2FF9CF61FB8571D004D728F /* DJAMapManager.m in Sources */,
 				D8FFA7031F8CC6DB00326AA1 /* DJMineWaybillTableView.m in Sources */,
 				D80F07611F908E0700F45ABB /* DJMessageDetailTableViewCell.m in Sources */,
 				D814146A1F98967C00AE5800 /* DJAppManagerInit.m in Sources */,

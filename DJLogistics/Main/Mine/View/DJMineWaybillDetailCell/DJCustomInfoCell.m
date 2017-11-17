@@ -208,7 +208,7 @@
     switch (btn.tag) {
         case 100:
         {
-            NSLog(@"gps");
+            DJLog(@"gps");
             // 初始化
             self.compositeManager = [[AMapNaviCompositeManager alloc] init];
             // 如果需要使用AMapNaviCompositeManagerDelegate的相关回调（如自定义语音、获取实时位置等），需要设置delegate
@@ -228,7 +228,7 @@
         case 101:
         {
             
-            NSLog(@"call");
+            DJLog(@"call");
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",_model.tp_phone]]];
            
 
@@ -236,7 +236,7 @@
             break;
         case 102:
         {
-            NSLog(@"message");
+            DJLog(@"message");
 //            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",_model.tp_phone]]];
             if (!self.manager) {
                 self.manager = [[DJSendMessageManager alloc]init];

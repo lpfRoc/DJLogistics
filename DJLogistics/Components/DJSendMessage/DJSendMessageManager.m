@@ -53,18 +53,18 @@
     switch (result) {
         case MessageComposeResultSent:
             //信息传送成功
-            NSLog(@"信息发送成功");
+            DJLog(@"信息发送成功");
              [ controller  dismissViewControllerAnimated:YES completion:nil];
             break;
         case MessageComposeResultFailed:
             //信息传送失败
-            NSLog(@"信息传送失败");
+            DJLog(@"信息传送失败");
              [ controller  dismissViewControllerAnimated:YES completion:nil];
             
             break;
         case MessageComposeResultCancelled:
             //信息被用户取消传送
-            NSLog(@"信息被用户取消传送");
+            DJLog(@"信息被用户取消传送");
             
             
             break;

@@ -60,7 +60,7 @@
         DJLog(@"%@",responseObject);
         if ([responseObject[@"code"] integerValue] == 1) {//退出成功
             DJMessageDataSource *dataSource = [DJMessageDataSource yy_modelWithJSON:responseObject];
-            NSLog(@"%@",dataSource.result);
+            DJLog(@"%@",dataSource.result);
             _messageCenterTableView.messageModelArr = dataSource.result;
             [_messageCenterTableView reloadData];
         }else
