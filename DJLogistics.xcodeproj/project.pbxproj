@@ -1312,7 +1312,7 @@
 				CODE_SIGN_ENTITLEMENTS = DJLogistics/DJLogistics.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WLUJNW49DA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DJLogistics/PrefixHeader.pch;
 				INFOPLIST_FILE = DJLogistics/Info.plist;
@@ -1336,7 +1336,7 @@
 				CODE_SIGN_ENTITLEMENTS = DJLogistics/DJLogistics.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WLUJNW49DA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DJLogistics/PrefixHeader.pch;
 				INFOPLIST_FILE = DJLogistics/Info.plist;
