@@ -67,6 +67,7 @@
 		D81B97A41F9F18F7004BE532 /* DJMineWayBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B97A31F9F18F7004BE532 /* DJMineWayBillModel.m */; };
 		D81B97A71F9F1EE8004BE532 /* DJFoodBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B97A61F9F1EE8004BE532 /* DJFoodBillModel.m */; };
 		D81B97AA1F9F1F81004BE532 /* DJMineWayBillDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B97A91F9F1F81004BE532 /* DJMineWayBillDataSource.m */; };
+		D81E9A9E1FBEDCFC00165717 /* notify.wav in Resources */ = {isa = PBXBuildFile; fileRef = D81E9A9D1FBEDCFC00165717 /* notify.wav */; };
 		D8C62E961F8E168A0015FF32 /* DJWaybillHistoryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */; };
 		D8C62E991F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C62E981F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.m */; };
 		D8FFA6FA1F8C995400326AA1 /* DJChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFA6F91F8C995400326AA1 /* DJChangePasswordViewController.m */; };
@@ -240,6 +241,7 @@
 		D81B97A61F9F1EE8004BE532 /* DJFoodBillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJFoodBillModel.m; sourceTree = "<group>"; };
 		D81B97A81F9F1F81004BE532 /* DJMineWayBillDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJMineWayBillDataSource.h; sourceTree = "<group>"; };
 		D81B97A91F9F1F81004BE532 /* DJMineWayBillDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJMineWayBillDataSource.m; sourceTree = "<group>"; };
+		D81E9A9D1FBEDCFC00165717 /* notify.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notify.wav; sourceTree = "<group>"; };
 		D8C62E941F8E168A0015FF32 /* DJWaybillHistoryDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillHistoryDetailController.h; sourceTree = "<group>"; };
 		D8C62E951F8E168A0015FF32 /* DJWaybillHistoryDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJWaybillHistoryDetailController.m; sourceTree = "<group>"; };
 		D8C62E971F8E16A50015FF32 /* DJWaybillHistoryDetailTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJWaybillHistoryDetailTableView.h; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 		D81AD6051F7DD94100EE8F2A /* DJLogistics */ = {
 			isa = PBXGroup;
 			children = (
+				D81E9A9D1FBEDCFC00165717 /* notify.wav */,
 				D814290C1F9DDD1B0067CDE1 /* DJLogistics.entitlements */,
 				D81AD64A1F7DEBC000EE8F2A /* Foundation */,
 				D81AD6391F7DEBC000EE8F2A /* AppInter */,
@@ -998,6 +1001,7 @@
 				E2FB93EE1F97C0D100B9B266 /* DJSpaceCell.xib in Resources */,
 				E258BFDB1F9377060032E04D /* icon_contact_kefu@2x.png in Resources */,
 				E2FB93E81F97BA3100B9B266 /* btn_waybill_finish@2x.png in Resources */,
+				D81E9A9E1FBEDCFC00165717 /* notify.wav in Resources */,
 				E258BFD41F9351930032E04D /* icon_get_order@2x.png in Resources */,
 				D81AD6161F7DD94100EE8F2A /* LaunchScreen.storyboard in Resources */,
 			);
