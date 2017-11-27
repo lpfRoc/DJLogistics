@@ -10,4 +10,6 @@
 
 @interface DJSyMyOrderListVC : DJRootViewController
 
+-(void) refreshList;
+
 @end

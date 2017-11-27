@@ -14,7 +14,7 @@
 #import "DJCacheDataModel.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
-
+#import <Bugly/Bugly.h>
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
 #import <UserNotifications/UserNotifications.h>
@@ -50,7 +50,7 @@
      error:&activationErr];
     
     [AMapServices sharedServices].apiKey = @"3f843f8e909afb65f75a251c49f15571";
-    
+    [Bugly startWithAppId:@"a15971ced9"];
     
     if ([[DJCacheDataModel sharedInstance] isAutoLogin]){
         self.window.rootViewController = [[DJTabBarController alloc] init];

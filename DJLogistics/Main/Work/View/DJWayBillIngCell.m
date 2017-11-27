@@ -128,6 +128,7 @@
 }
 
 - (IBAction)statusChange:(id)sender {
+    [Toast makeToastActivity];
     if ([_model.status integerValue] ==0) {
         [ZDBaseRequestManager POSTJKID:@"arrived" parameters:@{
                                                               @"unique":_model.unique
@@ -135,8 +136,9 @@
                                                                   self.im.image = [UIImage imageNamed:@"btn_waybill_get"];
                                                                   self.statusLb.text = @"完成取餐";
                                                                   self.model.status =@"1";
+                                                                  [Toast makeToastSuccess:@"到店成功"];
                                                               } failure:^(ZDURLResponseStatusCode errorCode) {
-                                                                  
+                                                                  [Toast hideToastActivity];
                                                               }];
     }else if ([_model.status integerValue] ==1) {
         [ZDBaseRequestManager POSTJKID:@"get" parameters:@{
@@ -145,10 +147,10 @@
                                                                    self.im.image = [UIImage imageNamed:@"btn_waybill_finish"];
                                                                    self.statusLb.text = @"确认送达";
                                                                    self.model.status =@"2";
-                                                                   
+                                                                   [Toast makeToastSuccess:@"取餐成功"];
                                                                    
                                                                } failure:^(ZDURLResponseStatusCode errorCode) {
-                                                                   
+                                                                   [Toast hideToastActivity];
                                                                }];
     }else if ([_model.status integerValue] ==2) {
         [ZDBaseRequestManager POSTJKID:@"finish" parameters:@{
@@ -157,15 +159,19 @@
                                                                    self.im.image = [UIImage imageNamed:@"btn_waybill_finish"];
                                                                    self.statusLb.text = @"订单完成";
                                                                    self.model.status =@"3";
-                                                                   
-                                                                   
+                                                                   [Toast makeToastSuccess:@"送达成功"];
+                                                                   if (self.refreshDataBlock){
+                                                                       self.refreshDataBlock();
+                                                                   }
+                                                       
                                                                } failure:^(ZDURLResponseStatusCode errorCode) {
-                                                                   
+                                                                   [Toast hideToastActivity];
                                                                }];
     }else{
         self.im.image = [UIImage imageNamed:@"btn_waybill_finish"];
         self.statusLb.text = @"订单完成";
         self.model.status =@"4";
+         [Toast hideToastActivity];
     }
 }
 // 当前位置更新回调

@@ -90,9 +90,8 @@
     self.tableView .mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self constructData];
     }];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self constructData];
-    }];
+
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(constructData) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
     
     
@@ -100,24 +99,31 @@
 }
 
 
+
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [Toast makeToastActivity];
     [self constructData];
 }
+-(void)refreshList{
+    [self constructData ];
+}
+
+
 -(void)refreshData{
-     [Toast makeToastActivity];
+    
     [ZDBaseRequestManager POSTJKID:@"request" parameters:@{@"id":DJUser_Info.ID} success:^(id responseObject) {
         if ([responseObject[@"code"] integerValue] == 1) {//登陆成功
             [Toast hideToastActivity];
         }else{
             [Toast makeToast:responseObject[@"msg"]];
         }
-        
     } failure:^(ZDURLResponseStatusCode errorCode) {
         [Toast hideToastActivity];
     }];
-    
-    
 }
 
 -(void)constructData{
@@ -176,6 +182,10 @@
     }else{
         DJWayBillIngCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DJWayBillIngCell" forIndexPath:indexPath];
         DJMineWayBillModel *model = self.dataArr[indexPath.row/2];
+        __weak DJSyMyOrderListVC *weakSelf = self;
+        cell.refreshDataBlock = ^{
+            [weakSelf constructData];
+        };
         cell.model = model;
        
         return cell;

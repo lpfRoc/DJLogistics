@@ -20,6 +20,7 @@ PODS:
   - AMapNavi (5.3.0):
     - AMap3DMap (>= 5.3.0)
     - AMapFoundation (~> 1.4)
+  - Bugly (2.4.8)
   - iCarousel (1.8.3)
   - IQKeyboardManager (4.0.13)
   - JSONKit-NoWarning (1.2)
@@ -40,6 +41,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AMapNavi
+  - Bugly
   - iCarousel (~> 1.8.3)
   - IQKeyboardManager (~> 4.0.13)
   - JSONKit-NoWarning (~> 1.2)
@@ -57,6 +59,7 @@ SPEC CHECKSUMS:
   AMap3DMap: 3eb906ac6b9d488413ab26c24f67eca4b4ad4641
   AMapFoundation: 6c0471c9a6a0ad17dad46e3d800ad56ca170f82a
   AMapNavi: 3f553beb42afdc4c18b2ca8137f9363038d8783d
+  Bugly: da3c02408c14838d498429320545a8e439392978
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
@@ -70,6 +73,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 93f51fbdaf283fb43b0b669dc9264ed44e583532
+PODFILE CHECKSUM: 9d440b7cf51fb9e75fcd25faecb9016c2f27d83f
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0.beta.2

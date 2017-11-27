@@ -58,6 +58,9 @@
     [super viewWillAppear:animated];
     [self requestData];
 }
+-(void)refreshVC{
+    [self requestData];
+}
 
 //
 -(void)requestData

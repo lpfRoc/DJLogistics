@@ -95,11 +95,8 @@
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 9.5, UI_SCREEN_WIDTH, 0.5)];
     line.backgroundColor = COLOR_Line;
     [headView addSubview:line];
-    _refreshTimer = [NSTimer scheduledTimerWithTimeInterval:60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self constructData];
-    }];
+    _refreshTimer  = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(constructData) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_refreshTimer forMode:NSRunLoopCommonModes];
-    
 }
 -(void)dealloc {
     [_refreshTimer invalidate];

@@ -61,9 +61,7 @@
         [Toast hideToastActivity];
         if (self.refreshTableBlock) {
             self.refreshTableBlock(responseObject);
-        }
-        
-        
+        }        
         
     } failure:^(ZDURLResponseStatusCode errorCode) {
         [Toast hideToastActivity];

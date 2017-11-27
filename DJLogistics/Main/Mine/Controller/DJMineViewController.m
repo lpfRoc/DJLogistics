@@ -71,7 +71,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我的";
-
     [self.view addSubview:self.mineTableView];
     [self autoLayout];
     [self requestData];

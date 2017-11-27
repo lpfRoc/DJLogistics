@@ -10,4 +10,7 @@
 
 @interface DJFinishWayBillViewController : DJRootViewController
 
+-(void)refreshVC;
+
+
 @end

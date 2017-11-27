@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DJMineWayBillModel.h"
+
+typedef void(^RefreshDataBlock)();
+
 @interface DJWayBillIngCell : UITableViewCell
 
 @property (nonatomic , strong) DJMineWayBillModel *model;
+
+@property (nonatomic , copy) RefreshDataBlock refreshDataBlock;
 @end

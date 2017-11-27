@@ -63,6 +63,8 @@
     self.navigationItem.title = @"工作台";
     self.view.backgroundColor = COLOR_BG;
     
+ 
+    
 //    FYLocationManager *manager = [FYLocationManager shareInstance];
     [self constuctView];
     // Do any additional setup after loading the view.

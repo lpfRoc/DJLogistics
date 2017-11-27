@@ -13,8 +13,13 @@
 #import "DJDispatchingViewController.h"
 #import "DJSyMyOrderListVC.h"
 @interface DJWayBillCenterViewController ()<iCarouselDelegate, iCarouselDataSource>
+{
+    DJFinishWayBillViewController *finishVC;
+    DJSyMyOrderListVC *dispatchingViewController;
+}
 @property (strong, nonatomic) XTSegmentControl *mySegmentControl;
 @property (strong, nonatomic) iCarousel *carousel;
+
 @property (strong, nonatomic) NSArray *titlesArray;
 @end
 
@@ -45,6 +50,14 @@
     
     [self addBarButtonItem];
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [dispatchingViewController refreshList];
+    
+}
+
+
 - (void)addBarButtonItem{
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, 24, 23);
@@ -82,7 +95,11 @@
 }
 
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
+    if (carousel.currentItemIndex==1) {
+        [finishVC refreshVC];
+    }
     if (_mySegmentControl) {
+        
         _mySegmentControl.currentIndex = carousel.currentItemIndex;
     }
 }
@@ -106,13 +123,13 @@
     switch (index) {
         case 0:
         {
-            DJSyMyOrderListVC *dispatchingViewController = [[DJSyMyOrderListVC alloc] init];
+            dispatchingViewController = [[DJSyMyOrderListVC alloc] init];
             controller = dispatchingViewController;
         }
             break;
         case 1:
         {
-            DJFinishWayBillViewController *finishVC = [[DJFinishWayBillViewController alloc] init];
+            finishVC = [[DJFinishWayBillViewController alloc] init];
             controller = finishVC;
             
         }

@@ -39,6 +39,11 @@ Copyright © 2014 AutoNavi. All Rights Reserved.
 Copyright © 2014 AutoNavi. All Rights Reserved.
 
 
+## Bugly
+
+Copyright 2017 tencent.com. All rights reserved.
+
+
 ## IQKeyboardManager
 
 IQKeyboardManager license
